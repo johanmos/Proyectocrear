@@ -1,3 +1,15 @@
+<?php
+
+include_once("proyecto_catalogo/datos_conexion_bd.php");
+
+
+
+$sql= "SELECT * FROM categoria";
+
+$result= array();
+$result= $conn->query($sql);
+
+?>
 <!DOCTYPE html>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 
@@ -776,7 +788,7 @@
 										</a>
 										
 									</li>';
-								?>
+								}}?>
 								</ul>
 							</div>
 						</div>

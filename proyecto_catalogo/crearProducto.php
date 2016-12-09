@@ -25,11 +25,11 @@ $result= $conn->query($sql);
 				<td><input type="text" name="descripcion" value=""></td></tr>
 			<tr><td>Categoria</td>
 				<td>
-					<select name="idcategoria">
+					<select name="categoria">
 						<?php 
 						if($result->num_rows>0){
 						while($row=$result->fetch_assoc()){
-							print '<option value="'.$row["idcategoria"].'" >'.$row["nombre"].'</option>';
+							print '<option value="'.$row["nombre"].'" >'.$row["nombre"].'</option>';
 						}}
 						?>					
 					</select>

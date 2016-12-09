@@ -48,7 +48,7 @@ include_once("proyecto_catalogo/collectionLogic.php");
 	<script type="text/javascript">
 	var arrayJS=<?php echo json_encode($ar);?>;
 	for (var i = 0; i < arrayJS.length; i++) {
-		console.log("<br>"+arrayJS[0]["nombre"]);
+		console.log("<br>"+arrayJS[i]["nombre"]);
 	};
 </script>
 
@@ -775,7 +775,7 @@ include_once("proyecto_catalogo/collectionLogic.php");
 									<div class="product-single__photos" id="ProductPhoto">
 									<img src="" alt="Corporis suscipit laboriosam" id="ProductPhotoImg" data-image-id="7500291971">
 									<script type="text/javascript">
-									document.getElementById("ProductPhotoImg").src='data:image/jpg;base64,'+arrayJS["0"]["imagen"];
+									document.getElementById("ProductPhotoImg").src=''+arrayJS["0"]["imagen"];
 									document.getElementById("labeldescripcion").innerHTML=''+arrayJS["0"]["descripcion"];
 									document.getElementById("labelcolores").innerHTML=''+arrayJS["0"]["colores"];
 									document.getElementById("labeltecnica").innerHTML=''+arrayJS["0"]["tecnicamarca"];
@@ -794,8 +794,8 @@ include_once("proyecto_catalogo/collectionLogic.php");
 									?>	
 									
 										<li class="thumb__element">
-											<?php print '<a id="'.$i.'" nombre="" href="data:image/jpg;base64,'.$ar[$i]["imagen"].'" onclick="return mostrarDescripcion(this.id);" class="product-single__thumbnail">';
-												  print'<img src="data:image/jpg;base64,'.$ar[$i]["imagen"].'" alt="Corporis suscipit laboriosam">';
+											<?php print '<a id="'.$i.'" nombre="" href="'.$ar[$i]["imagen"].'" onclick="return mostrarDescripcion(this.id);" class="product-single__thumbnail">';
+												  print'<img src="'.$ar[$i]["imagen"].'" alt="Corporis suscipit laboriosam">';
 												  print	'</a>';
 												  ?>
 												 <script> 

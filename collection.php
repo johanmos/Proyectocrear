@@ -44,7 +44,7 @@ include_once("proyecto_catalogo/collectionLogic.php");
 	<script type="text/javascript">
 	var arrayJS=<?php echo json_encode($ar);?>;
 	for (var i = 0; i < arrayJS.length; i++) {
-		console.log("<br>"+arrayJS[0]["nombre"]);
+		console.log("<br>"+arrayJS[i]["nombre"]);
 	}
 </script>
 </head>
@@ -809,8 +809,8 @@ include_once("proyecto_catalogo/collectionLogic.php");
 										print '<div class="grid__item large--one-quarter medium--one-half">
 												<div class="grid__item_wrapper">
 													<div class="grid__image product-image">
-														<a href="product.php">
-															<img src="data:image/jpg;base64,'.$ar[$i]["imagen"].'" alt="Demo Product Sample">
+														<a href="product.php?categoria='.$categoria.'">
+															<img src="'.$ar[$i]["imagen"].'" alt="Demo Product Sample">
 														</a>
 														<div class="quickview">
 															<div class="product-ajax-cart hidden-xs hidden-sm">

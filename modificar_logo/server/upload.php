@@ -12,7 +12,7 @@ include("funciones.php");
 	 	
 
 	 $j=0;
-	 $tipos=array("image/jpg","image/jpeg","image/png","image/gif");
+	 $tipos=array("image/jpg","image/jpeg");
 	 	
 	 for ($i=0; $i <count($imagenes) ; $i++) { 
 	 	if($errorimg[$i] == 0)
@@ -21,22 +21,23 @@ include("funciones.php");
 	 		{
 	 			$k=$j++;
 				$logo='logo';
-				$png = ".png";
+				
 	 			$solonom= str_replace(".jpg", "", $imagenes[$i]);
 	 			//$b=rand(20,30);
 	 			$se_subio_imagen=subir_imagenes($typeimg[$i],$tempimg[$i],$logo,"img/",200);
 	 		
 	 		    echo $se_subio_imagen."<br>";
 				
-				header("location: mostrar_logo.php");
+				header("location: ../../adminlogin/modificar_logo.html");
 
 	 		
 	 		}
 			/* Si solo se quiere admitir un tipo de imagenes $tipos=array("image/jpg");
-			else 
+			*/else 
 			{
+			header("../../adminlogin/modificar_logo.html");
 			echo "solo imegenes jpg";
-			}*/
+			}
 	 	
 	 	}
 	 	

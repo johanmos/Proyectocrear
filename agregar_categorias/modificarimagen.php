@@ -25,3 +25,13 @@ require_once('../conexion.php');
 <input type="submit" value="aceptar">
 
 </form></center>
+
+
+<div class="p-20">
+                            <div class="form-group clearfix">
+                                <div class="col-sm-12 padding-left-0 padding-right-0">
+                                    <input type="file" name="imagenes[]" id="filer_input2"
+                                                               multiple="multiple">
+                                </div>
+                            </div>
+                         </div>   

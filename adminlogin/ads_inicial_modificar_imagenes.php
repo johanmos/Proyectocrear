@@ -1,22 +1,18 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html>
-	
-<!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/form-uploads.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:18 GMT -->
+  
+<!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/tables-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:21 GMT -->
 <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-		<meta name="author" content="Coderthemes">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
 
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-		<title>Flacto - Responsive Admin Dashboard Template</title>
+    <title>Flacto - Responsive Admin Dashboard Template</title>
 
-        <!-- Jquery filer css -->
-        <link href="assets/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
-        <link href="assets/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
-
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -42,16 +38,14 @@
         ga('send', 'pageview');
 
     </script>
-<script type="text/javascript">
-    $(":file").filestyle({input: false});
-</script>
-	</head>
 
-	<body class="fixed-left">
+  </head>
 
-		<!-- Begin page -->
-		<!-- Begin page -->
-		<div id="wrapper">
+  <body class="fixed-left">
+
+    <!-- Begin page -->
+    <!-- Begin page -->
+    <div id="wrapper">
 
             <!-- Top Bar Start -->
             <div class="topbar">
@@ -78,9 +72,9 @@
                             </div>
 
                             <form role="search" class="navbar-left app-search pull-left hidden-xs">
-			                     <input type="text" placeholder="Search..." class="form-control">
-			                     <a href="#"><i class="fa fa-search"></i></a>
-			                </form>
+                           <input type="text" placeholder="Search..." class="form-control">
+                           <a href="#"><i class="fa fa-search"></i></a>
+                      </form>
 
 
                             <ul class="nav navbar-nav navbar-right pull-right">
@@ -133,7 +127,7 @@
                     <div id="sidebar-menu">
                         <ul>
 
-                        	<li class="text-muted menu-title">Navigation</li>
+                          <li class="text-muted menu-title">Navigation</li>
 
                             <li class="has_sub">
                                 <a href="index-2.html" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
@@ -182,7 +176,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                	<li><a href="tables-basic.html">Basic Tables</a></li>
+                                  <li><a href="tables-basic.html">Basic Tables</a></li>
                                     <li><a href="tables-datatable.html">Data Table</a></li>
                                     <li><a href="tables-editable.html">Editable Table</a></li>
                                 </ul>
@@ -211,7 +205,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-collection-item"></i><span class="label label-default pull-right">8</span><span> Pages </span></a>
                                 <ul class="list-unstyled">
-                                	<li><a href="page-starter.html">Starter Page</a></li>
+                                  <li><a href="page-starter.html">Starter Page</a></li>
                                     <li><a href="page-timeline.html">Timeline</a></li>
                                     <li><a href="page-login.html">Login</a></li>
                                     <li><a href="page-register.html">Register</a></li>
@@ -246,64 +240,122 @@
 
                 </div>
             </div>
-			<!-- Left Sidebar End -->
+      <!-- Left Sidebar End -->
 
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+          <div class="container">
 
-			<!-- ============================================================== -->
-			<!-- Start right Content here -->
-			<!-- ============================================================== -->
-			<div class="content-page">
-				<!-- Start content -->
-				<div class="content">
-					<div class="container">
-
-						<!-- Page-Title -->
+            <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                
-                                <h4 class="page-title">Agregar Nueva Categoría</h4>
-                            </div>
-                        </div>
+                                <div class="btn-group pull-right m-t-5 m-b-20">
+                                    <button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Opciones </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="agregar_nueva_categoria.php">Nueva Categoría</a></li>
+                                        
+                                    </ul>
+                                </div>
+                                <h4 class="page-title">Imagenes Promocion/Ads</h4>
+                            
+                        <!-- End row -->
+
+                       
+                        <!-- end row -->
 
 
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-lg-12">
                                 <div class="card-box">
-                                    <form action="../agregar_categorias/proceso_guardar.php" method="POST" enctype="multipart/form-data">
-                                    <input type="text" class="form-control" name="name" id="" placeholder="Nombre de la categoria"><br>                    
-                                   <div class="row m-t-50">
-                                        <div class="col-xs-12 col-sm-6">
-                                        <div class="p-20">
-                                                <div class="form-group clearfix">
-                                                    <div class="col-sm-12 padding-left-0 padding-right-0">
-                                                            <input type="file" name="imagen">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     
-                                    
-                                    
-                                    <br><input type="submit" class="btn btn-danger" value="Aceptar">
-                                    </form>
 
                                     
-                              
-                            
-                                    <!-- end row -->
 
+                                    <div class="table-responsive">
                                    
-                                    <!-- end row -->
+                                        <table class="table m-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Imagen</th>
+                                                    
+                                                    <th>Titulo</th>
+                                                    <th>Descripción</th>
+                                                    
+                                                    <th>Estado</th>
+                                                    <th></th>
+                                                    
+                                                   
+                                                    
+                                                </tr>
+                                            </thead>
 
-                        		</div>
-                            </div><!-- end col-->
+                                            
+<?php
+        include '../conexion.php';
+        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+                        if(!$link) {
+                            die('Failed to connect to server: ' . mysql_error());       
+                            }
+                        
+                        //Select database
+                        $db = mysqli_select_db($link,DB_DATABASE);
+                        if(!$db) {
+                            die("Unable to select database");
+                        }
+                        $id=$_REQUEST['id'];
+        $re=mysqli_query($link,"select * from adsinicial WHERE id='$id'")or die();
+        while ($f=mysqli_fetch_array($re)) {
+    ?>
+    <tbody>
+    <tr>
+         <form action="ads_inicial_editar_estado.php?id=<?php echo $f['id'];?>" method="POST">
+        <td><img width="200px" src="../pub_inicial/Subir/Imagenes/<?php echo $f['Imagen']; ?>"></td>
+        
+        <td><input type="text" name="nombre" value="<?php echo $f['Nombre'];?>"></td>
+        <td><textarea rows="7"><?php echo htmlspecialchars($f['descripcion']); ?></textarea></td>
+         <td>
+       
+          <?php if($f['estado']==1){
+          print"
+                <input type='radio' name='estado' value='1' checked> Activo
+                <input type='radio' name='estado' value='0'> No Activo";}    
+          else{
+          print "<input type='radio' name='estado' value='1'> Activo
+                 <input type='radio' name='estado' value='0' checked> No Activo";}?>
+          
+          <td><input type="submit" class="btn btn-primary" value="aceptar">
+          
+          </td>
+        </form> 
+       
+
+        
+        
+    </tr>
+    </tbody>
+    <?php
+    }
+    ?>
+
+
+
+                                        </table>   
+                                   
+                                    </div>
+                               
+                                </div>
+                            </div><!-- end col -->
 
                         </div>
                         <!-- end row -->
 
+
+                       
+                        <!-- end row -->
 
 
                     </div> <!-- container -->
@@ -415,17 +467,11 @@
         <script src="assets/js/jquery.nicescroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
 
-        <!-- Jquery filer js -->
-        <script src="assets/plugins/jquery.filer/js/jquery.filer.min.js"></script>
-
         <!-- App js -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
 
-        <!-- page specific js -->
-        <script src="assets/pages/jquery.fileuploads.init.js"></script>
+  </body>
 
-	</body>
-
-<!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/form-uploads.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:21 GMT -->
+<!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/tables-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:21 GMT -->
 </html>

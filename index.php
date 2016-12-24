@@ -475,72 +475,64 @@
 					
 					<div class="grid__item small--one-whole medium--one-whole three-quarters main-slideshow">
 						<div class="main_slideshow_wrapper">
-							<div id="slider" class="flexslider">
+							
+							
+    <div id="slider" class="flexslider">
+
 								<ul class="slides">
+								<!-- inicia peticion php para mostrar imagenes en slide grande -->
+									<?php
+								        require_once('conexion.php');
+								        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+								                if(!$link) {
+								                        die('Failed to connect to server: ' . mysql_error());       
+								                            }
+								                        
+								                        //Select database
+								                        $db = mysqli_select_db($link,DB_DATABASE);
+								                        if(!$db) {
+								                            die("Unable to select database");
+								                        }
+								    				    $re=mysqli_query($link,"select * from adsinicial WHERE estado=1")or die();
+								        				while ($f=mysqli_fetch_array($re)) {
+								    ?>		
+									<td>
 									<li>
-										<img src="assets/images/demo1_885x450.jpg" alt="" />
+										<img src="pub_inicial/Subir/Imagenes/<?php echo $f['Imagen']; ?>">
 									</li>
-									<li>
-										<img src="assets/images/demo2_885x450.jpg" alt="" />
-									</li>
-									<li>
-										<img src="assets/images/demo3_885x450.jpg" alt="" />
-									</li>
-									<li>
-										<img src="assets/images/demo4_885x450.jpg" alt="" />
-									</li>
-									<li>
-										<img src="assets/images/demo5_885x450.jpg" alt="" />
-									</li>
-									<li>
-										<img src="assets/images/demo6_885x450.jpg" alt="" />
-									</li>
+									</td>
+									<!-- termina peticion php para mostrar imagenes en slide grande -->
+									<?php } ?>
+									
 								</ul>
 							</div>
 							<div id="carousel" class="flexslider">
 								<ul class="slides">
+								<?php
+								        require_once('conexion.php');
+								        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+								                if(!$link) {
+								                        die('Failed to connect to server: ' . mysql_error());       
+								                            }
+								                        
+								                        //Select database
+								                        $db = mysqli_select_db($link,DB_DATABASE);
+								                        if(!$db) {
+								                            die("Unable to select database");
+								                        }
+								    				    $re=mysqli_query($link,"select * from adsinicial WHERE estado=1")or die();
+								        				while ($f=mysqli_fetch_array($re)) {
+								    ?>	
+								    <td>
 									<li>
 										<div>
-											<img src="assets/images/demo1_50x50.jpg" alt="">
-											<span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Opening celebration 7th store</a></span>
-											<span class="cr-desc">Sale up to 70% from Nov 1, 2015 to Nov 7, 2015</span>
+											<img width="20px" src="pub_inicial/Subir/Imagenes/<?php echo $f['Imagen']; ?>">
+											<span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'"><?php echo $f['Nombre'];?></a></span>
+											<span class="cr-desc"><?php echo $f['descripcion'];?></span>
 										</div>
 									</li>
-									<li>
-										<div>
-											<img src="assets/images/demo2_50x50.jpg" alt="">
-											<span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Beautiful woman 2015</a></span>
-											<span class="cr-desc">high-end products cosmetics &amp; mackup</span>
-										</div>
-									</li>
-									<li>
-										<div>
-											<img src="assets/images/demo3_50x50.jpg" alt="">
-											<span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Sony Xperia Z5</a></span>
-											<span class="cr-desc">buy now only today sale 60% for all colour</span>
-										</div>
-									</li>
-									<li>
-										<div>
-											<img src="assets/images/demo4_50x50.jpg" alt="">
-											<span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">New Lego collection</a></span>
-											<span class="cr-desc">best seller 2015</span>
-										</div>
-									</li>
-									<li>
-										<div>
-											<img src="assets/images/demo5_50x50.jpg" alt="">
-											<span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Christmas 2015</a></span>
-											<span class="cr-desc">Merry Christmas</span>
-										</div>
-									</li>
-									<li>
-										<div>
-											<img src="assets/images/demo6_50x50.jpg" alt="">
-											<span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Happy New Year</a></span>
-											<span class="cr-desc">Happy New Year</span>
-										</div>
-									</li>
+									</td>
+									<?php } ?>
 							</div>
 						</div>
 					</div>

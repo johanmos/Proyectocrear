@@ -1,6 +1,6 @@
 <?php 
-include_once("proyecto_catalogo/collectionLogic.php");
-include_once("proyecto_catalogo/listacategorias.php");
+include_once("collectionLogic.php");
+include_once("listacategorias.php"); 
 $listacategorias2=$listacategorias;
 
 ?>

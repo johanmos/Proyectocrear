@@ -448,7 +448,7 @@
 								<div class="sdcollections-content">
 								<ul class="sdcollections-list">
 									<li class="sdc-element vetical-menu1 site-nav--has-dropdown" aria-haspopup="true">
-										<a href="collection.html" class="site-nav__link">
+										<a href="collection.php?categoria='.$row["nombre"].'" class="site-nav__link">
 											<div class="element-main">
 												<div class="collection-icon">';?>
 												<td><img width="70px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>"/></td>

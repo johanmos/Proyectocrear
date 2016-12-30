@@ -1,20 +1,27 @@
 <?php 
-include_once("proyecto_catalogo/datos_conexion_bd.php");
-$conn=new mysqli($servername, $username, $password, $db_name);
-if($conn-> connect_error){ // sirve para php > 5.2.9
-	die("Connection failed ".$conn-> connect_error);
-} 
+require_once('conexion.php');
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+						if(!$link) {
+							die('Failed to connect to server: ' . mysql_error());		
+							}
+						
+						//Select database
+						$db = mysqli_select_db($link,DB_DATABASE);
+						if(!$db) {
+							die("Unable to select database");
+						}
+
 
 $categoria=$_GET["categoria"];
 $sql1="SELECT id FROM ca WHERE nombre='$categoria'";
 //$id=arra
-$getid= mysqli_query($conn,$sql1);
+$getid= mysqli_query($link,$sql1);
 $idc=mysqli_fetch_array($getid, MYSQLI_NUM);
 
 //print $id ;
 $sql= "SELECT * FROM producto WHERE idcategoria ='$idc[0]'";
 $result= array();
-$result= $conn->query($sql);
+$result= $link->query($sql);
 while($row=$result->fetch_assoc()){
 	$ar[]=$row;}
 

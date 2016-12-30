@@ -1,7 +1,16 @@
 <?php
 @session_start();
-
-include_once("datos_conexion_bd.php");
+require_once('../conexion.php');
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+						if(!$link) {
+							die('Failed to connect to server: ' . mysql_error());		
+							}
+						
+						//Select database
+						$db = mysqli_select_db($link,DB_DATABASE);
+						if(!$db) {
+							die("Unable to select database");
+						}
 
 date_default_timezone_set('UTC');
 //Imprimimos la fecha actual dandole un formato
@@ -18,7 +27,7 @@ $tecnica=$_POST['tecnica'];
 
 $sql1="SELECT id FROM ca WHERE nombre='$nombrecategoria'";
 //$id=arra
-$getid= mysqli_query($conn,$sql1);
+$getid= mysqli_query($link,$sql1);
 $idc=mysqli_fetch_array($getid, MYSQLI_NUM);
 
 //echo "File:".$_FILES['photo1'];
@@ -53,12 +62,12 @@ $data4=date("Y-m-d-G-i-s");
 //$photo2=mysql_real_escape_string($photo2);
 $sql= "INSERT INTO producto(nombre, descripcion, precio, medidas, colores, tecnicamarca, fechaingreso, imagen, idcategoria) VALUES ('$name2', '$descripcion2', '$precio2', '$medida','$colores', '$tecnica', '$data4', '$direccionimagen2', '$idc[0]')";
 
-if($conn->query($sql)==TRUE){
+if($link->query($sql)==TRUE){
 //if(mysqli_query($conn,$sql)==TRUE){
 	echo "Guardada satisfactoriamente";
 }else{
 	//echo "Error: ".$sql."<br>".mysql_error($conn);
-	echo "Error: ".$sql."<br>".$conn->error;
+	echo "Error: ".$sql."<br>".$link->error;
 }
 
 

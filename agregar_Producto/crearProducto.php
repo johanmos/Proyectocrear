@@ -1,11 +1,21 @@
 <?php 
-include_once("datos_conexion_bd.php");
+require_once('../conexion.php');
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+						if(!$link) {
+							die('Failed to connect to server: ' . mysql_error());		
+							}
+						
+						//Select database
+						$db = mysqli_select_db($link,DB_DATABASE);
+						if(!$db) {
+							die("Unable to select database");
+						}
 
 
 $sql= "SELECT * FROM ca";
 
 $result= array();
-$result= $conn->query($sql);
+$result= $link->query($sql);
 ?>
 <!DOCTYPE html>
 <html>

@@ -1445,7 +1445,8 @@ footer.site-footer .fi-title {
     -moz-justify-content: left;
     -ms-justify-content: left;
     -webkit-justify-content: left;
-    justify-content: left
+    justify-content: left;
+    margin-left: 10px;
 }
 .grid-uniform-category>.grid__item {
     float: none;

@@ -2819,7 +2819,8 @@ label.error {
 }
 .grid__image img {
     display: block;
-    margin: 0 auto
+    /*margin: 0 auto*/
+    
 }
 .filter--active {
     font-weight: bold

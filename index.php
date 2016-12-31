@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 <?php
 					require_once('conexion.php');
@@ -547,16 +548,57 @@
 							<div class="grid__item three-quarters bh-left small--one-whole medium--one-whole">
 								
 								<div class="home-products-block bh-products">
+								
+								<!-- Modulo elegir que categoria se muestra en el carrusel inferior -->
+								
+								<?php require_once('conexion.php');
+				                        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+				                        if(!$link) {
+				                            die('Failed to connect to server: ' . mysql_error());       
+				                            }
+				                        
+				                        //Select database
+				                        $db = mysqli_select_db($link,DB_DATABASE);
+				                        if(!$db) {
+				                            die("Unable to select database");
+				                        }
+				                        
+				                        $opcion = "SELECT * FROM vista";
+				                        $vista = $link->query($opcion);
+
+				                        while($v = $vista->fetch_assoc())
+				                        {
+				                        	$view = $v['opcion'];
+				                        	echo $view; echo "hola";
+				                        }
+
+				                    	$query2 = "SELECT * FROM ca WHERE id = '$view'";
+				                    	
+				                        $resultado2 = $link->query($query2);
+				                        while($row2 = $resultado2->fetch_assoc())
+				                        {
+				                        	echo $row2['nombre'];
+				                        	$id = $row2['id']; 
+				                        	echo $id;
+				                ?>
 									<div class="home-products-block-title">
-										<span>Spotlight</span>
+										<span><?php echo $row2['nombre'];?></span>
 									</div>
 									<div class="home-products-block-content">
 										<div class="home-products-slider">
+										
+				                        <?php 
+
+				                        $query = "SELECT * FROM producto WHERE idcategoria = '$id'";
+				                        $resultado = $link->query($query);
+				                        while($row = $resultado->fetch_assoc()){
+				                        ?>
+
 											<div class="grid__item">
 												<div class="grid__item_wrapper">
 													<div class="grid__image product-image">
 														<a href="product.html">
-															<img src="assets/images/demo1_product6_208x208.jpg" alt="Demo Product Sample">
+															<img width="140px" src="<?php echo $row['imagen']; ?>" alt="Demo Product Sample">
 														</a>
 														<div class="quickview">
 															<div class="product-ajax-cart hidden-xs hidden-sm">
@@ -570,24 +612,18 @@
 													</div>
 													<div class="rating-star">
 														<span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
-															<span class="spr-starrating spr-badge-starrating">
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-															</span>
+															
 															<span class="spr-badge-caption">No reviews </span>
 														</span>
 													</div>
 													<p class="h6 product-title">
-														<a href="product.html">Demo Product Sample</a>
+														<a href="product.html"><?php echo $row['nombre']; ?></a>
 													</p>
 													<p class="product-price">
 														<strong>On Sale</strong>
-														<span class="money" data-currency-usd="$19.99">$19.99</span>
+														<span class="money" data-currency-usd="$19.99"><?php echo $row['precio'];?></span>
 														<span class="visually-hidden">Regular price</span>
-														<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>
+														<!--<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>-->
 													</p>
 													<ul class="action-button">
 														<li class="add-to-cart-form">
@@ -609,233 +645,11 @@
 													</ul>
 												</div>
 											</div> 
-											<div class="grid__item">
-												<div class="grid__item_wrapper">
-													<div class="grid__image product-image">
-														<a href="product.html">
-															<img src="assets/images/demo1_product7_208x208.jpg" alt="Demo Product Sample">
-														</a>
-														<div class="quickview">
-															<div class="product-ajax-cart hidden-xs hidden-sm">
-																<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																	<a href="#quick-shop-modal" class="btn quick_shop">
-																		<i class="fa fa-eye" title="Quick View"></i>																
-																	</a>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="rating-star">
-														<span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
-															<span class="spr-starrating spr-badge-starrating">
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-															</span>
-															<span class="spr-badge-caption">No reviews </span>
-														</span>
-													</div>
-													<p class="h6 product-title">
-														<a href="product.html">Demo Product Sample</a>
-													</p>
-													<p class="product-price">
-														<strong>On Sale</strong>
-														<span class="money" data-currency-usd="$19.99">$19.99</span>
-														<span class="visually-hidden">Regular price</span>
-														<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>
-													</p>
-													<ul class="action-button">
-														<li class="add-to-cart-form">
-															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
-																<div class="effect-ajax-cart">
-																	<input type="hidden" name="quantity" value="1">
-																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
-																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Buy Now</span>
-																	</button>
-																</div>
-															</form>
-														</li>
-														<li class="wishlist">
-															<a class="wish-list btn" href="wish-list.html"><i class="fa fa-heart" title="Wishlist"></i></a>
-														</li>
-														<li class="email">
-															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
-														</li>
-													</ul>
-												</div>
-											</div> 
-											<div class="grid__item">
-												<div class="grid__item_wrapper">
-													<div class="grid__image product-image">
-														<a href="product.html">
-															<img src="assets/images/demo1_product8_208x208.jpg" alt="Demo Product Sample">
-														</a>
-														<div class="quickview">
-															<div class="product-ajax-cart hidden-xs hidden-sm">
-																<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																	<a href="#quick-shop-modal" class="btn quick_shop">
-																		<i class="fa fa-eye" title="Quick View"></i>																
-																	</a>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="rating-star">
-														<span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
-															<span class="spr-starrating spr-badge-starrating">
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-															</span>
-															<span class="spr-badge-caption">No reviews </span>
-														</span>
-													</div>
-													<p class="h6 product-title">
-														<a href="product.html">Demo Product Sample</a>
-													</p>
-													<p class="product-price">
-														<strong>On Sale</strong>
-														<span class="money" data-currency-usd="$19.99">$19.99</span>
-														<span class="visually-hidden">Regular price</span>
-														<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>
-													</p>
-													<ul class="action-button">
-														<li class="add-to-cart-form">
-															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
-																<div class="effect-ajax-cart">
-																	<input type="hidden" name="quantity" value="1">
-																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
-																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Buy Now</span>
-																	</button>
-																</div>
-															</form>
-														</li>
-														<li class="wishlist">
-															<a class="wish-list btn" href="wish-list.html"><i class="fa fa-heart" title="Wishlist"></i></a>
-														</li>
-														<li class="email">
-															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
-														</li>
-													</ul>
-												</div>
-											</div> 
-											<div class="grid__item">
-												<div class="grid__item_wrapper">
-													<div class="grid__image product-image">
-														<a href="product.html">
-															<img src="assets/images/demo1_product9_208x208.jpg" alt="Demo Product Sample">
-														</a>
-														<div class="quickview">
-															<div class="product-ajax-cart hidden-xs hidden-sm">
-																<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																	<a href="#quick-shop-modal" class="btn quick_shop">
-																		<i class="fa fa-eye" title="Quick View"></i>																
-																	</a>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="rating-star">
-														<span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
-															<span class="spr-starrating spr-badge-starrating">
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-															</span>
-															<span class="spr-badge-caption">No reviews </span>
-														</span>
-													</div>
-													<p class="h6 product-title">
-														<a href="product.html">Demo Product Sample</a>
-													</p>
-													<p class="product-price">
-														<strong>On Sale</strong>
-														<span class="money" data-currency-usd="$19.99">$19.99</span>
-														<span class="visually-hidden">Regular price</span>
-														<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>
-													</p>
-													<ul class="action-button">
-														<li class="add-to-cart-form">
-															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
-																<div class="effect-ajax-cart">
-																	<input type="hidden" name="quantity" value="1">
-																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
-																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Buy Now</span>
-																	</button>
-																</div>
-															</form>
-														</li>
-														<li class="wishlist">
-															<a class="wish-list btn" href="wish-list.html"><i class="fa fa-heart" title="Wishlist"></i></a>
-														</li>
-														<li class="email">
-															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
-														</li>
-													</ul>
-												</div>
-											</div> 
-											<div class="grid__item">
-												<div class="grid__item_wrapper">
-													<div class="grid__image product-image">
-														<a href="product.html">
-															<img src="assets/images/demo1_product10_208x208.jpg" alt="Demo Product Sample">
-														</a>
-														<div class="quickview">
-															<div class="product-ajax-cart hidden-xs hidden-sm">
-																<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																	<a href="#quick-shop-modal" class="btn quick_shop">
-																		<i class="fa fa-eye" title="Quick View"></i>																
-																	</a>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="rating-star">
-														<span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
-															<span class="spr-starrating spr-badge-starrating">
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-																<i class="spr-icon spr-icon-star-empty" style=""></i>
-															</span>
-															<span class="spr-badge-caption">No reviews </span>
-														</span>
-													</div>
-													<p class="h6 product-title">
-														<a href="product.html">Demo Product Sample</a>
-													</p>
-													<p class="product-price">
-														<strong>On Sale</strong>
-														<span class="money" data-currency-usd="$19.99">$19.99</span>
-														<span class="visually-hidden">Regular price</span>
-														<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>
-													</p>
-													<ul class="action-button">
-														<li class="add-to-cart-form">
-															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
-																<div class="effect-ajax-cart">
-																	<input type="hidden" name="quantity" value="1">
-																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
-																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Buy Now</span>
-																	</button>
-																</div>
-															</form>
-														</li>
-														<li class="wishlist">
-															<a class="wish-list btn" href="wish-list.html"><i class="fa fa-heart" title="Wishlist"></i></a>
-														</li>
-														<li class="email">
-															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
-														</li>
-													</ul>
-												</div>
+											<?php
+                        
+                        }}
+                        
+                        ?>
 											</div> 
 										</div>	
 									</div>											           

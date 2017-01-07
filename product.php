@@ -780,7 +780,7 @@ $idsel=$_GET["id"];
 									<img src="" alt="Corporis suscipit laboriosam" id="ProductPhotoImg" data-image-id="7500291971">
 									
 									<script type="text/javascript">
-									document.getElementById("ProductPhotoImg").src=''+arrayJS[idselected]["imagen"];
+									document.getElementById("ProductPhotoImg").src=''+arrayJS[idselected]["imagen1"];
 									document.getElementById("labeldescripcion").innerHTML=''+arrayJS[idselected]["descripcion"];
 									document.getElementById("labelcolores").innerHTML=''+arrayJS[idselected]["colores"];
 									document.getElementById("labeltecnica").innerHTML=''+arrayJS[idselected]["tecnicamarca"];
@@ -807,8 +807,12 @@ $idsel=$_GET["id"];
 									?>	
 									
 										<li class="thumb__element">
-											<?php print '<a id="'.$i.'" nombre="" href="'.$ar[$i]["imagen"].'" onclick="return mostrarDescripcion(this.id);" class="product-single__thumbnail">
-												 <img width=175px; height=175px; src="'.$ar[$i]["imagen"].'" alt="Corporis suscipit laboriosam">
+											<?php 
+											$n=$i+1;
+											$numimg= "imagen".$n;
+											echo $numimg;
+											print '<a id="'.$i.'" nombre="" href="'.$ar[$idsel][$numimg].'" onclick="return mostrarDescripcion(this.id);" class="product-single__thumbnail">
+												 <img width=175px; height=175px; src="'.$ar[$idsel][$numimg].'" alt="Corporis suscipit laboriosam">
 												  		</a>';
 												  ?>
 																						 

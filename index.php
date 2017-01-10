@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 <?php
@@ -265,7 +268,19 @@
 			<div class="wrapper">
 				<div id="topother-header" class="grid--full grid--table">
 					<div class="grid__item one-half top-header-left">
-						 Crear Publicidad 2016
+						 Crear Publicidad 2016  
+						<?php 
+
+                  if(isset($_SESSION['SESS_LOGIN']))
+                    {
+                      echo ' - Bienvenido   <b>'.htmlentities($_SESSION['SESS_LOGIN'], ENT_QUOTES, 'UTF-8');
+                    } 
+                    ?>
+					<a href="adminlogin/ver_post_blog.php">- Ir a panel de Admin</a>
+                    <?
+                  
+
+                    ?>
 					</div>
 					<div class="grid__item one-half top-header-right">
 						<div class="currency-picker">
@@ -289,6 +304,7 @@
 							<a href="#" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
 							<a href="#" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
 							<a href="#" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
+
 						</div>
 					</div>
 				</div>
@@ -356,8 +372,12 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="grid__item small--one-whole two-eighths medium-down--hide">
 						<ul class="link-list">
+
+					
+						
 							<li class="track-order">
 								<a href="store-location.html">
 									<i class="fa fa-phone"></i>
@@ -706,6 +726,7 @@
 								<a href="index.html" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
 							</div>
 						</div>
+
 						<div class="fi-links grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
 								Information
@@ -791,21 +812,33 @@
 								</div>
 								</li>
 							</ul>
-							<li class="header-account">
+					<!-- si ya inicio sesión no se muestra opción de ingresar -->		
+					<?php 
+
+                  if(isset($_SESSION['SESS_LOGIN']))
+                    {
+                      echo '';
+                    } 
+                    else
+                    {
+
+                   
+					?>
+                <li class="header-account">
 								<a href="#loginBox" id="login_link">
 									<i class="fa fa-user"></i>
 									<span class="name">Administrador</span>
 								</a>
 								<div id="loginBox" class="loginLightbox" style="display:none;">
 									<div id="lightboxlogin">
-										<form method="post" action="http://demo.tadathemes.com/HTML_Homemarket/demo/login.html" id="customer_login" accept-charset="UTF-8">
+										<form method="post" action="login-exec.php" id="customer_login" accept-charset="UTF-8">
 											<input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="✓">
 											<div id="bodyBox">
 												<h3>Login</h3>
 												<label for="CustomerEmail" class="hidden-label">Email</label>
-												<input type="email" name="customer[email]" id="CustomerEmail" class="input-full" placeholder="Email">
+												<input type="text" name="login" id="login" class="input-full" placeholder="Username">
 												<label for="CustomerPassword" class="hidden-label">Password</label>
-												<input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full" placeholder="Password">
+												<input type="password" value="" name="password" id="password" class="input-full" placeholder="Password">
 												<input type="submit" class="btn btn2 btn--full" value="Sign In">
 												<div>
 													<p class="forgot">
@@ -884,7 +917,11 @@
 											}
 										  </script>
 								</div>
-							</li>
+							</li> 
+							<?php
+						}
+                    ?>
+
 						</div>
 					</div>
 				</div>

@@ -780,13 +780,8 @@ $idsel=$_GET["id"];
 									<img src="" alt="Corporis suscipit laboriosam" id="ProductPhotoImg" data-image-id="7500291971">
 									
 									<script type="text/javascript">
-									document.getElementById("ProductPhotoImg").src=''+arrayJS[0]["imagen1"];
-									document.getElementById("labeldescripcion").innerHTML=''+arrayJS[0]["descripcion"];
-									document.getElementById("labelcolores").innerHTML=''+arrayJS[0]["colores"];
-									document.getElementById("labeltecnica").innerHTML=''+arrayJS[idselected]["tecnicamarca"];
-									document.getElementById("labelnombre").innerHTML=''+arrayJS[idselected]["nombre"];
-									document.getElementById("labelMedidas").innerHTML=''+arrayJS[idselected]["medidas"];
-									document.getElementById("labelPrecio").innerHTML=''+arrayJS[idselected]["precio"];
+									
+									window.onload=load;
 									</script>	
 									
 									</div>

@@ -1,7 +1,7 @@
 	function load(){
-										document.getElementById("ProductPhotoImg").src=''+arrayJS[0]["imagen1"];
-									document.getElementById("labeldescripcion").value=''+arrayJS[0]["descripcion"];
-									document.getElementById("labelcolores").value=''+arrayJS[0]["colores"];
+									
+									document.getElementById("labeldescripcion").innerHTML=''+arrayJS[idselected]["descripcion"];
+									document.getElementById("labelcolores").innerHTML=''+arrayJS[idselected]["colores"];
 									document.getElementById("labeltecnica").innerHTML=''+arrayJS[idselected]["tecnicamarca"];
 									document.getElementById("labelnombre").innerHTML=''+arrayJS[idselected]["nombre"];
 									document.getElementById("labelMedidas").innerHTML=''+arrayJS[idselected]["medidas"];

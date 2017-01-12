@@ -2,6 +2,8 @@
 
 include_once("collectionLogic.php");
 $idsel=$_GET["id"];
+$opciones=array("primero","segundo","tercero");
+$num_ran=array_rand($opciones,1);
 
 ?>
 <!DOCTYPE html>
@@ -780,6 +782,7 @@ $idsel=$_GET["id"];
 									<img src="" alt="Corporis suscipit laboriosam" id="ProductPhotoImg" data-image-id="7500291971">
 									
 									<script type="text/javascript">
+									document.getElementById("ProductPhotoImg").src=''+arrayJS[idselected]["imagen1"];
 									
 									window.onload=load;
 									</script>	
@@ -825,7 +828,7 @@ $idsel=$_GET["id"];
 								</div>
 								<div class="grid__item large--one-half">
 									<div class="product-info-left grid__item five-eighths">
-										<h1 itemprop="name">Elementos escogidos</h1>
+										<h1 itemprop="name">Detalles de Producto</h1>
 										<div class="rating-star">
 											<span class="spr-badge" id="spr_badge_3008529923" data-rating="0.0">
 											<span class="spr-starrating spr-badge-starrating"><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i></span>

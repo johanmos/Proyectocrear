@@ -52,7 +52,7 @@
 			$_SESSION['SESS_LOGIN'] = $member['login'];
 			
            
-			header("location: adminlogin/indexprueba.php");
+			header("location: index.php");
 			exit();
 		}else {
 			//Login failed

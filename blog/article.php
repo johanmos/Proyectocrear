@@ -800,7 +800,14 @@ require_once('../conexion.php');
 							<?php echo htmlspecialchars($registro['descripcion_post']); ?>
 						</p>
 						
-					</div><?php } ?>
+					</div>
+					<div class="rte" itemprop="articleBody">
+						<p>
+							<?php echo $registro['contenido_completo_post']; ?>
+						</p>
+						
+					</div>
+					<?php } ?>
 					<ul class="inline-list">						
 					</ul>
 					<hr>

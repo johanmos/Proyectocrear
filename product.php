@@ -2,8 +2,7 @@
 
 include_once("collectionLogic.php");
 $idsel=$_GET["id"];
-$opciones=array("primero","segundo","tercero");
-$num_ran=array_rand($opciones,1);
+
 
 ?>
 <!DOCTYPE html>
@@ -1053,19 +1052,18 @@ $num_ran=array_rand($opciones,1);
 											<?php
 									if($result->num_rows>0){
 										//$contador=0;
-										for ($i=0; $i < count($ar) ; $i++) { 																		
-											
-									?>	
+
+										
+										for ($i=0; $i < count($ar) ; $i++) { ?>	
 									
 										<li class="thumb__element">
 											<?php print '<a id="'.$i.'" nombre="" href="product.php?categoria='.$categoria.'&id='.$i.'"  class="product-single__thumbnail">
-												 <img src="'.$ar[$i]["imagen1"].'" alt="Corporis suscipit laboriosam">
+												 <img src="'.$ar2[$i]["imagen1"].'" alt="Corporis suscipit laboriosam">
 												  </a>';
 												  ?>
 																						 
 										</li>
-
-											
+										
 									<?php 
 										}}
 								

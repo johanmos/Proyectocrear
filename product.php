@@ -41,6 +41,8 @@ $idsel=$_GET["id"];
 	<link href="assets/css/social-buttons.scss.css" rel="stylesheet" type="text/css" media="all">
 	<!-- JS ================================================== -->
 	<script type="text/javascript">
+
+		
 		var arrayJS=<?php echo json_encode($ar);?>;
 		var idselected=<?php echo json_encode($idsel);?>;
 		for (var i = 0; i < arrayJS.length; i++) {
@@ -247,12 +249,12 @@ $idsel=$_GET["id"];
 					<div class="ajaxcart__product">
 						<div class="ajaxcart__row" data-line="1">
 							<div class="grid">
-								<div class="grid__item one-quarter">
+								<!--<div class="grid__item one-quarter">
 									<a href="product.html" class="ajaxcart__product-image"><img src="assets/images/demo1_cart1.jpg" alt=""></a>
 								</div>
 								<div class="grid__item three-quarters">
 									<p>
-										<a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
+										<a id="productoSel" href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
 										<span class="ajaxcart__product-meta">S / Red</span>
 									</p>
 									<div class="grid--full display-table">
@@ -273,76 +275,16 @@ $idsel=$_GET["id"];
 											<span class="money" data-currency-usd="$34.00 USD" data-currency="USD">$34.00 USD</span>
 										</div>
 									</div>
-								</div>
+								</div>-->
+								<table id="tablaCarrito">
+									
+								</table>
 							</div>
 						</div>
 					</div>
-					<div class="ajaxcart__product">
-						<div class="ajaxcart__row" data-line="2">
-							<div class="grid">
-								<div class="grid__item one-quarter">
-									<a href="product.html" class="ajaxcart__product-image"><img src="assets/images/demo1_cart2.jpg" alt=""></a>
-								</div>
-								<div class="grid__item three-quarters">
-									<p>
-										<a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-										<span class="ajaxcart__product-meta">Medium / Pink</span>
-									</p>
-									<div class="grid--full display-table">
-										<div class="grid__item">
-											<div class="ajaxcart__qty">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="10722484483" data-qty="0" data-line="2">
-												<span class="icon icon-minus" aria-hidden="true"></span>
-												<span class="fallback-text">?</span>
-												</button>
-												<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="10722484483" data-line="2" aria-label="quantity" pattern="[0-9]*">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="10722484483" data-line="2" data-qty="2">
-												<span class="icon icon-plus" aria-hidden="true"></span>
-												<span class="fallback-text">+</span>
-												</button>
-											</div>
-										</div>
-										<div class="grid__item">
-											<span class="money" data-currency-usd="$100.00 USD" data-currency="USD">$100.00 USD</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+				
 					</div>
-					<div class="ajaxcart__product">
-						<div class="ajaxcart__row" data-line="3">
-							<div class="grid">
-								<div class="grid__item one-quarter">
-									<a href="product.html" class="ajaxcart__product-image"><img src="assets/images/demo1_cart3.jpg" alt=""></a>
-								</div>
-								<div class="grid__item three-quarters">
-									<p>
-										<a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-										<span class="ajaxcart__product-meta">XS / Black</span>
-									</p>
-									<div class="grid--full display-table">
-										<div class="grid__item">
-											<div class="ajaxcart__qty">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="8772462979" data-qty="0" data-line="3">
-												<span class="icon icon-minus" aria-hidden="true"></span>
-												<span class="fallback-text">?</span>
-												</button>
-												<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="8772462979" data-line="3" aria-label="quantity" pattern="[0-9]*">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="8772462979" data-line="3" data-qty="2">
-												<span class="icon icon-plus" aria-hidden="true"></span>
-												<span class="fallback-text">+</span>
-												</button>
-											</div>
-										</div>
-										<div class="grid__item">
-											<span class="money" data-currency-usd="$89.00 USD" data-currency="USD">$89.00 USD</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<div>
 						<label for="CartSpecialInstructions">Special instructions for seller</label>
 						<textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
@@ -595,7 +537,8 @@ $idsel=$_GET["id"];
 							<li class="header-cart">
 								<a href=".cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
 									<i class="fa fa-shopping-basket"></i>
-									<span id="CartCount">0</span>
+									<span id="CartCount"></span>
+
 									<span class="name">Shopping Cart</span>
 								</a>
 							</li>
@@ -840,7 +783,16 @@ $idsel=$_GET["id"];
 											<label id="labeldescripcion"></label> 
 										</div>
 										<div class="product-vendor">
-											Colores: <b><label id="labelcolores"></label></b>
+											Colores:
+											<form >
+											<?php $prueba=explode('/',$ar[$idsel]["colores"],10); for ($i=0; $i < count($prueba); $i++) { 
+												echo $prueba[$i];
+												echo '  <input type="checkbox" value="'. $prueba[$i].'">';
+											} ?>
+											
+												
+												
+											</form>
 										</div>
 										<div class="product-type">
 											Técnica de Marca: <b><label id="labeltecnica"></label></b>
@@ -872,9 +824,10 @@ $idsel=$_GET["id"];
 															</button>
 														</div>
 													</div>
-													<button type="submit" name="add" id="AddToCart" class="btn">
-													<span id="AddToCartText">Cotizar</span>
-													</button>
+													<?php print '
+													<button type="button" name="add" id="AddToCart" onclick="addToCart('.$idsel.');"class="btn">
+														<span id="AddToCartText">Cotizar</span>
+													</button> ';?>
 												</form>
 												<div class="add-to-wishlist">
 													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>Add to Wishlist</a></span>

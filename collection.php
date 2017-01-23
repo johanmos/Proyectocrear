@@ -783,7 +783,7 @@ $listacategorias2=$listacategorias;
 												<div class="grid__item_wrapper">
 													<div class="grid__image product-image">
 														<a href="product.php?categoria='.$categoria.'&id='.$i.'">
-															<img src="'.$ar[$i]["imagen"].'" alt="Demo Product Sample">
+															<img src="'.$ar[$i]["imagen1"].'" alt="Demo Product Sample">
 														</a>
 														<div class="quickview">
 															<div class="product-ajax-cart hidden-xs hidden-sm">

@@ -274,7 +274,7 @@
                                         <table class="table m-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Imagen</th>
+                                                    <th>Imagen Grande</th>
                                                     
                                                     <th>Titulo</th>
                                                     <th>Descripción</th>
@@ -335,6 +335,40 @@
                         </div>
                         <!-- end row -->
 
+<!-- Imagen 2 -->
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card-box">
+                                    <div class="table-responsive">                                   
+                                        <table class="table m-0">
+                                            <thead>
+                                                <tr>
+                                                     <th>Imagen Pequeña</th>                             
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>                                          
+
+                         <tbody>
+                            <tr>
+                                <form action="../pub_inicial/subir/guardar3.php" method="post" enctype="multipart/form-data">
+                                <td><input type="file" name="foto" /></td> 
+                                <td></td>
+                                <td></td>
+                                <td><input type="submit" class="btn btn-primary" value="Aceptar">
+                        </form> 
+                        </tr>
+                        </tbody>
+                    </table>   
+                                   
+                                    </div>
+                               
+                                </div>
+                            </div><!-- end col -->
+
+                        </div>
 
                        
                         <!-- end row -->

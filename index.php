@@ -682,7 +682,18 @@ session_start();
 							<div class="grid__item one-quarter bh-right small--one-whole medium--one-whole">
 								
 								<div class="banner-area">
-									<a href="collection.html"><img src="assets/images/demo1_banner2_185x345.png" alt=""></a>
+								<?php 
+								
+								$queryimagen2 = "SELECT * FROM adsinicial2";
+				                $resultado = $link->query($queryimagen2);
+				                while($row = $resultado->fetch_assoc())
+								{
+								?>
+								<!-- se llama la imagen2 desde adsinicial -->
+									<a href="collection.html"><img src="pub_inicial/Subir/Imagenes/<?php echo $row['imagen']; ?>" alt=""></a>
+								<?php
+								}
+								?>
 								</div>
 							</div>
 						</div>

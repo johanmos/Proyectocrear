@@ -264,10 +264,6 @@
                             
                         <!-- End row -->
 
-                       
-                        <!-- end row -->
-
-
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card-box">
@@ -355,6 +351,68 @@
 
                         </div>
                         <!-- end row -->
+
+                        <!--imagen 2 pequeña -->
+
+                         <div class="row">
+                            <div class="col-sm-12">
+                                
+                                <h4 class="page-title">Imagenes Inferior</h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card-box">
+                                    
+
+                                    
+
+                                    <div class="table-responsive">
+                                   
+                                        <table class="table m-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Imagen</th>
+                                                    <th>Opcion</th>
+                                                   
+                                                    
+                                                </tr>
+                                            </thead>
+
+                                            
+<?php
+        
+        $re=mysqli_query($link,"select * from adsinicial2")or die();
+        while ($f=mysqli_fetch_array($re)) {
+    ?>
+    <tbody>
+    <tr>
+        
+        <td><img width="200px" src="../pub_inicial/Subir/Imagenes/<?php echo $f['imagen']; ?>"></td>
+        
+        <td><a href="ads_inicial_nueva.php">Modificar</a></td>
+        
+        
+        
+    </tr>
+    </tbody>
+    <?php
+    }
+    ?>
+
+<!-- fin imagen 2 pequeña -->
+
+                                        </table>   
+                                   
+                                    </div>
+                               
+                                </div>
+                            </div><!-- end col -->
+
+                        </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
 
 
                        

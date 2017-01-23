@@ -151,6 +151,12 @@
                             </li>
 
                             <li class="has_sub">
+                                <a href="modificar_logo.html" class="waves-effect"><i class="zmdi zmdi-flower"></i> <span> Logo Tipo </span> <span class="menu-arrow"></span></a>                              
+                            </li>
+
+                            
+            
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-chart"></i><span> Charts </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="chart-flot.html">Flot Chart</a></li>

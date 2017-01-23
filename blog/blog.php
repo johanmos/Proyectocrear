@@ -791,7 +791,7 @@ require_once('../conexion.php');
 							<?php echo "<a href='article.html'><img width='421' height='270' src='imagenes/".$row["imagen_post"]."'></a>"?>
 								
 							</div>
-							<h3 class="blog-title"><a href="article.html"><?php echo $row['titulo_post']?></a></h3>
+							<h3 class="blog-title"><a <a href="article.php?id=<?php echo $row['id_post']; ?>"><?php echo $row['titulo_post']?></a></h3>
 
 							<p class="author">
 								Publicado por <strong><?php echo $row['autor_post']?></strong> el <time datetime="2015-11-29"><?php echo $row['fecha_post'] ?></time>
@@ -818,14 +818,14 @@ require_once('../conexion.php');
 								<h6 class="sb-title">Articulos Recientes</h6>
 								<ul class="no-bullets sb-content">
 								<?php
-								$query = "SELECT * FROM post ORDER BY id_post DESC";
+								$query = "SELECT * FROM post ORDER BY id_post DESC limit 5";
 								$resultado = $link->query($query);
 								while($row = $resultado->fetch_assoc()){
 
 									?>
 									<li>
 									<div class="title">
-										<a href="article.html"><?php echo $row['titulo_post'];?></a>
+										<a href="article.php?id=<?php echo $row['id_post']; ?>"><?php echo $row['titulo_post'];?></a>
 									</div>
 									<time datetime="2015-11-29"><?php echo $row['fecha_post'];?></time>
 									</li>

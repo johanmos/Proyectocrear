@@ -723,66 +723,40 @@ session_start();
 					<div class="grid-uniform">
 						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								About us
+								Contacto
 							</div>
+							<?php 
+								
+								$queryimagen2 = "SELECT * FROM informacion";
+				                $resultado = $link->query($queryimagen2);
+				                while($row12 = $resultado->fetch_assoc())
+								{
+							?>
 							<div class="fi-content">
 								<ul class="group_information">
-									<li><i class="fa fa-map-marker"></i> 474 Ontario St Toronto, ON M4X 1M7 Canada</li>
-									<li><i class="fa fa-phone"></i> (+1234)56789xxx</li>
-									<li><i class="fa fa-envelope"></i> tadathemes@gmail.com</li>
+									<li><i class="fa fa-map-marker"></i><?php echo $row12['direccion']; ?></li>
+									<li><i class="fa fa-phone"></i><?php echo $row12['telefono']; ?></li>
+									<li><i class="fa fa-envelope"></i><?php echo $row12['email']; ?></li>
 								</ul>
 							</div>
-							<div class="fi-content inline-list social-icons">
-								<a href="index.html" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-								<a href="index.html" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
-								<a href="index.html" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
-								<a href="index.html" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-								<a href="index.html" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
-								<a href="index.html" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
-							</div>
+							
+							
 						</div>
 
 						<div class="fi-links grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								Information
+								Redes sociales
 							</div>
-							<div class="fi-content">
-								<ul class="grid__item one-half">
-									<li>
-										<a href="about-us.html"><span>About us</span></a>
-									</li>
-									<li>
-										<a href="#"><span>Shipping &amp; Returns</span></a>
-									</li>
-									<li>
-										<a href="#"><span>Privacy</span></a>
-									</li>
-									<li>
-										<a href="#"><span>Conditions</span></a>
-									</li>
-									<li>
-										<a href="#"><span>Online support</span></a>
-									</li>
-								</ul>
-								<ul class="grid__item one-half">
-									<li>
-										<a href="account.html"><span>My Account</span></a>
-									</li>
-									<li>
-									<a href="#"><span>Order History</span></a>
-									</li>
-									<li>
-									<a href="#"><span>Help &amp; FAQs</span></a>
-									</li>
-									<li>
-									<a href="contact.html"><span>Contact us</span></a>
-									</li>
-									<li>
-									<a href="#"><span>Manufacturers</span></a>
-									</li>
-								</ul>
+							<div class="fi-content inline-list social-icons">
+								<a href="<?php echo "http://".$row12['twitter'].""; ?>" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
+								<a href="<?php echo "http://".$row12['facebook'].""; ?>" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>	
+								<a href="<?php echo "http://".$row12['pinterest'].""; ?>" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
 							</div>
 						</div>
+
+						<?php
+								}
+							?>	
 						<div class="fi-tags grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
 								Product Tags
@@ -805,28 +779,31 @@ session_start();
 								</ul>
 							</div>
 						</div>
+
 						<div class="fi-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								Recent Post
+								Ultimos Post
 							</div>
+								<?php 
+									
+						$qry=mysqli_query($link,"SELECT * FROM post ORDER BY id_post DESC limit 2");
+						while($row = mysqli_fetch_array($qry))
+								
+						{
+							?>
 							<ul class="fi-content post-element">
 								<li>
 								<div class="post-title">
-									<a href="article.html">Quisque porta felis est ut malesuada lorem dignissim</a>
+									<a href="blog/article.php?id=<?php echo $row['id_post']; ?>"><?php echo $row['titulo_post']; ?></a>
 								</div>
 								<div class="post-author">
-									by <span class="author">Tada Theme</span>
-								</div>
-								</li>
-								<li>
-								<div class="post-title">
-									<a href="article.html">Section 1.10.33 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC</a>
-								</div>
-								<div class="post-author">
-									by <span class="author">Tada Theme</span>
+									by <span class="author"><?php echo $row['autor_post']; ?></span>
 								</div>
 								</li>
 							</ul>
+							<?php
+						}
+                    ?>
 					<!-- si ya inicio sesión no se muestra opción de ingresar -->		
 					<?php 
 
@@ -933,11 +910,13 @@ session_start();
 										  </script>
 								</div>
 							</li> 
-							<?php
-						}
-                    ?>
+							
 
 						</div>
+						<?php
+					}
+					?>
+
 					</div>
 				</div>
 			</div>

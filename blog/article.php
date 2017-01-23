@@ -1006,7 +1006,7 @@ require_once('../conexion.php');
 									?>
 									<li>
 									<div class="title">
-										<a href="article.html"><?php echo $row['titulo_post'];?></a>
+										<a <a href="article.php?id=<?php echo $row['id_post']; ?>"><?php echo $row['titulo_post'];?></a>
 									</div>
 									<time datetime="2015-11-29"><?php echo $row['fecha_post'];?></time>
 									</li>

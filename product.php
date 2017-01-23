@@ -277,7 +277,7 @@ $idsel=$_GET["id"];
 									</div>
 								</div>-->
 								<table id="tablaCarrito">
-									
+									<div id="datos"></div>
 								</table>
 							</div>
 						</div>
@@ -826,7 +826,7 @@ $idsel=$_GET["id"];
 													</div>
 													<?php print '
 													<button type="button" name="add" id="AddToCart" onclick="addToCart('.$idsel.');"class="btn">
-														<span id="AddToCartText">Cotizar</span>
+														<span id="AddToCartText">Añadir al Carrito</span>
 													</button> ';?>
 												</form>
 												<div class="add-to-wishlist">

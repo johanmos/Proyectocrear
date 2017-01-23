@@ -4,10 +4,9 @@
 									if(contador==null){
 										contador=0;
 										document.getElementById('CartCount').innerHTML="0";
-									}else{
-									document.getElementById('CartCount').innerHTML=""+contador;}
+									}else{	document.getElementById('CartCount').innerHTML=""+contador;}
 									document.getElementById("labeldescripcion").innerHTML=''+arrayJS[idselected]["descripcion"];
-									document.getElementById("labelcolores").innerHTML=''+arrayJS[idselected]["colores"];
+									//document.getElementById("labelcolores").innerHTML=''+arrayJS[idselected]["colores"];
 									document.getElementById("labeltecnica").innerHTML=''+arrayJS[idselected]["tecnicamarca"];
 									document.getElementById("labelnombre").innerHTML=''+arrayJS[idselected]["nombre"];
 									document.getElementById("labelMedidas").innerHTML=''+arrayJS[idselected]["medidas"];
@@ -18,7 +17,7 @@
 												 	
 												 		var posicion=clicked_id;
 												 		document.getElementById('labeldescripcion').innerHTML=""+arrayJS[clicked_id]["descripcion"];
-												 		document.getElementById('labelcolores').innerHTML=""+arrayJS[clicked_id]["colores"];
+												 		//document.getElementById('labelcolores').innerHTML=""+arrayJS[clicked_id]["colores"];
 												 		document.getElementById('labeltecnica').innerHTML=""+arrayJS[clicked_id]["tecnicamarca"];
 												 		document.getElementById('labelnombre').innerHTML=""+arrayJS[clicked_id]["nombre"];
 												 		document.getElementById('labelMedidas').innerHTML=""+arrayJS[clicked_id]["medidas"];
@@ -28,19 +27,25 @@
 
 	 function addToCart(idselected){
     	//alert('id2: '+idselected);
-    	alert('prueba '+contador);
+    	
     	contador=contador+1;
     	cotizacion.push(arrayJS[idselected]);
-    	document.getElementById('productoSel').innerHTML=""+cotizacion["nombre"];
-    	//alert('nombre: '+cotizacion["descripcion"]);
+    	//document.getElementById('productoSel').innerHTML=""+cotizacion["nombre"];
+    	
     	document.getElementById('CartCount').innerHTML=""+contador;
+    	alert('prueba '+contador);
     	//var theDiv=document.getElementById('test');
-    	var datos;
+    	var datos="";
     	for (var i = 0; i < cotizacion.length ; i++) {
-				datos=document.getElementById('test').innerHTML+"<tr><td>Nombre " + cotizacion[i]["nombre"] +"is:  </td><br><td>"+ i+" </td></tr>";
-									
+				datos=datos+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+cotizacion[i]["imagen1"]+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+cotizacion[i]["nombre"]+"</a><span class='ajaxcart__product-meta'>S / Red</span></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'><button type='button' class='ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text' data-id='8772444163' data-qty='0' data-line='1'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>?</span></button><input type='text' name='updates[]' class='ajaxcart__qty-num' value='1' min='0' data-id='8772444163' data-line='1' aria-label='quantity' pattern='[0-9]*'><button type='button' class='ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text' data-id='8772444163' data-line='1' data-qty='2'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'>$34.00 USD</span></div></div></div><br>";
+								//<tr><td>Nombre " + cotizacion[i]["nombre"] +"is:  </td><br><td>"+ i+" </td></tr>";
+					
+
+
+
+
 			}
-			document.getElementById('test').innerHTML=datos;
+			document.getElementById('datos').innerHTML=datos;
     	
     }
  

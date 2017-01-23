@@ -12,7 +12,7 @@ $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 							die("Unable to select database");
 						}
 
-
+$res;
 $nombrecategoria=$_POST['categoria'];
 
 $sql1="SELECT id FROM ca WHERE nombre='$nombrecategoria'";
@@ -24,7 +24,8 @@ $sql= "UPDATE vista SET opcion = '$idc[0]'";
 
 if($link->query($sql)==TRUE){
 //if(mysqli_query($conn,$sql)==TRUE){
-	echo "Guardada satisfactoriamente";
+	header("location:../adminlogin/elegir_vista.php?res=1"); 
+	
 }else{
 	//echo "Error: ".$sql."<br>".mysql_error($conn);
 	echo "Error: ".$sql."<br>".$link->error;

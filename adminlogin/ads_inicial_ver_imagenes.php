@@ -256,7 +256,7 @@
                                 <div class="btn-group pull-right m-t-5 m-b-20">
                                     <button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Opciones </button>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="agregar_nueva_categoria.php">Nueva Categoría</a></li>
+                                        <li><a href="ads_inicial_nueva.php">Nueva Imagen</a></li>
                                         
                                     </ul>
                                 </div>
@@ -335,7 +335,7 @@
 
         
         <td><a href="ads_inicial_modificar_imagenes.php?id=<?php echo $f['id'];?>">Modificar</a></td>
-        <td><a href="ads_inicial_eliminar_imagenes.php">Eliminar</a></td>
+        <td><a href="ads_inicial_eliminar_imagenes.php?id=<?php echo $f['id'];?>">Eliminar</a></td>
         
         
     </tr>

@@ -107,9 +107,8 @@
                                     </a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
+                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Opciones</a></li>
+                                        
                                         <li><a href="../logout.php"><i class="ti-power-off m-r-5"></i> Logout</a></li>
                                     </ul>
                                 </li>
@@ -253,21 +252,22 @@
 				<!-- Start content -->
 				<div class="content">
 					<div class="container">
-
-						<!-- Page-Title -->
-                        <div class="row">
+                    <div class="row">
                             <div class="col-sm-12">
                                 <div class="btn-group pull-right m-t-5 m-b-20">
-                                    <button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
+                                    <button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Opciones <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
+                                        <li><a href="agregar_post_blog.php">Nuevo Post</a></li>
+                                        
                                     </ul>
                                 </div>
-                                <h4 class="page-title">Post Publicados</h4>
+                                 <h4 class="page-title">Post Publicados</h4>
+                            </div>
+                        </div>
+
+					
+                               
+                               
                             
                         <!-- End row -->
 

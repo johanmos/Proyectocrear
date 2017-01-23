@@ -11,28 +11,23 @@ $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 						if(!$db) {
 							die("Unable to select database");
 						}
-$id = $_REQUEST['id'];
-$autor = $_POST['autor'];
+
 $titulo = $_POST['titulo'];
 $descripcion = $_POST['descripcion'];
-$categoria = $_POST['categoria'];
 $contenido = $_POST['contenido'];
 
 	
 
-	$query = "UPDATE post SET autor_post='$autor', fecha_post=NOW(), categoria_post='$categoria', titulo_post='$titulo', descripcion_post='$descripcion', contenido_completo_post='$contenido' WHERE id_post ='$id'";
+	$query = "UPDATE landing SET titulo='$titulo', descripcion='$descripcion', contenido='$contenido'";
 	$resultado = $link->query($query);
 	if($resultado){
-	header("location: ../adminlogin/ver_post_blog.php");
+	header("location: ../landingpage/landing.php");
 	}
-	
-	
+	else
+	{ 
+	echo "no";
+	}
 
-else{
-	echo "el archivo no es una imagen <br/>";
-	exit();
-	echo "<a href='agregar_post.php'>Volver atras</a>";
-}
 
 
 

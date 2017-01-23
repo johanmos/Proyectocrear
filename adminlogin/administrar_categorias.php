@@ -130,56 +130,24 @@
                         	<li class="text-muted menu-title">Navigation</li>
 
                             <li class="has_sub">
-                                <a href="index-2.html" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-dashboard""></i> <span> Categorias </span> <span class="menu-arrow"></span> </a>                               
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> User Interface </span> <span class="menu-arrow"></span> </a>
-                                <ul class="list-unstyled">
-                                    <li><a href="ui-buttons.html">Buttons</a></li>
-                                    <li><a href="ui-cards.html">Cards</a></li>
-                                    <li><a href="ui-typography.html">Typography </a></li>
-                                    <li><a href="ui-checkbox-radio.html">Checkboxs-Radios</a></li>
-                                    <li><a href="ui-icons.html">Icons</a></li>
-                                    <li><a href="ui-modals.html">Modals</a></li>
-                                    <li><a href="ui-images.html">Images</a></li>
-                                    <li><a href="ui-components.html">Components</a>
-                                </ul>
+                                <a href="ads_inicial_ver_imagenes.php" class="waves-effect"><i class="zmdi zmdi-map"></i> <span> Slider Inicial </span> <span class="menu-arrow"></span> </a>       
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-case"></i> <span> Admin UI </span> <span class="menu-arrow"></span> </a>
-                                <ul class="list-unstyled">
-                                    <li><a href="admin-masonry.html">Masonry</a></li>
-                                    <li><a href="admin-notification.html">Notification</a></li>
-                                    <li><a href="admin-range-slider.html">Range Slider</a></li>
-                                    <li><a href="admin-sweetalert.html">Sweet Alert</a>
-                                </ul>
+                                <a href="ver_post_blog.php" class="waves-effect"><i class="zmdi zmdi-layers"></i> <span> Blog </span> </a>
                             </li>
 
                             <li class="has_sub">
-                                <a href="widgets.html" class="waves-effect"><i class="zmdi zmdi-layers"></i> <span> Widgets </span> </a>
+                                <a href="editar_landing.php" class="waves-effect"><i class="zmdi zmdi-collection-text"></i><span class="label label-default pull-right">6</span><span> Landing Page </span> </a>
+                                
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-collection-text"></i><span class="label label-default pull-right">6</span><span> Forms </span> </a>
-                                <ul class="list-unstyled">
-                                    <li><a href="form-elements.html">Form Elements</a></li>
-                                    <li><a href="form-advanced.html">Advanced Form</a></li>
-                                    <li><a href="form-validation.html">Form Validation</a></li>
-                                    <li><a href="form-wizard.html">Form Wizard</a></li>
-                                    <li><a href="form-summernote.html">Summernote</a></li>
-                                    <li><a href="form-uploads.html">Form Uploads</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                	<li><a href="tables-basic.html">Basic Tables</a></li>
-                                    <li><a href="tables-datatable.html">Data Table</a></li>
-                                    <li><a href="tables-editable.html">Editable Table</a></li>
-                                </ul>
+                                <a href="elegir_vista.php" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Slider Inferior </span> <span class="menu-arrow"></span></a>                              
                             </li>
 
                             <li class="has_sub">

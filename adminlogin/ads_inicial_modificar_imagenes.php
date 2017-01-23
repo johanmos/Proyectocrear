@@ -253,13 +253,7 @@
             <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <div class="btn-group pull-right m-t-5 m-b-20">
-                                    <button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Opciones </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="agregar_nueva_categoria.php">Nueva Categoría</a></li>
-                                        
-                                    </ul>
-                                </div>
+                                
                                 <h4 class="page-title">Imagenes Promocion/Ads</h4>
                             
                         <!-- End row -->
@@ -285,7 +279,7 @@
                                                     <th>Titulo</th>
                                                     <th>Descripción</th>
                                                     
-                                                    <th>Estado</th>
+                                                   
                                                     <th></th>
                                                     
                                                    
@@ -312,24 +306,16 @@
     ?>
     <tbody>
     <tr>
-         <form action="ads_inicial_editar_estado.php?id=<?php echo $f['id'];?>" method="POST">
-        <td><img width="200px" src="../pub_inicial/Subir/Imagenes/<?php echo $f['Imagen']; ?>"></td>
+         <form action="ads_inicial_editar_estado_completo.php?id=<?php echo $f['id'];?>" method="POST">
+        <td><img width="200px" src="../pub_inicial/Subir/Imagenes/<?php echo $f['Imagen']; ?>"><br><a href="ads_inicial_modificar_imagenes_1.php?id=<?php echo $f['id'];?>">Cambiar Imagen</a></td>
         
         <td><input type="text" name="nombre" value="<?php echo $f['Nombre'];?>"></td>
-        <td><textarea rows="7"><?php echo htmlspecialchars($f['descripcion']); ?></textarea></td>
-         <td>
-       
-          <?php if($f['estado']==1){
-          print"
-                <input type='radio' name='estado' value='1' checked> Activo
-                <input type='radio' name='estado' value='0'> No Activo";}    
-          else{
-          print "<input type='radio' name='estado' value='1'> Activo
-                 <input type='radio' name='estado' value='0' checked> No Activo";}?>
+        <td><textarea name="descripcion" rows="7"><?php echo htmlspecialchars($f['descripcion']); ?></textarea></td>
+         
           
-          <td><input type="submit" class="btn btn-primary" value="aceptar">
+          <td><input type="submit" class="btn btn-primary" value="Aceptar">
           
-          </td>
+          
         </form> 
        
 

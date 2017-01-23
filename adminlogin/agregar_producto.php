@@ -285,78 +285,49 @@
 						<!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <div class="btn-group pull-right m-t-5 m-b-20">
-                                    <button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <h4 class="page-title">Editar el Post</h4>
+                                
+                                <h4 class="page-title">Añadir un nuevo Producto</h4>
                             </div>
                         </div>
 
-<?php
 
-
-
-
-require_once('../conexion.php');
-$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
-                        if(!$link) {
-                            die('Failed to connect to server: ' . mysql_error());       
-                            }
-
-                        //Select database
-                        $db = mysqli_select_db($link,DB_DATABASE);
-                        if(!$db) {
-                            die("Unable to select database");
-                        }
-                        $id = $_REQUEST['id'];
-                        $query = "SELECT * FROM post WHERE id_post='$id'";
-                        $resultado = $link->query($query);
-                        while($row = $resultado->fetch_assoc()){
-
-
-
-?>
                         <div class="row">
 
                             <div class="col-lg-12">
 
                                 <div class="card-box">
-                                    
-                                <form action="../blog/procesar_modificar_post.php?id=<?php echo $row['id_post']?>" method="POST" >
-                                    <input type="text" class="form-control" name="titulo" id="" value="<?php echo $row['titulo_post']; ?>" placeholder="Titulo del post"><br>
-                                    <input type="text" class="form-control" value="<?php echo $row['autor_post']; ?>" name="autor" id="" placeholder="Nombre del Autor"><br>
-                                    <textarea name="descripcion" class="form-control" id="descripcion" placeholder="descripcion del post"><?php echo htmlspecialchars($row['descripcion_post']); ?></textarea><br>
-                                    <div class="tags-default">
-                                        <input type="text" name="categoria" value="<?php echo $row['categoria_post']; ?>" data-role="tagsinput" placeholder="Escribe Categorías..."/>
-                                    </div><br>
+                                <form action="../blog/procesar_guardar_post.php" method="POST" enctype="multipart/form-data">
 
+                                    <input type="text" class="form-control" name="nombre" id="" placeholder="Nombre">
+                                    <br>
+                                    <input type="text" class="form-control" name="titulo" id="" placeholder="Descripción">
+                                    <br>
+                                    <input type="text" class="form-control" name="titulo" id="" placeholder="Colores">
+                                    <br>
+                                    <input type="text" class="form-control" name="titulo" id="" placeholder="Medidas">
+                                    <br>
+                                    <input type="text" class="form-control" name="autor" id="" placeholder="Precio">
+                                    <br>
+                                    <textarea name="descripcion" class="form-control" id="descripcion" placeholder="descripcion del post"></textarea>
+                                    <br>
+                                                                       
+                                   
                                     
+                                    <div class="tags-default">
+                                        <input type="text" name="categoria" value="" data-role="tagsinput" placeholder="Escribe Categorías..."/>
+                                    </div><br>
+                                     <input type="file" name="imagen" id="imagen"><br><br>
                                      
-                                    <label for="">Contenido del Post</label>
-                                    <textarea name="contenido" id="contenido"><?php echo htmlspecialchars($row['contenido_completo_post']); ?></textarea>
+                                    
                                     
                                     <br><input type="submit" class="btn btn-danger" value="Guardar y Publicar">
                                 </form>
-                                <br><br><br>
-                                <form action="../blog/procesar_modificar_post_imagen.php?id=<?php echo $row['id_post']?>" method="POST" enctype="multipart/form-data">
-                                      <img src="<?php echo "../blog/imagenes/".$row["imagen_post"].""?>" width='370'><br><br><br>
-                                      <input type="file" name="imagen" id="imagen"><br>
-                                      <br><input type="submit" class="btn btn-danger" value="Modificar Imagen">
-                                </form>  
 
                                     
                                 </div>
-                                <?php } ?>  
                             </div><!-- end col -->
 
-                          
+                            
                             </div><!-- end col -->
                         </div>
                     

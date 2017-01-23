@@ -166,7 +166,7 @@ header.site-header {
 }
 .site-header__search {
     background: #fff;
-    max-width: 100%;
+    max-width: 70%;
     border: 3px solid #fa5555;
     border-radius: 5px;
     position: relative
@@ -219,10 +219,10 @@ header.site-header {
 .site-header__search form.search-bar .input-group-btn {
     position: relative;
     white-space: nowrap;
-    width: 40px;
+    width: 35%;
     padding: 0;
     display: inline-block;
-    text-align: center
+    text-align: right;
 }
 .site-header__search form.search-bar .input-group-btn .btn {
     padding: 0

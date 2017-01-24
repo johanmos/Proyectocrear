@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+<?php 
+require_once('../conexion.php');
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+                        if(!$link) {
+                            die('Failed to connect to server: ' . mysql_error());       
+                            }
+                        
+                        //Select database
+                        $db = mysqli_select_db($link,DB_DATABASE);
+                        if(!$db) {
+                            die("Unable to select database");
+                        }
+
+
+$sql= "SELECT * FROM ca";
+
+$result= array();
+$result= $link->query($sql);
+?>
+
+?><!DOCTYPE html>
 <html>
 	
 <!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/form-advanced.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:44:59 GMT -->
@@ -296,31 +316,36 @@
                             <div class="col-lg-12">
 
                                 <div class="card-box">
-                                <form action="../blog/procesar_guardar_post.php" method="POST" enctype="multipart/form-data">
+                                <form action="../agregar_Producto/guardarProduto.php" method="POST" enctype="multipart/form-data">
 
-                                    <input type="text" class="form-control" name="nombre" id="" placeholder="Nombre">
+                                    <input type="text" class="form-control" name="codigo" id="" placeholder="Código">
                                     <br>
-                                    <input type="text" class="form-control" name="titulo" id="" placeholder="Descripción">
+                                    <input type="text" class="form-control" name="name1" id="" placeholder="Nombre">
                                     <br>
-                                    <input type="text" class="form-control" name="titulo" id="" placeholder="Colores">
+                                    <input type="text" class="form-control" name="descripcion" id="" placeholder="Descripción">
                                     <br>
-                                    <input type="text" class="form-control" name="titulo" id="" placeholder="Medidas">
+                                    <input type="text" class="form-control" name="colores" id="" placeholder="Colores">
                                     <br>
-                                    <input type="text" class="form-control" name="autor" id="" placeholder="Precio">
+                                    <input type="text" class="form-control" name="medidas" id="" placeholder="Medidas">
                                     <br>
-                                    <textarea name="descripcion" class="form-control" id="descripcion" placeholder="descripcion del post"></textarea>
+                                    <input type="text" class="form-control" name="precio1" id="" placeholder="Precio">
                                     <br>
-                                                                       
-                                   
-                                    
-                                    <div class="tags-default">
-                                        <input type="text" name="categoria" value="" data-role="tagsinput" placeholder="Escribe Categorías..."/>
-                                    </div><br>
-                                     <input type="file" name="imagen" id="imagen"><br><br>
+                                    <input type="text" class="form-control" name="tecnica" id="" placeholder="Técnica de Marca">
+                                    <br> 
+                                    <select name="categoria" class="form-control" data-role="tagsinput" placeholder="Escribe Categorías...">
+                                        <?php 
+                                        if($result->num_rows>0){
+                                        while($row=$result->fetch_assoc()){
+                                            print '<option value="'.$row["nombre"].'" >'.$row["nombre"].'</option>';
+                                        }}
+                                        ?>                  
+                                    </select>                                                         
+                                    <br><br>                        
+                                     <input class="form-control" type="file" name="imagen" id="imagen"><br><br>
                                      
                                     
                                     
-                                    <br><input type="submit" class="btn btn-danger" value="Guardar y Publicar">
+                                    <br><input type="submit" class="btn btn-danger" value="Guardar Producto Nuevo">
                                 </form>
 
                                     

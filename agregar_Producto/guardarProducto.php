@@ -16,6 +16,7 @@ date_default_timezone_set('UTC');
 //Imprimimos la fecha actual dandole un formato
 // $estado="1"; 
 $photo2=""; 
+$codigo=$_POST['codigo'];
 $name2=$_POST['name1'];
 $descripcion2=$_POST['descripcion'];
 $colores=$_POST['colores'];
@@ -60,7 +61,7 @@ if (move_uploaded_file($_FILES['photo1']['tmp_name'], $direccionimagen)) {
 $data4=date("Y-m-d-G-i-s");
 
 //$photo2=mysql_real_escape_string($photo2);
-$sql= "INSERT INTO producto(nombre, descripcion, precio, medidas, colores, tecnicamarca, fechaingreso, imagen, idcategoria) VALUES ('$name2', '$descripcion2', '$precio2', '$medida','$colores', '$tecnica', '$data4', '$direccionimagen2', '$idc[0]')";
+$sql= "INSERT INTO producto(codigo, nombre, descripcion, precio, medidas, colores, tecnicamarca, fechaingreso, imagen, idcategoria) VALUES ('$codigo', $name2', '$descripcion2', '$precio2', '$medida','$colores', '$tecnica', '$data4', '$direccionimagen2', '$idc[0]')";
 
 if($link->query($sql)==TRUE){
 //if(mysqli_query($conn,$sql)==TRUE){

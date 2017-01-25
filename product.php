@@ -46,7 +46,7 @@ $idsel=$_GET["id"];
 		var arrayJS=<?php echo json_encode($ar);?>;
 		var idselected=<?php echo json_encode($idsel);?>;
 		for (var i = 0; i < arrayJS.length; i++) {
-			console.log("<br>"+arrayJS[i]["nombre"]);
+			
 		};
 	</script>
 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>	
@@ -249,36 +249,9 @@ $idsel=$_GET["id"];
 					<div class="ajaxcart__product">
 						<div class="ajaxcart__row" data-line="1">
 							<div class="grid">
-								<!--<div class="grid__item one-quarter">
-									<a href="product.html" class="ajaxcart__product-image"><img src="assets/images/demo1_cart1.jpg" alt=""></a>
-								</div>
-								<div class="grid__item three-quarters">
-									<p>
-										<a id="productoSel" href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-										<span class="ajaxcart__product-meta">S / Red</span>
-									</p>
-									<div class="grid--full display-table">
-										<div class="grid__item">
-											<div class="ajaxcart__qty">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="8772444163" data-qty="0" data-line="1">
-												<span class="icon icon-minus" aria-hidden="true"></span>
-												<span class="fallback-text">?</span>
-												</button>
-												<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="8772444163" data-line="1" aria-label="quantity" pattern="[0-9]*">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="8772444163" data-line="1" data-qty="2">
-												<span class="icon icon-plus" aria-hidden="true"></span>
-												<span class="fallback-text">+</span>
-												</button>
-											</div>
-										</div>
-										<div class="grid__item">
-											<span class="money" data-currency-usd="$34.00 USD" data-currency="USD">$34.00 USD</span>
-										</div>
-									</div>
-								</div>-->
-								<table id="tablaCarrito">
+						
 									<div id="datos"></div>
-								</table>
+								
 							</div>
 						</div>
 					</div>
@@ -306,8 +279,8 @@ $idsel=$_GET["id"];
 					<p class="text-center">
 						Shipping &amp; taxes calculated at checkout
 					</p>
-					<button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='cart.html'">
-					Shopping Cart ? </button>
+					<button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='cart.php'">
+					VER COTIZACIÓN COMPLETA </button>
 					<button type="submit" class="btn btn2 btn--full cart__checkout" name="checkout">
 					Check Out ? </button>
 				</div>
@@ -722,12 +695,6 @@ $idsel=$_GET["id"];
 								<div class="grid__item large--one-half text-center">
 									<div class="product-single__photos" id="ProductPhoto">
 									<img src="" alt="Corporis suscipit laboriosam" id="ProductPhotoImg" data-image-id="7500291971">
-									
-									<script type="text/javascript">
-									document.getElementById("ProductPhotoImg").src=''+arrayJS[idselected]["imagen1"];
-									
-									window.onload=load;
-									</script>	
 									
 									</div>
 									<ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">

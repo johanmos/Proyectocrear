@@ -29,6 +29,7 @@ while($row=$result->fetch_assoc()){
 $opciones=array("primero","segundo","tercero");
 $num_ran=array_rand($opciones,1);
 echo $num_ran;
+
 switch ($num_ran) {
 	case '0':
 		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY fechaingreso ASC";
@@ -46,6 +47,9 @@ switch ($num_ran) {
 $r= array();
 $r= $link->query($sql2);
 while($row3=$r->fetch_assoc()){
-	$ar2[]=$row3;}
+	$arrayVariable[]=$row3;}
+
+
+
 
 ?>

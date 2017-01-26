@@ -234,10 +234,7 @@
 						</div>
 					</div>
 					
-					<div>
-						<label for="CartSpecialInstructions">Special instructions for seller</label>
-						<textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
-					</div>
+					
 				</div>
 				<div class="ajaxcart__footer">
 					<div class="grid--full">

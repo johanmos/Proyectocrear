@@ -4,38 +4,42 @@ include_once("collectionLogic.php");
 $idsel=$_GET["id"];
 $rand=$_GET["rand"];
 $cookie_name = "randomAnterior";
-
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "Cookie named '" . $cookie_name . "' is not set!";
-
-} else {
-    echo "Cookie '" . $cookie_name . "' is set!<br>";
+if($rand==3){
+	echo "viene desde coleccion";
+	$arfinal[]=$ar;
+}else{
+	echo "Cookie '" . $cookie_name . "' is set!<br>";
     echo "Value is: " . $_COOKIE[$cookie_name];
-    $ar[]=unserialize($_COOKIE[$cookie_name]);
-}
-
-	//condicionales para determinar la cadena correcta debido a que exiten 4 posibibilidaes en el carrusel y no se mostraria la imagen seleccionada de manera correcta.
-	
-switch ($num_ran) {
+   switch ($_COOKIE[$cookie_name]) {
 	case '0':
-		echo "entró a nume_rand 0";
-		$ar0[]=$arrayVariable;
-		$cookie_value = $ar0;
+		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY fechaingreso ASC";
 		break;
 	case '1':
-		echo "entró a num_rand 1";
-		$ar1[]=$arrayVariable;
-		$cookie_value = $ar1;
+		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY fechaingreso DESC";
 		break;
 	case '2':
-		echo "entró a num_rand 2";
-		$ar2[]=$arrayVariable;
-		$cookie_value = $ar2;
+		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY idproducto DESC";
 		break;
+	
+		}
+
+			$a= array();
+			$a= $link->query($sql2);
+			while($row4=$a->fetch_assoc()){
+				$ar[]=$row4;}
+
+	$arfinal[]=$ar;			
 	
 }
 
-setcookie($cookie_name, serialize($cookie_value), time() + (86400), "/"); // 86400 = 1 day		
+if ($arfinal==null) {
+	echo "es nulo";
+}
+	//condicionales para determinar la cadena correcta debido a que exiten 4 posibibilidaes en el carrusel y no se mostraria la imagen seleccionada de manera correcta.
+$cookie_value=$num_ran;	
+
+
+setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day		
 ?>
 <!DOCTYPE html>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
@@ -74,7 +78,10 @@ setcookie($cookie_name, serialize($cookie_value), time() + (86400), "/"); // 864
 	<!-- JS ================================================== -->
 	<script type="text/javascript">
 	
-		var arrayJS=<?php echo json_encode($ar);?>;
+		var arrayJS=<?php echo json_encode($arfinal);?>;
+		if(arrayJS==null || arrayJS==undefined || arrayJS==""){
+			alerta("null");
+		}
 		var idselected=<?php echo json_encode($idsel);?>;
 		
 	</script>
@@ -1005,7 +1012,7 @@ setcookie($cookie_name, serialize($cookie_value), time() + (86400), "/"); // 864
 									
 										<li class="thumb__element">
 											<?php print '<a id="'.$i.'" nombre="" href="product.php?categoria='.$categoria.'&id='.$i.'&rand='.$num_ran.'"  class="product-single__thumbnail">
-												 <img src="'.$ar[$i]["imagen1"].'" alt="Corporis suscipit laboriosam">
+												 <img src="'.$arrayVariable[$i]["imagen1"].'" alt="Corporis suscipit laboriosam">
 												  </a>';
 												  ?>
 																						 

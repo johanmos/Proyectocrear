@@ -782,7 +782,7 @@ $listacategorias2=$listacategorias;
 										print '<div class="grid__item large--one-quarter medium--one-half">
 												<div class="grid__item_wrapper">
 													<div class="grid__image product-image">
-														<a href="product.php?categoria='.$categoria.'&id='.$i.'&rand=3">
+														<a href="product.php?categoria='.$categoria.'&id='.$$ar[$i]["idproducto"].'&rand=3">
 															<img src="'.$ar[$i]["imagen1"].'" alt="Demo Product Sample">
 														</a>
 														<div class="quickview">

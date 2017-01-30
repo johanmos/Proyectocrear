@@ -782,7 +782,7 @@ $listacategorias2=$listacategorias;
 										print '<div class="grid__item large--one-quarter medium--one-half">
 												<div class="grid__item_wrapper">
 													<div class="grid__image product-image">
-														<a href="product.php?categoria='.$categoria.'&id='.$i.'">
+														<a href="product.php?categoria='.$categoria.'&id='.$i.'&rand=3">
 															<img src="'.$ar[$i]["imagen1"].'" alt="Demo Product Sample">
 														</a>
 														<div class="quickview">
@@ -808,7 +808,7 @@ $listacategorias2=$listacategorias;
 														</span>
 													</div>
 													<p class="h6 product-title">
-														<a id="nombre_producto" href="product.php?categoria='.$categoria.'&id='.$i.'">'.$ar[$i]["nombre"].'</a>
+														<a id="nombre_producto" href="product.php?categoria='.$categoria.'&id='.$i.'&rand=3">'.$ar[$i]["nombre"].'</a>
 													</p>
 													<p class="product-price">
 														<strong>On Sale</strong>

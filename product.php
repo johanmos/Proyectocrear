@@ -2,8 +2,44 @@
 
 include_once("collectionLogic.php");
 $idsel=$_GET["id"];
+$rand=$_GET["rand"];
+$cookie_name = "randomAnterior";
+if($rand==3){
+	echo "viene desde coleccion";
+	$arfinal[]=$ar;
+}else{
+	echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+   switch ($_COOKIE[$cookie_name]) {
+	case '0':
+		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY fechaingreso ASC";
+		break;
+	case '1':
+		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY fechaingreso DESC";
+		break;
+	case '2':
+		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY idproducto DESC";
+		break;
+	
+		}
+
+			$a= array();
+			$a= $link->query($sql2);
+			while($row4=$a->fetch_assoc()){
+				$ar[]=$row4;}
+
+	$arfinal[]=$ar;			
+	
+}
+
+if ($arfinal==null) {
+	echo "es nulo";
+}
+	//condicionales para determinar la cadena correcta debido a que exiten 4 posibibilidaes en el carrusel y no se mostraria la imagen seleccionada de manera correcta.
+$cookie_value=$num_ran;	
 
 
+setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day		
 ?>
 <!DOCTYPE html>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
@@ -41,13 +77,13 @@ $idsel=$_GET["id"];
 	<link href="assets/css/social-buttons.scss.css" rel="stylesheet" type="text/css" media="all">
 	<!-- JS ================================================== -->
 	<script type="text/javascript">
-
-		
-		var arrayJS=<?php echo json_encode($ar);?>;
+	
+		var arrayJS=<?php echo json_encode($arfinal);?>;
+		if(arrayJS==null || arrayJS==undefined || arrayJS==""){
+			alerta("null");
+		}
 		var idselected=<?php echo json_encode($idsel);?>;
-		for (var i = 0; i < arrayJS.length; i++) {
-			
-		};
+		
 	</script>
 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>	
 	<script src="assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
@@ -258,10 +294,6 @@ $idsel=$_GET["id"];
 				
 					</div>
 					
-					<div>
-						<label for="CartSpecialInstructions">Special instructions for seller</label>
-						<textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
-					</div>
 				</div>
 				<div class="ajaxcart__footer">
 					<div class="grid--full">
@@ -699,7 +731,9 @@ $idsel=$_GET["id"];
 									</div>
 									<ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
 									<?php
+
 									if($result->num_rows>0){
+								
 										if($ar[$idsel]["imagen2"]==Null && $ar[$idsel]["imagen3"]==Null ){
 											$cantidadImg=0;
 										}
@@ -977,8 +1011,8 @@ $idsel=$_GET["id"];
 										for ($i=0; $i < count($ar) ; $i++) { ?>	
 									
 										<li class="thumb__element">
-											<?php print '<a id="'.$i.'" nombre="" href="product.php?categoria='.$categoria.'&id='.$i.'"  class="product-single__thumbnail">
-												 <img src="'.$ar2[$i]["imagen1"].'" alt="Corporis suscipit laboriosam">
+											<?php print '<a id="'.$i.'" nombre="" href="product.php?categoria='.$categoria.'&id='.$i.'&rand='.$num_ran.'"  class="product-single__thumbnail">
+												 <img src="'.$arrayVariable[$i]["imagen1"].'" alt="Corporis suscipit laboriosam">
 												  </a>';
 												  ?>
 																						 

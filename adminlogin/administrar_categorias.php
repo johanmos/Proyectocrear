@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
-	
-<!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/tables-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:21 GMT -->
+<?php
+    require_once('../auth.php');
+    require_once('../conexion.php');
+
+?>	
+
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +14,7 @@
 
 		<link rel="shortcut icon" href="assets/images/favicon.ico">
 
-		<title>Flacto - Responsive Admin Dashboard Template</title>
+		<title>Administrar Categorías</title>
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
@@ -53,9 +57,8 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-                        <a href="index-2.html" class="logo">
-                            <i class="zmdi zmdi-toys icon-c-logo"></i><span>Flac<span>to</span></span>
-                            <!--<span><img src="assets/images/logo.png" alt="logo" style="height: 20px;"></span>-->
+                        <a href="index.php" class="logo">                        
+                           <?php include('includes/logoinclude.php');?>
                         </a>
                     </div>
                 </div>
@@ -71,10 +74,7 @@
                                 <span class="clearfix"></span>
                             </div>
 
-                            <form role="search" class="navbar-left app-search pull-left hidden-xs">
-			                     <input type="text" placeholder="Search..." class="form-control">
-			                     <a href="#"><i class="fa fa-search"></i></a>
-			                </form>
+                            
 
 
                             <ul class="nav navbar-nav navbar-right pull-right">
@@ -102,12 +102,7 @@
                                         <div class="user-status away"><i class="zmdi zmdi-dot-circle"></i></div>
                                     </a>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i> Logout</a></li>
-                                    </ul>
+                                    <?php include('includes/menulogout.php'); ?>
                                 </li>
                             </ul>
 
@@ -120,106 +115,10 @@
 
 
             <!-- ========== Left Sidebar Start ========== -->
-
-            <div class="left side-menu">
-                <div class="sidebar-inner slimscrollleft">
-                    <!--- Divider -->
-                    <div id="sidebar-menu">
-                        <ul>
-
-                        	<li class="text-muted menu-title">Navigation</li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-dashboard""></i> <span> Categorias </span> <span class="menu-arrow"></span> </a>                               
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="ads_inicial_ver_imagenes.php" class="waves-effect"><i class="zmdi zmdi-map"></i> <span> Slider Inicial </span> <span class="menu-arrow"></span> </a>       
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="ver_post_blog.php" class="waves-effect"><i class="zmdi zmdi-layers"></i> <span> Blog </span> </a>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="editar_landing.php" class="waves-effect"><i class="zmdi zmdi-collection-text"></i><span class="label label-default pull-right">6</span><span> Landing Page </span> </a>
-                                
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="elegir_vista.php" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Slider Inferior </span> <span class="menu-arrow"></span></a>                              
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="modificar_logo.html" class="waves-effect"><i class="zmdi zmdi-flower"></i> <span> Logo Tipo </span> <span class="menu-arrow"></span></a>                              
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="modificar_logo.html" class="waves-effect"><i class="zmdi zmdi-view-week"></i> <span> Información </span> <span class="menu-arrow"></span></a>                              
-                            </li>
-
-
-                                                        
-            
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-chart"></i><span> Charts </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="chart-flot.html">Flot Chart</a></li>
-                                    <li><a href="chart-morris.html">Morris Chart</a></li>
-                                    <li><a href="chart-chartist.html">Chartist Charts</a></li>
-                                    <li><a href="chart-other.html">Other Chart</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-map"></i><span> Maps </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="map-google.html">Google Maps</a></li>
-                                    <li><a href="map-vector.html">Vector Maps</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="text-muted menu-title">More</li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-collection-item"></i><span class="label label-default pull-right">8</span><span> Pages </span></a>
-                                <ul class="list-unstyled">
-                                	<li><a href="page-starter.html">Starter Page</a></li>
-                                    <li><a href="page-timeline.html">Timeline</a></li>
-                                    <li><a href="page-login.html">Login</a></li>
-                                    <li><a href="page-register.html">Register</a></li>
-                                    <li><a href="page-recoverpw.html">Recover Password</a></li>
-                                    <li><a href="page-lock-screen.html">Lock Screen</a></li>
-                                    <li><a href="page-confirm-mail.html">Confirm Mail</a></li>
-                                    <li><a href="page-404.html">Error 404</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="ti-share"></i><span> Multi Level </span> <span class="menu-arrow"></span></a>
-                                <ul>
-                                    <li class="has_sub">
-                                        <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="menu-arrow"></span></a>
-                                        <ul style="">
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-
-                </div>
-            </div>
-			<!-- Left Sidebar End -->
+            <!-- Inicio menu lateral -->
+            <?php include('includes/menulateral.php') ?>
+            <!-- Fin menu lateral -->
+			
 
 			<!-- ============================================================== -->
 			<!-- Start right Content here -->
@@ -270,7 +169,7 @@
 
                                             
 <?php
-        require_once('../conexion.php');
+        
                         $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
                         if(!$link) {
                             die('Failed to connect to server: ' . mysql_error());       
@@ -321,9 +220,7 @@
 
                 </div> <!-- content -->
 
-                <footer class="footer">
-                    2016 © Flacto. Design by <a href="http://coderthemes.com/" target="_blank" class="text-muted">Coderthemes</a>
-                </footer>
+                <?php include('includes/footer.php');?>
 
             </div>
             <!-- ============================================================== -->
@@ -432,5 +329,5 @@
 
 	</body>
 
-<!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/tables-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:21 GMT -->
+
 </html>

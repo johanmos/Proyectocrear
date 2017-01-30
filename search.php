@@ -782,7 +782,17 @@ session_start();
 							$query = mysqli_query($link, "SELECT * FROM producto WHERE nombre LIKE '%$searchq%' OR idproducto LIKE '%$searchq%'") or die ("could not search");
 							$count = mysqli_num_rows($query);
 
-							echo "Resultado para la busqued de: <b>".$searchq."<b><br></br>";
+							
+							if($count == 0)
+							{
+								echo "No hay resultado para la busqueda: <b>".$searchq."</b>";
+								print "<img src='http://www.tatasecondcareer.com/images/page_notfound.png'>";
+							}
+							else
+							{
+								echo "Resultado para la busqued de: <b>".$searchq."<b><br></br>";	
+							}
+
 						?>
 
 						<div class="page-content">      

@@ -15,14 +15,24 @@
 		contador=parseInt(sessionStorage.getItem("contador"));
 		document.getElementById('CartCount').innerHTML=""+contador;}
 	
-	document.getElementById("ProductPhotoImg").src=''+arrayJS[idselected]["imagen1"];
-	
-	document.getElementById("labeldescripcion").innerHTML=''+arrayJS[idselected]["descripcion"];
+	/*Se llena toda la informacion del producto seleccionado*/
+	for (var k = 0; k < arrayJS.length ; k++){
+		
+		if(arrayJS[k]["idproducto"]==idselected){
+			var idArray=k;
+			
+		}
+
+	}
+	document.getElementById("ProductPhotoImg").src=''+arrayJS[idArray]["imagen1"];
+	document.getElementById("labeldescripcion").innerHTML=''+arrayJS[idArray]["descripcion"];
 	//document.getElementById("labelcolores").innerHTML=''+arrayJS[idselected]["colores"];
-	document.getElementById("labeltecnica").innerHTML=''+arrayJS[idselected]["tecnicamarca"];
-	document.getElementById("labelnombre").innerHTML=''+arrayJS[idselected]["nombre"];
-	document.getElementById("labelMedidas").innerHTML=''+arrayJS[idselected]["medidas"];
-	document.getElementById("labelPrecio").innerHTML=''+arrayJS[idselected]["precio"];
+	document.getElementById("labeltecnica").innerHTML=''+arrayJS[idArray]["tecnicamarca"];
+	document.getElementById("labelnombre").innerHTML=''+arrayJS[idArray]["nombre"];
+	document.getElementById("labelMedidas").innerHTML=''+arrayJS[idArray]["medidas"];
+	document.getElementById("labelPrecio").innerHTML=''+arrayJS[idArray]["precio"];
+
+	/*Se consulta el carro guardado*/
 	for (var i = 1; i < sessionStorage.length ; i++) {
 		objGuardado=sessionStorage.getItem(i) ;
 		objFinal=JSON.parse(objGuardado);
@@ -35,21 +45,38 @@
 
 	function mostrarDescripcion(clicked_id){
 												 	
- 		var posicion=clicked_id;
- 		document.getElementById('labeldescripcion').innerHTML=""+arrayJS[clicked_id]["descripcion"];
+ 		for (var j = 0; j < arrayJS.length ; j++){
+		
+		if(arrayJS[j]["idproducto"]==idselected){
+			var idArray2=j;
+
+		}
+
+	}
+ 		document.getElementById('labeldescripcion').innerHTML=""+arrayJS[idArray2]["descripcion"];
  		//document.getElementById('labelcolores').innerHTML=""+arrayJS[clicked_id]["colores"];
- 		document.getElementById('labeltecnica').innerHTML=""+arrayJS[clicked_id]["tecnicamarca"];
- 		document.getElementById('labelnombre').innerHTML=""+arrayJS[clicked_id]["nombre"];
- 		document.getElementById('labelMedidas').innerHTML=""+arrayJS[clicked_id]["medidas"];
- 		document.getElementById('labelPrecio').innerHTML=""+arrayJS[clicked_id]["precio"];
+ 		document.getElementById('labeltecnica').innerHTML=""+arrayJS[idArray2]["tecnicamarca"];
+ 		document.getElementById('labelnombre').innerHTML=""+arrayJS[idArray2]["nombre"];
+ 		document.getElementById('labelMedidas').innerHTML=""+arrayJS[idArray2]["medidas"];
+ 		document.getElementById('labelPrecio').innerHTML=""+arrayJS[idArray2]["precio"];
 												 	}
 	
 
 	 function addToCart(idselected){
+	 		for (var abc = 0; abc < arrayJS.length ; abc++){
+			
+			if(arrayJS[abc]["idproducto"]==idselected){
+				var idArray2=abc;
+				
+			
+		}
+
+	}
+
 	 	contador=parseInt(sessionStorage.getItem("contador"));
     	contador=contador+1;
     	//cotizacion.push(arrayJS[idselected]);
-    	var jsonStr=JSON.stringify(arrayJS[idselected]);
+    	var jsonStr=JSON.stringify(arrayJS[idArray2]);
     	//var jsonStr=JSON.stringify(arrayJS[idselected]);
     	if (typeof(Storage) !== "undefined"){
 

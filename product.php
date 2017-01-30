@@ -2,44 +2,8 @@
 
 include_once("collectionLogic.php");
 $idsel=$_GET["id"];
-$rand=$_GET["rand"];
-$cookie_name = "randomAnterior";
-if($rand==3){
-	echo "viene desde coleccion";
-	$arfinal[]=$ar;
-}else{
-	echo "Cookie '" . $cookie_name . "' is set!<br>";
-    echo "Value is: " . $_COOKIE[$cookie_name];
-   switch ($_COOKIE[$cookie_name]) {
-	case '0':
-		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY fechaingreso ASC";
-		break;
-	case '1':
-		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY fechaingreso DESC";
-		break;
-	case '2':
-		$sql2= "SELECT * FROM producto WHERE idcategoria ='$idc[0]' ORDER BY idproducto DESC";
-		break;
-	
-		}
 
-			$a= array();
-			$a= $link->query($sql2);
-			while($row4=$a->fetch_assoc()){
-				$ar[]=$row4;}
-
-	$arfinal[]=$ar;			
-	
-}
-
-if ($arfinal==null) {
-	echo "es nulo";
-}
-	//condicionales para determinar la cadena correcta debido a que exiten 4 posibibilidaes en el carrusel y no se mostraria la imagen seleccionada de manera correcta.
-$cookie_value=$num_ran;	
-
-
-setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day		
+				
 ?>
 <!DOCTYPE html>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
@@ -76,15 +40,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
 	<link href="assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
 	<link href="assets/css/social-buttons.scss.css" rel="stylesheet" type="text/css" media="all">
 	<!-- JS ================================================== -->
-	<script type="text/javascript">
 	
-		var arrayJS=<?php echo json_encode($arfinal);?>;
-		if(arrayJS==null || arrayJS==undefined || arrayJS==""){
-			alerta("null");
-		}
-		var idselected=<?php echo json_encode($idsel);?>;
-		
-	</script>
 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>	
 	<script src="assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
 	<script src="assets/js/owl.carousel.min.js" type="text/javascript"></script>
@@ -730,17 +686,25 @@ setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
 									
 									</div>
 									<ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
+									
 									<?php
 
-									if($result->num_rows>0){
+
+									$sqlprod= "SELECT * FROM producto WHERE idproducto ='$idsel'";
+									$result2= array();
+									$result2= $link->query($sqlprod);
+									while($prodsel=$result2->fetch_assoc()){
+										$ar[]=$prodsel;
+
+									if($result2->num_rows>0){
 								
-										if($ar[$idsel]["imagen2"]==Null && $ar[$idsel]["imagen3"]==Null ){
+										if($prodsel["imagen2"]==Null && $prodsel["imagen3"]==Null ){
 											$cantidadImg=0;
 										}
-										if($ar[$idsel]["imagen2"]!=Null || $ar[$idsel]["imagen3"]!=Null ){
+										if($prodsel["imagen2"]!=Null || $prodsel["imagen3"]!=Null ){
 											$cantidadImg=2;
 										}
-										if($ar[$idsel]["imagen2"]!=Null && $ar[$idsel]["imagen3"]!=Null ){
+										if($prodsel["imagen2"]!=Null && $prodsel["imagen3"]!=Null ){
 											$cantidadImg=3;
 										}
 										for ($i=0; $i < $cantidadImg ; $i++) { 																	
@@ -752,8 +716,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
 											$n=$i+1;
 											$numimg= "imagen".$n;
 											
-											print '<a id="'.$idsel.'" nombre="" href="'.$ar[$idsel][$numimg].'" onclick="return mostrarDescripcion(this.id);" class="product-single__thumbnail">
-												 <img width=175px; height=175px; src="'.$ar[$idsel][$numimg].'" alt="Corporis suscipit laboriosam">
+											print '<a id="'.$idsel.'" nombre="" href="'.$prodsel[$numimg].'" onclick="return mostrarDescripcion(this.id);" class="product-single__thumbnail">
+												 <img width=175px; height=175px; src="'.$prodsel[$numimg].'" alt="Corporis suscipit laboriosam">
 												  		</a>';
 												  ?>
 																						 
@@ -762,10 +726,17 @@ setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
 
 
 									<?php 
-										}}
+										}}}
+
 								
 									?>
-
+										<script type="text/javascript">
+	
+										var arrayJS=<?php echo json_encode($ar);?>;
+										
+										var idselected=<?php echo json_encode($idsel);?>;
+										
+									</script>
 									 </ul>
 									 			
 								</div>
@@ -1004,14 +975,15 @@ setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
 										<h1 class="feature-title"><span>You may also like</span></h1>
 										<ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
 											<?php
+
 									if($result->num_rows>0){
 										//$contador=0;
 
 										
-										for ($i=0; $i < count($ar) ; $i++) { ?>	
+										for ($i=0; $i < count($arrayVariable) ; $i++) { ?>	
 									
 										<li class="thumb__element">
-											<?php print '<a id="'.$i.'" nombre="" href="product.php?categoria='.$categoria.'&id='.$i.'&rand='.$num_ran.'"  class="product-single__thumbnail">
+											<?php print '<a id="'.$arrayVariable[$i]["idproducto"].'" nombre="" href="product.php?categoria='.$categoria.'&id='.$arrayVariable[$i]["idproducto"].'"  class="product-single__thumbnail">
 												 <img src="'.$arrayVariable[$i]["imagen1"].'" alt="Corporis suscipit laboriosam">
 												  </a>';
 												  ?>

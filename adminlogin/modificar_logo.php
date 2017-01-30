@@ -267,26 +267,46 @@
 
                                   
                            
-                                    
+    <?php
+        include '../conexion.php';
+        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+                        if(!$link) {
+                            die('Failed to connect to server: ' . mysql_error());       
+                            }
+                        
+                        //Select database
+                        $db = mysqli_select_db($link,DB_DATABASE);
+                        if(!$db) {
+                            die("Unable to select database");
+                        }
+       ?>
                                                                        
         <div class="row m-t-50">
             <div class="col-xs-12 col-sm-6">
                 <h4 class="header-title m-t-0">Modificar Logo</h4>
                 <p class="text-muted font-13 m-b-30">
-                <img src="../modificar_logo/server/img/logo.jpg" width="200px" class="avatar img-square" alt="avatar"><br><br>Este es tu logo actual, puedes actualizarlo seleccionando la imagen y dando click en Guardar, solo se admiten iamgenes formato .jpg
+        <?php
+         $re=mysqli_query($link,"select * from logo")or die();
+        while ($f=mysqli_fetch_array($re)) {
+        ?>                 
+                <img src="../modificar_logo_2/Subir/Imagenes/<?php echo $f['imagen']; ?>" width="200px" class="avatar img-square" alt="avatar">
+        <?php
+            }
+        ?>
+                <br><br>Este es tu logo actual, puedes actualizarlo seleccionando la imagen y dando click en Guardar.
                 </p>
-                    <form action="../modificar_logo/server/upload.php" method="POST" role="form" enctype="multipart/form-data"> 
-                        <div class="p-20">
-                            <div class="form-group clearfix">
-                                <div class="col-sm-12 padding-left-0 padding-right-0">
-                                    <input type="file" name="imagenes[]" id="filer_input2"
-                                                               multiple="multiple">
-                                </div>
-                            </div>
-                         </div>
-                    <button type="submit" class="btn btn-danger">Guardar</button>
-                    </form>                    
+                    
+                    <form action="../modificar_logo_2/subir/guardar.php" method="post" enctype="multipart/form-data">
+                                <td><input type="file" name="foto" /></td> 
+                                <td></td>
+                                <td></td>
+                    <br><br>
+                                <td><input type="submit" class="btn btn-primary" value="Aceptar"></td>
+                    
+                    </form>    
+
             </div>
+            
         </div>
                                     
                                     

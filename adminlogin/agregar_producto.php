@@ -198,7 +198,9 @@ $result= $link->query($sql);
                                     <br>
                                     <input type="text" class="form-control" name="descripcion" id="" placeholder="Descripción">
                                     <br>
-                                    <input type="text" class="form-control" name="colores" id="" placeholder="Colores">
+                                     <div class="tags-default">
+                                        <input type="text" name="colores" value="" data-role="tagsinput" placeholder="Escribe Colores..."/>
+                                    </div>
                                     <br>
                                     <input type="text" class="form-control" name="medidas" id="" placeholder="Medidas">
                                     <br>

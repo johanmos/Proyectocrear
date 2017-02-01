@@ -779,7 +779,7 @@ session_start();
 							$searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
 
 
-							$query = mysqli_query($link, "SELECT * FROM producto WHERE nombre LIKE '%$searchq%' OR idproducto LIKE '%$searchq%'") or die ("could not search");
+							$query = mysqli_query($link, "SELECT * FROM producto WHERE nombre LIKE '%$searchq%' OR codigo LIKE '%$searchq%'") or die ("could not search");
 							$count = mysqli_num_rows($query);
 
 							

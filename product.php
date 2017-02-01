@@ -48,8 +48,8 @@ $idsel=$_GET["id"];
 	<script src="assets/js/jquery.optionSelect.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.easytabs.min.js" type="text/javascript"></script>
+	<script src="assets/js/itemscarro.js" type="text/javascript"></script>
 	<script src="assets/js/products.js" type="text/javascript"></script>
-	
 
 </head>
 
@@ -755,16 +755,7 @@ $idsel=$_GET["id"];
 											<label id="labeldescripcion"></label> 
 										</div>
 										<div class="product-vendor">
-											Colores:
-											<form >
-											<?php $prueba=explode('/',$ar[$idsel]["colores"],10); for ($i=0; $i < count($prueba); $i++) { 
-												echo $prueba[$i];
-												echo '  <input type="checkbox" value="'. $prueba[$i].'">';
-											} ?>
-											
-												
-												
-											</form>
+											Colores: <b><label id="labelcolores"></label></b>											
 										</div>
 										<div class="product-type">
 											Técnica de Marca: <b><label id="labeltecnica"></label></b>
@@ -789,7 +780,7 @@ $idsel=$_GET["id"];
 															<span class="icon icon-minus" aria-hidden="true"></span>
 															<span class="fallback-text">−</span>
 															</button>
-															<input id="cantidad" type="text" class="js-qty__num" value="1" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="quantity" id="Quantity">
+															<input id="cantidad" type="text" class="js-qty__num" value="1" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="quantity" >
 															<button onclick='return sumar();' type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="" data-qty="11">
 															<span class="icon icon-plus" aria-hidden="true"></span>
 															<span class="fallback-text">+</span>

@@ -660,7 +660,7 @@
 				<h1 class="section-header__title">Shopping Cart</h1>
 			</div>
 			<div class="wrapper">
-				<form action="http://demo.tadathemes.com/cart" method="post" novalidate="" class="cart table-wrap">
+				<form action="correoPrueba.php" method="post" novalidate="" class="cart table-wrap">
 					<table class='cart-table full table--responsive'>
 						<thead class='cart__row cart__header-labels'>
 							<tr>
@@ -668,8 +668,15 @@
 									Producto
 								</th>
 								<th class='text-center'>
+									Código
+								</th>
+								<th class='text-center'>
+									Colores
+								</th>
+								<th class='text-center'>
 									Precio
 								</th>
+								
 								<th class='text-center'>
 									Cantidad
 								</th>
@@ -690,13 +697,13 @@
 						<div class="grid__item text-right one-third small--one-whole">
 							<p>
 								<span class="cart__subtotal-title">Subtotal</span>
-								<span class="h3 cart__subtotal"><span class="money" data-currency-usd="$223.00">$223.00</span></span>
+								<span class="h3 cart__subtotal"><span id="totalcotizacion" class="money" data-currency-usd=""></span></span>
 							</p>
 							<p>
 								<em>Shipping &amp; taxes calculated at checkout</em>
 							</p>
-							<input type="submit" name="update" class="btn btn2 update-cart" value="Update Cart">
-							<input type="submit" name="checkout" class="btn" value="Check Out">
+							<!--<input type="submit" name="update" class="btn btn2 update-cart" value="Update Cart">-->
+							<input type="submit" name="checkout" class="btn" value="Solcitar Cotización">
 						</div>
 					</div>
 				</form>

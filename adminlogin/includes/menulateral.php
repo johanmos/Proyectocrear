@@ -36,6 +36,10 @@
                                 <a href="editar_info.php" class="waves-effect"><i class="zmdi zmdi-view-week"></i> <span> Información </span> <span class="menu-arrow"></span></a>                              
                             </li>
 
+                            <li class="has_sub">
+                                <a href="emails.php" class="waves-effect"><i class="zmdi zmdi-email-open"></i> <span> Emails Suscritos </span> <span class="menu-arrow"></span></a>                              
+                            </li>
+
 
                         </ul>
                         <div class="clearfix"></div>

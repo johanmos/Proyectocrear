@@ -1,8 +1,8 @@
 <div class="grid__item footer_newsletter">
 				<div class="wrapper">
 					<h3><i class="fa fa-envelope"></i> Subscribete a nuestro boletín de noticias</h3>
-					<form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-						<input type="email" value="" placeholder="Ingresa tu Email aquí ..." name="EMAIL" id="mail" class="input-group-field" aria-label="email@example.com">
+					<form action="emails/guardaremails.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+						<input type="email" value="" placeholder="Ingresa tu Email aquí ..." name="email" id="mail" class="input-group-field" aria-label="email@example.com">
 						<span class="input-group-btn">
 						<input type="submit" class="btn" name="subscribe" id="subscribe" value="Enviar">
 						</span>

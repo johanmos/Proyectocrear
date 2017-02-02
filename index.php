@@ -3,6 +3,10 @@
 session_start();
 ?>
 
+</style>
+                            
+
+
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 <?php
 					require_once('conexion.php');

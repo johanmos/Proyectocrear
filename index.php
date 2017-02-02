@@ -2,7 +2,17 @@
 <?php
 session_start();
 ?>
-
+<!-- chat -->
+<!--Start of Zendesk Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="https://v2.zopim.com/?30xIyeACRZ5LdQ3jTn9NLphLIls3j8zr";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zendesk Chat Script-->
+<!-- chat fin -->
 </style>
                             
 
@@ -68,6 +78,16 @@ session_start();
 </head>
 
 <body id="home-market-responsive-shopify-theme" class="index1 template-index">
+<!-- facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- facebook end -->
 	<div id="NavDrawer" class="drawer drawer--left">
 		<div class="drawer__header">
 			<div class="drawer__title h3">
@@ -553,20 +573,23 @@ session_start();
 							</div>
 							<div class="grid__item one-quarter bh-right small--one-whole medium--one-whole">
 								
-								<div class="banner-area">
-								<?php 
+								<!-- ads2 --><div class="banner-area">
+								<!--<?php 
 								
 								$queryimagen2 = "SELECT * FROM adsinicial2";
 				                $resultado = $link->query($queryimagen2);
 				                while($row = $resultado->fetch_assoc())
 								{
 								?>
-								<!-- se llama la imagen2 desde adsinicial -->
+								
 									<a href="collection.html"><img src="pub_inicial/Subir/Imagenes/<?php echo $row['imagen']; ?>" alt=""></a>
 								<?php
 								}
 								?>
 								</div>
+								<!-- ads 2 -->
+								<div class="fb-page" data-href="https://www.facebook.com/hufsin/" data-tabs="timeline" data-height="300px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/hufsin/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/hufsin/">Hufsin</a></blockquote></div>
+
 							</div>
 						</div>
 					</div>

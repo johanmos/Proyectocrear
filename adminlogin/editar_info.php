@@ -206,9 +206,30 @@
                                         <br>
                                         <br>
                                         <input type="submit" class="btn btn-danger" value="Guardar y Publicar">
-                                    </form>                                    
+                                    </form>  
+                            <br><br>
+                            <h4 class="page-title">Editar archivo cotización</h4>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form method="post" action="../archivo/subir.php" enctype="multipart/form-data">
+                                       
+                                               <input type="file" name="archivo">
+                                                <br>
+                                               <input type="submit" class="btn btn-danger" name="subir">
+                                                
+                                    </form>
                                 </div>
-                            </div><!-- end col -->
+                            </div>
+
+
+
+                                </div>
+
+                            </div>
+                            <!-- modificar archivo cotizacion -->
+
+
+                            <!-- end col -->
 
                             
                             </div><!-- end col -->

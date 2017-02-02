@@ -43,6 +43,31 @@
 								<a href="<?php echo "http://".$row12['facebook'].""; ?>" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>	
 								<a href="<?php echo "http://".$row12['pinterest'].""; ?>" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
 							</div>
+							<!-- archivo cotizacion -->
+							 <?php
+							require_once('conexion.php');
+							 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+							        if(!$link) {
+							        die('Failed to connect to server: ' . mysql_error());       
+							        }
+							                        
+							        //Select database
+							        $db = mysqli_select_db($link,DB_DATABASE);
+							        if(!$db) {
+							        die("Unable to select database");
+							    }
+							                        
+							    $query = "SELECT * FROM tbl_documentos";
+							    $resultado = $link->query($query);
+							    while($row = $resultado->fetch_assoc()){
+
+							?>
+							<br><br>
+							 <a href="archivo/archivos/<?php echo $row['nombre_archivo']; ?>">Descargar Formato de Cotización</a>﻿
+							<?php
+							}
+							?>
+
 						</div>
 
 						<?php

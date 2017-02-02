@@ -16,7 +16,7 @@ function load () {
 			objGuardado=sessionStorage.getItem(i) ;
 			objFinal=JSON.parse(objGuardado);
 			console.log("item: "+i+" es:"+objFinal.imagen1 );
-			datos=datos+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'><a href='product.html' class='cart__image'><img src='"+objFinal.imagen1+"' alt='Crear'></a></div><p class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div><a href='' onclick='return eliminarItem("+i+")'  class='cart__remove'><small><h3>Eliminar</h3></small></a></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><output name='"+objFinal.codigo+"''>"+objFinal.codigo+"</output></span></span></td><td data-label='Colores'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.colores+"</span></span></td><td data-label='Price'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.precio+"</span></span></td><td data-label='Quantity'><div class='js-qty'><button type='button' onclick='return restar("+objFinal.idproducto+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--minus icon-fallback-text' data-id='' data-qty='0'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>−</span></button><input type='text' id='"+objFinal.idproducto+"' class='js-qty__num' value='1' min='1' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ><button type='button' onclick='return sumar("+objFinal.idproducto+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--plus icon-fallback-text' data-id='' data-qty='11'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></td><td data-label='Total' class='text-center'><span class='h3'><span id='sub"+objFinal.idproducto+"' class='money' data-currency-usd=''></span></span></td></tr>";
+			datos=datos+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'><a href='product.html' class='cart__image'><img src='"+objFinal.imagen1+"' alt='Crear'></a></div><p class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div><a href='' onclick='return eliminarItem("+i+")'  class='cart__remove'><small><h3>Eliminar</h3></small></a></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"'' value='"+objFinal.codigo+"'></input></span></span></td><td data-label='Colores'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.colores+"</span></span></td><td data-label='Price'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.precio+"</span></span></td><td data-label='Quantity'><div class='js-qty'><button type='button' onclick='return restar("+objFinal.idproducto+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--minus icon-fallback-text' data-id='' data-qty='0'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>−</span></button><input type='text' id='"+objFinal.idproducto+"' class='js-qty__num' value='1' min='1' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ><button type='button' onclick='return sumar("+objFinal.idproducto+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--plus icon-fallback-text' data-id='' data-qty='11'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></td><td data-label='Total' class='text-center'><span class='h3'><span id='sub"+objFinal.idproducto+"' class='money' data-currency-usd=''></span></span></td></tr>";
 			}
 						
 		document.getElementById('tablaCotizacion').innerHTML=datos;
@@ -63,3 +63,37 @@ function load () {
 	           document.getElementById(idchecked).value=0;
 	       }
     };
+	function llenarObject(){
+		var coti={};
+		for (var i = 1; i < sessionStorage.length ; i++) {
+				objGuardado=sessionStorage.getItem(i) ;
+    			objFinal=JSON.parse(objGuardado);
+				coti.push(objFinal);
+		};
+		return coti;
+	}
+
+	$(document).on('ready', function(){
+		var cotizacion=[];
+		cotizacion=llenarObject();
+		$('#btn-cotizar').click(function(){
+			var url="correoPrueba.php";
+			var dataObject= {
+			prueba: "prueba2",
+			nombre: "johan",
+			apellido: "mosquera"
+
+		};
+			$.ajax({
+					type:"POST",
+					url: url,
+					data: cotizacion,
+					
+					success: function (data){
+						console.log("data: "+data);
+					}
+
+			});
+		});
+
+	});

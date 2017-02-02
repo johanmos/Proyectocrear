@@ -298,20 +298,7 @@ $idsel=$_GET["id"];
 													<hr>
 													<span class="visually-hidden">Regular price</span>
 													<span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD">Precio: <label id="labelPrecio"></label></span></span>
-													<div class="qty_select">
-														<label for="Quantity" class="quantity-selector">Quantity</label>
-														<div class="js-qty">
-															<button type="button" onclick='return restar();' class="js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="" data-qty="0">
-															<span class="icon icon-minus" aria-hidden="true"></span>
-															<span class="fallback-text">−</span>
-															</button>
-															<input id="cantidad" type="text" class="js-qty__num" value="1" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="quantity" >
-															<button onclick='return sumar();' type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="" data-qty="11">
-															<span class="icon icon-plus" aria-hidden="true"></span>
-															<span class="fallback-text">+</span>
-															</button>
-														</div>
-													</div>
+												
 													<?php print '
 													<button type="button" name="add" id="AddToCart" onclick="addToCart('.$idsel.');"class="btn">
 														<span id="AddToCartText">Añadir al Carrito</span>

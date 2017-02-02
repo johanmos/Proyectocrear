@@ -76,29 +76,10 @@ session_start();
 				</button>
 			</div>
 		</div>
-		<!-- begin mobile-nav -->
-		<ul class="mobile-nav">
-			<li class="mobile-nav__item mobile-nav__item--active">
-				<a href="#" class="mobile-nav__link">Home</a>
-			</li>
-
-			<?php 
-									
-								$qry=mysqli_query($link,"SELECT * FROM menu_header");
-					
-
-								while($row = mysqli_fetch_array($qry))
-								
-								{
-									print '
-			
-			<li class="mobile-nav__item">
-			<a href="register.html" id="customer_register_link">'.$row["titulo"].'</a>
-			</li>
-
-			';}?>
-
-		</ul>
+		<!-- begin mobile-nav menu para moviles -->
+		<?php
+			include('includes/menu_movil.php');
+		?>
 	</div>
 	
 	<div id="CartDrawer" class="drawer drawer--right fancybox-margin">
@@ -264,72 +245,17 @@ session_start();
 		</div>
 	
 		<!-- Top Other -->
-		<div id="top-header" class="grid--full grid--table">
-			<div class="wrapper">
-				<div id="topother-header" class="grid--full grid--table">
-					<div class="grid__item one-half top-header-left">
-						 Crear Publicidad 2016  
-						<?php 
-
-                  if(isset($_SESSION['SESS_LOGIN']))
-                    {
-                      echo ' - Bienvenido   <b>'.htmlentities($_SESSION['SESS_LOGIN'], ENT_QUOTES, 'UTF-8');
-                      echo '<a href="adminlogin/administrar_categorias.php"> - Ir al panel de Admin</a>';
-                    } 
-                    ?>
-					
-                    <?
-                  
-
-                    ?>
-					</div>
-					<div class="grid__item one-half top-header-right">
-						<div class="currency-picker">
-							<!--<label class="currency-picker__wrapper">
-							<span class="currency-picker__label">Currency</span>
-							<select class="currency-picker" name="currencies" style="display: inline; width: auto; vertical-align: inherit;">
-								<option value="USD" selected="selected">USD</option>
-								<option value="INR">INR</option>
-								<option value="GBP">GBP</option>
-								<option value="CAD">CAD</option>
-								<option value="AUD">AUD</option>
-								<option value="EUR">EUR</option>
-								<option value="JPY">JPY</option>
-							</select>
-							</label>-->
-						</div>
-						<div class="fi-content inline-list social-icons">
-							<a href="#" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-							<a href="#" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
-							<a href="#" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
-							<a href="#" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-							<a href="#" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
-							<a href="#" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php 
+		include('includes/top_info.php');
+		?>
 
 		<!-- Main Header -->
 		<header class="site-header">
 			<div class="wrapper">
 				<div id="main-header" class="grid--full grid--table">
-					<div class="grid__item small--one-whole medium--one-whole two-eighths">
-						<h1 class="site-header__logo large--left" itemscope="" itemtype="http://schema.org/Organization">
-						<a href="index.html" itemprop="url" class="site-header__logo-link">
-						 <?php
-					         $re=mysqli_query($link,"select * from logo")or die();
-					        while ($f=mysqli_fetch_array($re)) {
-					     ?>
-							<align right><img src="modificar_logo_2/Subir/Imagenes/<?php echo $f['imagen']; ?>" alt="Crear Publicidad" itemprop="logo">
-						<?php
-							}
-						?>
-						</a>
-						</h1>
-					</div>
+					<?php
+					include('includes/logo.php');
+					?>
 					<div class="grid__item small--one-whole medium--one-whole four-eighths mobile-bottom">
 						<div class="large--hide medium-down--show navigation-icon">
 							<div class="grid">
@@ -343,19 +269,7 @@ session_start();
 								</div>
 							</div>
 						</div>
-						<div class="site-header__search">
-							<form action="search.php" method="post" class="input-group search-bar">
-								
-								
-								<input type="text" name="search" value="" placeholder="Busqueda..." class="input-group-field st-default-search-input" aria-label="Search our store">
-								<span class="input-group-btn">
-								<button type="submit" class="btn icon-fallback-text">
-								<i class="fa fa-search"></i>
-								<span class="fallback-text">Search</span>
-								</button>
-								</span>
-							</form>
-						</div>
+						<?php include('includes/busqueda.php'); ?>
 						<div class="large--hide medium-down--show navigation-cart">
 							<div class="grid__item text-right">
 								<div class="site-nav--mobile">
@@ -370,40 +284,9 @@ session_start();
 						</div>
 					</div>
 
-					<div class="grid__item small--one-whole two-eighths medium-down--hide">
-						<ul class="link-list">
-						<?php 
-						if(isset($_SESSION['SESS_LOGIN']))
-                    		{
-                    	?>
-						<li class="header-account">
-								<a href="logout.php"" id="login_link">
-									<i class="fa fa-user"></i>
-									<span class="name">Cerrar Sesión</span>
-								</a>
-								
-						</li>
-						<?php
-							}
-						?>
-					
-						
-							<li class="track-order">
-								<a href="store-location.html">
-									<i class="fa fa-phone"></i>
-									<span class="name">Contactanos</span>
-								</a>
-							</li>
-							
-							<li class="header-cart">
-								<a href=".cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-									<i class="fa fa-shopping-basket"></i>
-									<span id="CartCount">3</span>
-									<span class="name">Shopping Cart</span>
-								</a>
-							</li>
-						</ul>
-					</div>
+					<?php
+					include('includes/options_header.php');
+					?>
 				</div>       
 			</div>
 		</header>
@@ -415,31 +298,9 @@ session_start();
 			<div class="wrapper">
 				<div class="medium-down--hide">
 					<!-- begin site-nav -->
-					<ul class="site-nav" id="AccessibleNav">
-						<li class="site-nav--active">
-							<a href="index.html" class="site-nav__link">
-								<span>Home</span>
-							</a>
-						</li>
-
-						<?php 
-									
-								$qry=mysqli_query($link,"SELECT * FROM menu_header");
-					
-
-								while($row = mysqli_fetch_array($qry))
-								
-								{
-									
-										
-								print '
-
-						<li>
-							<a href="index.html" class="site-nav__link">
-								<span>'.$row["titulo"].'</span>
-							</a>
-						</li>';}?>
-					</ul>
+					<?php
+						include('includes/menu_principal.php');
+					?>
 
 					<script>
 						  $(window).ready(function($) {
@@ -714,287 +575,14 @@ session_start();
 
 		<!-- Footer -->
 		<footer class="site-footer">       
-			<div class="grid__item footer_newsletter">
-				<div class="wrapper">
-					<h3><i class="fa fa-envelope"></i> Make sure you don't miss interesting happenings by joining our newsletter program</h3>
-					<form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-						<input type="email" value="" placeholder="Enter your email here ..." name="EMAIL" id="mail" class="input-group-field" aria-label="email@example.com">
-						<span class="input-group-btn">
-						<input type="submit" class="btn" name="subscribe" id="subscribe" value="subscribe">
-						</span>
-					</form>
-				</div>
-			</div>
-			<div class="grid__item footer_information">
-				<div class="wrapper">
-					<div class="grid-uniform">
-						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
-							<div class="fi-title">
-								Contacto
-							</div>
-							<?php 
-								
-								$queryimagen2 = "SELECT * FROM informacion";
-				                $resultado = $link->query($queryimagen2);
-				                while($row12 = $resultado->fetch_assoc())
-								{
-							?>
-							<div class="fi-content">
-								<ul class="group_information">
-									<li><i class="fa fa-map-marker"></i><?php echo $row12['direccion']; ?></li>
-									<li><i class="fa fa-phone"></i><?php echo $row12['telefono']; ?></li>
-									<li><i class="fa fa-envelope"></i><?php echo $row12['email']; ?></li>
-								</ul>
-							</div>
-							
-							
-						</div>
-
-						<div class="fi-links grid__item one-quarter small--one-whole medium--one-whole">
-							<div class="fi-title">
-								Redes sociales
-							</div>
-							<div class="fi-content inline-list social-icons">
-								<a href="<?php echo "http://".$row12['twitter'].""; ?>" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-								<a href="<?php echo "http://".$row12['facebook'].""; ?>" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>	
-								<a href="<?php echo "http://".$row12['pinterest'].""; ?>" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-							</div>
-						</div>
-
-						<?php
-								}
-							?>	
-						<div class="fi-tags grid__item one-quarter small--one-whole medium--one-whole">
-							<div class="fi-title">
-								Product Tags
-							</div>
-							<div class="fi-content">
-								<ul>
-								<?php 
-									
-								$qry=mysqli_query($link,"SELECT * FROM ca");
-					
-
-								while($row = mysqli_fetch_array($qry))
-								
-								{
-									
-										
-								print '
-									<li><a href="#">'.$row["nombre"].'</a></li>
-									';}?>
-								</ul>
-							</div>
-						</div>
-
-						<div class="fi-block grid__item one-quarter small--one-whole medium--one-whole">
-							<div class="fi-title">
-								Ultimos Post
-							</div>
-								<?php 
-									
-						$qry=mysqli_query($link,"SELECT * FROM post ORDER BY id_post DESC limit 2");
-						while($row = mysqli_fetch_array($qry))
-								
-						{
-							?>
-							<ul class="fi-content post-element">
-								<li>
-								<div class="post-title">
-									<a href="blog/article.php?id=<?php echo $row['id_post']; ?>"><?php echo $row['titulo_post']; ?></a>
-								</div>
-								<div class="post-author">
-									by <span class="author"><?php echo $row['autor_post']; ?></span>
-								</div>
-								</li>
-							</ul>
-							<?php
-						}
-                    ?>
-					<!-- si ya inicio sesión no se muestra opción de ingresar -->		
-					<?php 
-
-                  if(isset($_SESSION['SESS_LOGIN']))
-                    {
-                      echo '';
-                    } 
-                    else
-                    {
-
-                   
-					?>
-                <li class="header-account">
-								<a href="#loginBox" id="login_link">
-									<i class="fa fa-user"></i>
-									<span class="name">Administrador</span>
-								</a>
-								<div id="loginBox" class="loginLightbox" style="display:none;">
-									<div id="lightboxlogin">
-										<form method="post" action="login-exec.php" id="customer_login" accept-charset="UTF-8">
-											<input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="✓">
-											<div id="bodyBox">
-												<h3>Login</h3>
-												<label for="CustomerEmail" class="hidden-label">Email</label>
-												<input type="text" name="login" id="login" class="input-full" placeholder="Username">
-												<label for="CustomerPassword" class="hidden-label">Password</label>
-												<input type="password" value="" name="password" id="password" class="input-full" placeholder="Password">
-												<input type="submit" class="btn btn2 btn--full" value="Sign In">
-												<div>
-													<p class="forgot">
-														<a href="#recover" onclick="showRecoverPasswordForm();return false;" id="RecoverPassword">Forgot your password?</a>
-													</p>
-													<p class="create">
-														<a href="#create_accountBox" onclick="showCreateAccountForm();return false;" id="CreateAccountPassword">Create New Account</a>
-													</p>
-												</div>
-												<p>
-													<a href="#" onclick="$.fancybox.close();">Close</a>
-												</p>
-											</div>
-										</form>
-									</div>
-									<div id="recover-password" style="display:none;">
-										<h3>Reset your password</h3>
-										<p class="note">
-											We will send you an email to reset your password.
-										</p>
-										<form method="post" action="http://demo.tadathemes.com/HTML_Homemarket/demo/recover.html" accept-charset="UTF-8">
-											<input type="hidden" value="recover_customer_password" name="form_type"><input type="hidden" name="utf8" value="✓">
-											<p>
-												<label for="recover-email" class="label">Email</label>
-											</p>
-											<input type="email" value="" size="30" name="email" id="recover-email" class="text">
-											<div class="action_bottom">
-												<input class="btn btn2" type="submit" value="Submit">
-												<a class="btn back" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a>
-											</div>
-											<p class="close">
-												<a href="#" onclick="$.fancybox.close();">Close</a>
-											</p>
-										</form>
-									</div>
-									<div id="create_accountBox" style="display:none;">
-										<h3>Create Account</h3>
-										<div class="form-vertical">
-											<form method="post" action="http://demo.tadathemes.com/HTML_Homemarket/demo/account.html" id="create_customer" accept-charset="UTF-8">
-												<input type="hidden" value="create_customer" name="form_type"><input type="hidden" name="utf8" value="✓">
-												<label for="FirstName" class="hidden-label">First Name</label>
-												<input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="First Name">
-												<label for="LastName" class="hidden-label">Last Name</label>
-												<input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="Last Name">
-												<label for="Email" class="hidden-label">Email</label>
-												<input type="email" name="customer[email]" id="Email" class="input-full" placeholder="Email">
-												<label for="CreatePassword" class="hidden-label">Password</label>
-												<input type="password" name="customer[password]" id="CreatePassword" class="input-full" placeholder="Password">
-												<p>
-													<input type="submit" value="Create" class="btn btn2 btn--full">
-												</p>
-												<p>
-													<span><a class="btn" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a></span>
-												</p>
-												<p class="close">
-													<a href="#" onclick="$.fancybox.close();">Close</a>
-												</p>
-											</form>
-										</div>
-									</div>
-									<script>
-											function showRecoverPasswordForm() {
-											  $('#recover-password').css("display",'block');
-											  $('#lightboxlogin').css("display",'none');
-											  $('#create_accountBox').css("display",'none');
-											}
-											function hideRecoverPasswordForm() {
-											  $('#recover-password').css("display",'none');
-											  $('#lightboxlogin').css("display",'block');
-											  $('#create_accountBox').css("display",'none');
-											}
-											function showCreateAccountForm(){
-											  $('#recover-password').css("display",'none');
-											  $('#lightboxlogin').css("display",'none');
-											  $('#create_accountBox').css("display",'block');
-											}
-										  </script>
-								</div>
-							</li> 
-							
-
-						</div>
-						<?php
-					}
-					?>
-
-					</div>
-				</div>
-			</div>
 			
-			<div class="grid__item footer_product_categories">
-				<div class="wrapper">
-					<div class="fi-title">
-						Product Categories
-					</div>
-					<div class="fi-content">
-						<ul class="product_categories_list">
-							<li class="pc-items">
-							<a href="collection.html">Beauty &amp; Health</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Book</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Camera - Camcorder</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Clothing</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Home Appliances</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Homelife</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Kids &amp; Baby</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Smartphones &amp; Cell Phones</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Sport &amp; Outdoor</a>
-							</li>
-							<li class="pc-items">
-							<a href="collection.html">Stationery</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			<?php
+			include('includes/info_footer.php');
+			?>
 			
-			<div class="grid__item footer_copyright">
-				<div class="wrapper">
-					<div class="grid">
-						<div class="grid__item footer-copyright one-half small--one-whole medium--one-whole small--text-center">
-							<p>
-								© 2016 Home Market - Red. All rights Reserved
-							</p>
-						</div>
-						<div class="grid__item footer-payment one-half small--one-whole medium--one-whole small--text-center">
-							<div id="widget-payment">
-								<ul id="payments" class="list-inline animated">
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Visa"><a href="index.html" class="icons visa"><i class="fa fa-cc-visa"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Mastercard"><a href="index.html" class="icons mastercard"><i class="fa fa-cc-mastercard"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="American Express"><a href="index.html" class="icons amex"><i class="fa fa-cc-amex"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Paypal"><a href="index.html" class="icons paypal"><i class="fa fa-cc-paypal"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Google Wallet"><a href="index.html" class="icons gw"><i class="fa fa-google-wallet"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Discover"><a href="index.html" class="icons dsc"><i class="fa fa-cc-discover"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Diners Club"><a href="index.html" class="icons dc"><i class="fa fa-cc-diners-club"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="JCB"><a href="index.html" class="icons jcb"><i class="fa fa-cc-jcb"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
+			
+			
 			
 			<script type="text/javascript">
 			  $(function () {

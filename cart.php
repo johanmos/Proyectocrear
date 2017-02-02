@@ -49,6 +49,8 @@
 	<link href="assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
 	<!-- JS ================================================== -->
 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>	
+	<script src="//code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>	
+	<script src="//code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>	
 	<script src="assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
 	<script src="assets/js/owl.carousel.min.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.tweet.min.js" type="text/javascript"></script>
@@ -210,7 +212,7 @@
 				<h1 class="section-header__title">Shopping Cart</h1>
 			</div>
 			<div class="wrapper">
-				<form action="correoPrueba.php" method="post" novalidate="" class="cart table-wrap">
+				<form id="formularioCot"  method="post" novalidate="" class="cart table-wrap">
 					<table class='cart-table full table--responsive'>
 						<thead class='cart__row cart__header-labels'>
 							<tr>
@@ -253,7 +255,7 @@
 								<em>Shipping &amp; taxes calculated at checkout</em>
 							</p>
 							<!--<input type="submit" name="update" class="btn btn2 update-cart" value="Update Cart">-->
-							<input type="submit" name="checkout" class="btn" value="Solcitar Cotización">
+							<input id="btn-cotizar" type="button"  name="checkout" class="btn" value="Solicitar Cotización">
 						</div>
 					</div>
 				</form>

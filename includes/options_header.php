@@ -26,7 +26,7 @@
 				<li class="header-cart">
 				<a href=".cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
 				<i class="fa fa-shopping-basket"></i>
-				<span id="CartCount">3</span>
+				<span id="CartCount">0</span>
 				<span class="name">Shopping Cart</span>
 			</a>
 		</li>

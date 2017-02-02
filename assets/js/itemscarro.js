@@ -15,9 +15,24 @@ function load2(){
 		objGuardado=sessionStorage.getItem(i) ;
 		objFinal=JSON.parse(objGuardado);
 		console.log("item: "+i+" es:"+objFinal.imagen1 );
-		datos=datos+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a><span class='ajaxcart__product-meta'>S / Red</span></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'>$34.00 USD</span></div></div></div><br><br>";}
+		datos=datos+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+i+")'>Eliminar</a></span></div></div></div><br><br>";}
 						
 		document.getElementById('datos').innerHTML=datos;		
+	}
+
+	function eliminarItem(pos){
+		alert("entro a eliminar: "+pos);
+		sessionStorage.removeItem(pos);
+		contador=parseInt(sessionStorage.getItem("contador"));
+    	contador=contador-1;
+    	 if(contador<0){
+		contador=0;
+		
+		document.getElementById('CartCount').innerHTML="0";
+		}else{			
+		document.getElementById('CartCount').innerHTML=""+contador;}
+
+		sessionStorage.setItem("contador",contador);
 	}
 
 function addToCart(idselected){
@@ -45,7 +60,7 @@ function addToCart(idselected){
 				objGuardado=sessionStorage.getItem(i) ;
     			objFinal=JSON.parse(objGuardado);
 				console.log("item: "+i+" es:"+objFinal.imagen1 );
-				datos=datos+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a><span class='ajaxcart__product-meta'>S / Red</span></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'><button type='button' class='ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text' data-id='8772444163' data-qty='0' data-line='1'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>?</span></button><input type='text' name='updates[]' class='ajaxcart__qty-num' value='1' min='0' data-id='8772444163' data-line='1' aria-label='quantity' pattern='[0-9]*'><button type='button' class='ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text' data-id='8772444163' data-line='1' data-qty='2'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'>$34.00 USD</span></div></div></div><br>";}
+				datos=datos+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+i+")'>Eliminar</a></span></div></div></div><br><br>";}
 								
 			document.getElementById('datos').innerHTML=datos;
 			sessionStorage.setItem("contador",contador);

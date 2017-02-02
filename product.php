@@ -106,7 +106,7 @@ $idsel=$_GET["id"];
 						</div>
 						<div class="grid__item price-total">
 							<p>
-								<span class="money" data-currency-usd="$223.00 USD" data-currency="USD">$223.00 USD</span>
+								<span class="money" data-currency-usd="$223.00 USD" data-currency="USD"></span>
 							</p>
 						</div>
 					</div>
@@ -115,8 +115,7 @@ $idsel=$_GET["id"];
 					</p>
 					<button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='cart.php'">
 					VER COTIZACIÓN COMPLETA </button>
-					<button type="submit" class="btn btn2 btn--full cart__checkout" name="checkout">
-					Check Out ? </button>
+					
 				</div>
 			</form>
 		</div>

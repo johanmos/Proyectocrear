@@ -100,106 +100,11 @@ session_start();
 					<div class="ajaxcart__product">
 						<div class="ajaxcart__row" data-line="1">
 							<div class="grid">
-								<div class="grid__item one-quarter">
-									<a href="product.html" class="ajaxcart__product-image"><img src="assets/images/demo1_cart1.jpg" alt=""></a>
-								</div>
-								<div class="grid__item three-quarters">
-									<p>
-										<a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-										<span class="ajaxcart__product-meta">S / Red</span>
-									</p>
-									<div class="grid--full display-table">
-										<div class="grid__item">
-											<div class="ajaxcart__qty">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="8772444163" data-qty="0" data-line="1">
-												<span class="icon icon-minus" aria-hidden="true"></span>
-												<span class="fallback-text">−</span>
-												</button>
-												<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="8772444163" data-line="1" aria-label="quantity" pattern="[0-9]*">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="8772444163" data-line="1" data-qty="2">
-												<span class="icon icon-plus" aria-hidden="true"></span>
-												<span class="fallback-text">+</span>
-												</button>
-											</div>
-										</div>
-										<div class="grid__item">
-											<span class="money" data-currency-usd="$34.00 USD" data-currency="USD">$34.00 USD</span>
-										</div>
-									</div>
-								</div>
+								<div id="datos"></div>
 							</div>
 						</div>
 					</div>
-					<div class="ajaxcart__product">
-						<div class="ajaxcart__row" data-line="2">
-							<div class="grid">
-								<div class="grid__item one-quarter">
-									<a href="product.html" class="ajaxcart__product-image"><img src="assets/images/demo1_cart2.jpg" alt=""></a>
-								</div>
-								<div class="grid__item three-quarters">
-									<p>
-										<a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-										<span class="ajaxcart__product-meta">Medium / Pink</span>
-									</p>
-									<div class="grid--full display-table">
-										<div class="grid__item">
-											<div class="ajaxcart__qty">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="10722484483" data-qty="0" data-line="2">
-												<span class="icon icon-minus" aria-hidden="true"></span>
-												<span class="fallback-text">−</span>
-												</button>
-												<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="10722484483" data-line="2" aria-label="quantity" pattern="[0-9]*">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="10722484483" data-line="2" data-qty="2">
-												<span class="icon icon-plus" aria-hidden="true"></span>
-												<span class="fallback-text">+</span>
-												</button>
-											</div>
-										</div>
-										<div class="grid__item">
-											<span class="money" data-currency-usd="$100.00 USD" data-currency="USD">$100.00 USD</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="ajaxcart__product">
-						<div class="ajaxcart__row" data-line="3">
-							<div class="grid">
-								<div class="grid__item one-quarter">
-									<a href="product.html" class="ajaxcart__product-image"><img src="assets/images/demo1_cart3.jpg" alt=""></a>
-								</div>
-								<div class="grid__item three-quarters">
-									<p>
-										<a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-										<span class="ajaxcart__product-meta">XS / Black</span>
-									</p>
-									<div class="grid--full display-table">
-										<div class="grid__item">
-											<div class="ajaxcart__qty">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="8772462979" data-qty="0" data-line="3">
-												<span class="icon icon-minus" aria-hidden="true"></span>
-												<span class="fallback-text">−</span>
-												</button>
-												<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="8772462979" data-line="3" aria-label="quantity" pattern="[0-9]*">
-												<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="8772462979" data-line="3" data-qty="2">
-												<span class="icon icon-plus" aria-hidden="true"></span>
-												<span class="fallback-text">+</span>
-												</button>
-											</div>
-										</div>
-										<div class="grid__item">
-											<span class="money" data-currency-usd="$89.00 USD" data-currency="USD">$89.00 USD</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div>
-						<label for="CartSpecialInstructions">Special instructions for seller</label>
-						<textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
-					</div>
+					
 				</div>
 				<div class="ajaxcart__footer">
 					<div class="grid--full">
@@ -217,10 +122,9 @@ session_start();
 					<p class="text-center">
 						Shipping &amp; taxes calculated at checkout
 					</p>
-					<button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='cart.html'">
-					Shopping Cart → </button>
-					<button type="submit" class="btn btn2 btn--full cart__checkout" name="checkout">
-					Check Out → </button>
+					<button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='cart.php'">
+					VER COTIZACIÓN COMPLETA </button>
+					
 				</div>
 			</form>
 		</div>

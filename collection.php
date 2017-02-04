@@ -109,7 +109,7 @@ $listacategorias2=$listacategorias;
 						</div>
 						<div class="grid__item price-total">
 							<p>
-								<span class="money" data-currency-usd="$223.00 USD" data-currency="USD">$223.00 USD</span>
+								<span class="money" data-currency-usd="$223.00 USD" data-currency="USD"></span>
 							</p>
 						</div>
 					</div>
@@ -118,8 +118,7 @@ $listacategorias2=$listacategorias;
 					</p>
 					<button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='cart.php'">
 					Cotizacion Completa ? </button>
-					<button type="submit" class="btn btn2 btn--full cart__checkout" name="checkout">
-					Check Out ? </button>
+					
 				</div>
 			</form>
 		</div>
@@ -282,7 +281,7 @@ $listacategorias2=$listacategorias;
 															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
 																<div class="effect-ajax-cart">
 																	<input type="hidden" name="quantity" value="1">
-																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
+																	<button type="button" name="add" onclick="addToCart('.$ar[$i]["idproducto"].');" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
 																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Cotizar</span>
 																	</button>
 																</div>
@@ -318,17 +317,22 @@ $listacategorias2=$listacategorias;
 						                        $queryprod = "SELECT * FROM producto limit 4";
 						                        $resultado = $link->query($queryprod);
 						                        while($prod = $resultado->fetch_assoc()){
+						                        	$idp=$prod["idcategoria"];
+						                        $sql10="SELECT * FROM ca WHERE id='$idp'";
+
+												$rst = $link->query($sql10);
+						                        while($pr = $rst->fetch_assoc()){
 						                        ?>
 
 												<div class="grid__item_wrapper">
 													<div class="grid__image product-image">
-														<a href="product.php" class="grid__image product-image">
+														<?php echo '<a href="product.php?categoria='.$pr["nombre"].'&id='.$prod['idproducto'].'" class="grid__image product-image">'; ?>
 
 														<img src="<?php echo $prod['imagen1']; ?>" alt="Consequuntur magni dolores">
 														</a>													
 													</div>													
 													<p class="h6 product-title">
-														<a href="product.php"><?php echo $prod['nombre']; ?></a>
+														<?php print '<a href="product.php?categoria='.$pr["nombre"].'&id='.$prod['idproducto'].'">'.$prod['nombre'].' </a>';?>
 													</p>
 													<p class="product-price">
 														<strong>On Sale</strong>
@@ -340,15 +344,15 @@ $listacategorias2=$listacategorias;
 															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
 																<div class="effect-ajax-cart">
 																	<input type="hidden" name="quantity" value="1">
-																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
+																<?php print '	<button type="button" onclick="addToCart('.$prod["idproducto"].');" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
 																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Cotizar</span>
-																	</button>
+																	</button>';?>
 																</div>
 															</form>
 														</li>
 												</div>
 												<?php
-													}
+													}}
 												?>
 											</div>
 										</div>

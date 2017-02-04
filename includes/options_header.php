@@ -5,7 +5,7 @@
                     		{
                     	?>
 						<li class="header-account">
-								<a href="logout.php"" id="login_link">
+								<a href="logout.php" id="login_link">
 									<i class="fa fa-user"></i>
 									<span class="name">Cerrar Sesión</span>
 								</a>

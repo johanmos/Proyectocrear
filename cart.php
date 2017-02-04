@@ -51,6 +51,7 @@
 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>	
 	<script src="//code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>	
 	<script src="//code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>	
+	<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
 	<script src="assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
 	<script src="assets/js/owl.carousel.min.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.tweet.min.js" type="text/javascript"></script>
@@ -212,8 +213,9 @@
 				<h1 class="section-header__title">Shopping Cart</h1>
 			</div>
 			<div class="wrapper">
-				<form id="formularioCot"  method="post" novalidate="" class="cart table-wrap">
-					<table class='cart-table full table--responsive'>
+				<form id="formularioCot" action="correoPrueba.php" method="post" novalidate="" class="cart table-wrap">
+					
+					<table id="tablatotal" class='cart-table full table--responsive'>
 						<thead class='cart__row cart__header-labels'>
 							<tr>
 								<th class='text-center'>
@@ -241,12 +243,13 @@
 						
 						</tbody>
 					</table>
+					<?php include('includes/tablahidden.php'); ?>
 					<div class="grid cart__row">
 						<div class="grid__item two-thirds small--one-whole">
 							<label for="CartSpecialInstructions">Comentarios adicionales</label>
 							<textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
 						</div>
-						<div class="grid__item text-right one-third small--one-whole">
+						<!--<div class="grid__item text-right one-third small--one-whole">
 							<p>
 								<span class="cart__subtotal-title">Subtotal</span>
 								<span class="h3 cart__subtotal"><span id="totalcotizacion" class="money" data-currency-usd=""></span></span>
@@ -254,36 +257,38 @@
 							<p>
 								<em>Shipping &amp; taxes calculated at checkout</em>
 							</p>
-							<!--<input type="submit" name="update" class="btn btn2 update-cart" value="Update Cart">-->
-							<input id="btn-cotizar" type="button"  name="checkout" class="btn" value="Solicitar Cotización">
-						</div>
+							<!--<input type="submit" name="update" class="btn btn2 update-cart" value="Update Cart">
+							<input  type="button"  name="checkout" class="btn" value="Solicitar Cotización">
+						</div>-->
 					</div>
-				</form>
+				
 				<div id="shipping-calculator">
 					<h4>Datos solicitados</h4>
 					<div class="shipping-selector">
 						<p class="field">
 							<label for="address_zip">Nombre</label>
-							<input type="text" id="address_zip" name="address[zip]">
+							<input type="text" id="nombreUsuario" name="nombreUsuario">
 						</p>
 						<p class="field">
 							<label for="address_zip">Ciudad</label>
-							<input type="text" id="address_zip" name="address[zip]">
+							<input type="text"  id="ciudadUsuario" name="ciudadUsuario">
 						</p>
 						<p class="field">
 							<label for="address_zip">Telefono</label>
-							<input type="text" id="address_zip" name="address[zip]">
+							<input type="text" id="telefonoUsuario" name="telefonoUsuario">
 						</p>
 						<p class="field">
 							<label for="address_zip">Correo</label>
-							<input type="text" id="address_zip" name="address[zip]">
+							<input type="email" placeholder="email@example.com" id="correoUsuario" name="correoUsuario">
 						</p>
 						<p class="field">
-							<input type="button" class="get-rates btn button" value="Enviar Cotización">
+							<input id="btn-cotizar" type="submit" class="get-rates btn button" value="Enviar Cotización">
 						</p>
 					</div><br>
-					
+				
 				</div>
+				</form>
+				<div id="respuesta">
 			</div>
 		</main>
 		<footer class="site-footer">       

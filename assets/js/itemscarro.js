@@ -47,8 +47,18 @@ function addToCart(idselected){
     	contador=contador+1;
     	//cotizacion.push(arrayJS[idselected]);
     	var jsonStr=JSON.stringify(arrayJS[idArray2]);
-    	//var jsonStr=JSON.stringify(arrayJS[idselected]);
+    	var notify = null;
     	if (typeof(Storage) !== "undefined"){
+    		for (var k = 1; k < sessionStorage.length ; k++) {
+				obj1=sessionStorage.getItem(k) ;
+    			obj2=JSON.parse(objGuardado);
+				console.log("item: "+i+" es:"+obj2.idproducto );
+				if(obj2.idproducto==arrayJS[idArray2]["idproducto"]){
+					 
+					 notify = new Notification( "Error!", {body: 'Producto Repetido! :)',icon: 'assets/images/warning.png'});
+					return false;
+				}
+			}
 
     		sessionStorage.setItem(contador, jsonStr);
     	} else{
@@ -56,6 +66,7 @@ function addToCart(idselected){
     	}    	
     	document.getElementById('CartCount').innerHTML=""+contador;
     	datos="";
+    	var notification = null;
     	for (var i = 1; i < sessionStorage.length ; i++) {
 				objGuardado=sessionStorage.getItem(i) ;
     			objFinal=JSON.parse(objGuardado);
@@ -65,7 +76,7 @@ function addToCart(idselected){
 			document.getElementById('datos').innerHTML=datos;
 			sessionStorage.setItem("contador",contador);
 			
-			var notification = null;
+			
 
                     if (!('Notification' in window)) {
                         // el navegador no soporta la API de notificaciones

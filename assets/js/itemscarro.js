@@ -33,6 +33,7 @@ function load2(){
 		document.getElementById('CartCount').innerHTML=""+contador;}
 
 		sessionStorage.setItem("contador",contador);
+		
 	}
 
 function addToCart(idselected){
@@ -86,7 +87,9 @@ function addToCart(idselected){
                         // Se puede emplear las notificaciones
 
                         notification = new Notification( "cotizacion", {body: 'Producto agregado Exitosamente! :)',icon: 'assets/images/shopping-cart.png'});
-
+                        	setTimeout(function() {
+        				  notification.close()
+      						}, 2000);
 
                     } else if (Notification.permission !== 'denied') {
                         // se pregunta al usuario para emplear las notificaciones

@@ -103,10 +103,7 @@
                                 </li>
 
                                 <li class="dropdown user-box">
-                                    <a href="#" class="dropdown-toggle waves-effect waves-light profile " data-toggle="dropdown" aria-expanded="true">
-                                        <img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle user-img">
-                                        <div class="user-status away"><i class="zmdi zmdi-dot-circle"></i></div>
-                                    </a>
+                                   
                                      <?php include('includes/menulogout.php'); ?>
                                 </li>
                             </ul>

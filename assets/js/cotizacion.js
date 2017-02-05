@@ -3,7 +3,7 @@ window.onload=load;
 function load () {
 	
 			document.getElementById("tablaH").style.visibility="hidden"; 
-			document.getElementById("tablaH").style.display="inline";
+			document.getElementById("tablaH").style.display="none";
 		if(sessionStorage.getItem("contador")==undefined){
 			contador=0;
 			sessionStorage.setItem("contador",contador);

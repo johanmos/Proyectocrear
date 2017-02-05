@@ -2,7 +2,8 @@
 window.onload=load;
 function load () {
 	
-			//document.getElementById("tablaH").style.visibility="hidden"; 
+			document.getElementById("tablaH").style.visibility="hidden"; 
+			document.getElementById("tablaH").style.display="inline";
 		if(sessionStorage.getItem("contador")==undefined){
 			contador=0;
 			sessionStorage.setItem("contador",contador);
@@ -13,28 +14,53 @@ function load () {
 		var hidden="";									
 		var datos="";
 		var checkboxes="";
-		for (var i = 1; i < sessionStorage.length ; i++) {
+		var numItem=1;
+		var cont=1;
+		/*for (var i = 1; i < sessionStorage.length ; i++) {
 			objGuardado=sessionStorage.getItem(i) ;
+			if(objGuardado==null || objGuardado=="" || objGuardado==undefined){}
 			objFinal=JSON.parse(objGuardado);
 			
 			var res = objFinal.colores.split("/");
    			 for(var j = 0; j < res.length; j++) {
    			 	checkboxes="<input type='checkbox' id='checkbox"+objFinal.codigo+"' name='checkbox"+objFinal.codigo+"[]' onclick='return check(this.id);' value='"+res[j]+"'>"+res[j]+"<br>"+checkboxes;}
-  			 	console.log(j);
+  			 	console.log("i: es"+i);
 
 			datos=datos+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'><a href='product.html' class='cart__image'><img src='"+objFinal.imagen1+"' alt='Crear'></a></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div><a href='' onclick='return eliminarItem("+i+")'  class='cart__remove'><small><h3>Eliminar</h3></small></a></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td data-label='Colores'>"+checkboxes+"</td><td data-label='Price'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.precio+"</span></span></td><td data-label='Quantity'><div class='js-qty'><button type='button' onclick='return restar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--minus icon-fallback-text' data-id='' data-qty='0'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>−</span></button><input type='text' id='cantidad"+objFinal.codigo+"' class='js-qty__num' value='1' min='1' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ><button type='button' onclick='return sumar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--plus icon-fallback-text' data-id='' data-qty='11'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></td><td data-label='Total' class='text-center'><span class='h3'><span id='sub"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td></tr>";
 			hidden=hidden+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td data-label='Colores'><span class='h3'><span id='colcheckbox"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td><td data-label='Quantity'><div class='js-qty'><label id='cantidad2"+objFinal.codigo+"' class='js-qty__num' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ></label></div></td></tr>";
 			checkboxes="";
-			}
+			}*/
+			var datoslateral="";
+			do{
+				objGuardado=sessionStorage.getItem(numItem) ;
+				if(objGuardado==null || objGuardado=="" || objGuardado==undefined){
+					numItem++;
+				}else{
+					
+					console.log("contador "+cont+" numitem: "+numItem);
+						objFinal=JSON.parse(objGuardado);
+						var res = objFinal.colores.split("/");
+			   			 for(var j = 0; j < res.length; j++) {
+			   			 	checkboxes="<input type='checkbox' id='checkbox"+objFinal.codigo+"' name='checkbox"+objFinal.codigo+"[]' onclick='return check(this.id);' value='"+res[j]+"'>"+res[j]+"<br>"+checkboxes;}
+			  			 	//console.log("i: es"+i);
+
+						datos=datos+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'><a href='product.html' class='cart__image'><img src='"+objFinal.imagen1+"' alt='Crear'></a></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div><a href='' onclick='return eliminarItem("+numItem+")'  class='cart__remove'><small><h3>Eliminar</h3></small></a></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td data-label='Colores'>"+checkboxes+"</td><td data-label='Price'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.precio+"</span></span></td><td data-label='Quantity'><div class='js-qty'><button type='button' onclick='return restar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--minus icon-fallback-text' data-id='' data-qty='0'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>−</span></button><input type='text' id='cantidad"+objFinal.codigo+"' class='js-qty__num' value='1' min='1' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ><button type='button' onclick='return sumar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--plus icon-fallback-text' data-id='' data-qty='11'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></td><td data-label='Total' class='text-center'><span class='h3'><span id='sub"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td></tr>";
+						hidden=hidden+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td data-label='Colores'><span class='h3'><span id='colcheckbox"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td><td data-label='Quantity'><div class='js-qty'><label id='cantidad2"+objFinal.codigo+"' class='js-qty__num' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ></label></div></td></tr>";
+						datoslateral=datoslateral+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+numItem+")'>Eliminar</a></span></div></div></div><br><br>";
+					cont++;
+					numItem++;
+						}
+				checkboxes="";
+			}while(cont<sessionStorage.length);
 		document.getElementById('datahidden').innerHTML=hidden;				
 		document.getElementById('tablaCotizacion').innerHTML=datos;
 
-		var datoslateral="";
-		for (var m = 1; m < sessionStorage.length ; m++) {
+		
+	/*	for (var m = 1; m < sessionStorage.length ; m++) {
 			objGuardado=sessionStorage.getItem(m) ;
 			objFinal=JSON.parse(objGuardado);
 			
-			datoslateral=datoslateral+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+m+")'>Eliminar</a></span></div></div></div><br><br>";}
+			datoslateral=datoslateral+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+m+")'>Eliminar</a></span></div></div></div><br><br>";}*/
 							
 			document.getElementById('datos').innerHTML=datoslateral;
 
@@ -52,6 +78,7 @@ function load () {
 		document.getElementById('CartCount').innerHTML=""+contador;}
 
 		sessionStorage.setItem("contador",contador);
+		console.log(contador);
 		//load();
 	}
 
@@ -103,13 +130,13 @@ function load () {
 
 	$(document).ready(function(){
 	
-		 var checkboxValues="";
+		
 		 
 		/*$('input[name="orderBox[]"]:checked').each(function(){
        		checkboxValues+= $(this).val()+" , ";
        		checkboxValues = checkboxValues.substring(0, checkboxValues.length-1);
        	});*/
-       	alert("colores: "+checkboxValues);
+       
 		$("#formularioCot").bind("submit",function(){
 			// Capturamnos el boton de envío
         var btnEnviar = $("#btn-cotizar");

@@ -31,7 +31,7 @@ function load2(){
 		document.getElementById('CartCount').innerHTML="0";
 		}else{			
 		document.getElementById('CartCount').innerHTML=""+contador;}
-
+		console.log(contador);
 		sessionStorage.setItem("contador",contador);
 		
 	}

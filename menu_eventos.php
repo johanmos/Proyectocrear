@@ -263,9 +263,17 @@ h4 {
 }
 
 </style>
+
+<style type="text/css">
+  .centrado{
+    text-align:left;
+  }
+</style>
 <br><br>
 <section id="services" class="space-top three">
         <div class="container">
+
+
             <div class="row">
                 <div class="service-base col-sm-12 no-padding">
                     <div class="col-sm-6 service-block text-center animate-in move-up">
@@ -276,19 +284,27 @@ h4 {
                     <div class="col-sm-6 service-block text-center animate-in move-up">
                         
                         <h4 style="color: red;">Promoción en Medios Impresos</h4>
-						
-                        <p>
-						Diseño y producción de afiches, plegables, volantes,<br> tarjetas de invitación, pasacalles, pendones de promoción para eventos </p>
+                        						
+                        <p class="centrado">
+						<img src="assets/images/check.png"> Diseño y producción de afiches, plegables, volantes<br> 
+						<img src="assets/images/check.png"> Tarjetas de invitación, pasacalles
+						<br>
+						<img src="assets/images/check.png"> Pendones de promoción para eventos </p>
 						<br>
 
 						<h4 style="color: red;">Promoción en medios digitales</h4>
 						
 
-						<p>Diseño y difusión Banner promocionales  para redes y wsp
-						<br>Invitaciones, inscripciones y certificaciones virtuales
-						<br>Difusión de cronogramas virtual 
-						<br>Recordatorio de fechas para inscritos 
-						<br>Agradecimiento al final de la jornada 
+						<p class="centrado">
+						<img src="assets/images/check.png">Diseño y difusión Banner promocionales  para redes y wsp
+						<br>
+						<img src="assets/images/check.png">Invitaciones, inscripciones y certificaciones virtuales
+						<br>
+						<img src="assets/images/check.png">Difusión de cronogramas virtual 
+						<br>
+						<img src="assets/images/check.png">Recordatorio de fechas para inscritos 
+						<br>
+						<img src="assets/images/check.png">Agradecimiento al final de la jornada 
 						</p>
 
 
@@ -308,7 +324,9 @@ h4 {
                         <h4 style="color:red;">Eventos</h4> 
 						<br>
                         <p>
-                        Refrigerios, pasabocas <br> cocteles, bebidas,<br>
+                        <img src="assets/images/check.png">Refrigerios, pasabocas 
+                        <br> 
+                        <img src="assets/images/check.png">Cocteles, bebidas,<br>
 
 
 						<br>
@@ -316,7 +334,9 @@ h4 {
 						<h4 style="color:red;">Logistica</h4> 
 						<br>
 						<p>	 
-						Sonido, mobiliario <br>alquiler de espacios,
+						<img src="assets/images/check.png">
+						Sonido, mobiliario <br>
+						<img src="assets/images/check.png">Alquiler de espacios,
 						</p>
 
                         
@@ -347,7 +367,14 @@ h4 {
                         
                         <br><br>
 
-						<p>Pendones, escarapelas, programas de mano <br> libretas, agendas (con control de entradas),<br><br> carpetas, bolígrafos, camisetas <br>certificados, reconocimiento, memorias 
+						<p class="centrado">
+						<img src="assets/images/check.png">Pendones, escarapelas, programas de mano 
+						<br> 
+						<img src="assets/images/check.png">Libretas, agendas (con control de entradas)
+						<br><br> 
+						<img src="assets/images/check.png">Carpetas, bolígrafos, camisetas 
+						<br>
+						<img src="assets/images/check.png">certificados, reconocimiento, memorias 
 						</p>
 
 

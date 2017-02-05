@@ -90,6 +90,9 @@
 
   
   <section class="container text-center welcome-message">
+  <style>
+    .row{margin-left:-15px;margin-right:-15px;margin-top:-50px;}
+  </style>
     <div class="row">
       <div class="col-md-11 center-block">
         <div class="row">

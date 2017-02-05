@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <?php
 session_start();
 ?>
@@ -75,6 +77,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	<script src="assets/js/jquery.tweet.min.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.optionSelect.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 
 <body id="home-market-responsive-shopify-theme" class="index1 template-index">
@@ -238,24 +241,128 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							//$('.megamenu__dropdown').css("width",$('#main-header').innerWidth());
 						  });
 					</script>
+
 				</div>
 			</div>
 		</nav>    <!-- Main Content -->
     
-	
-<center></center><table style="border: hidden;">
+<style>
+	#services.three .service-block > p {
+    color: #222222;
+    font-family: poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+
+h4 {
+    color: #34404e;
+    font-family: Poppins;
+    padding-top: 30px;
+}
+
+</style>
 <br><br>
-<tr style="border: hidden;">
-<th style="border: hidden;"><center>PANEACION Y PROMOCION</center></th>
-<th style="border: hidden;"> <center>LOGITICA</center></th>
-<th style="border: hidden;"><center>MATERIAL DE APOYO</center></th>
-</tr>
-<tr>
-<td style="border: hidden;"><center>hola2</center></td>
-<td style="border: hidden;"><center>hola2</center></td>
-<td style="border: hidden;"><center>hola2</center></td>
-</tr>
-</table></center>
+<section id="services" class="space-top three">
+        <div class="container">
+            <div class="row">
+                <div class="service-base col-sm-12 no-padding">
+                    <div class="col-sm-6 service-block text-center animate-in move-up">
+                        <img src="http://img110.xooimage.com/files/a/b/0/123-518ab30.png" width="350px" alt="service">
+                        <h4 style="color: red;">Planeación y Promoción</h4>
+                        
+                    </div>
+                    <div class="col-sm-6 service-block text-center animate-in move-up">
+                        
+                        <h4 style="color: red;">Promoción en Medios Impresos</h4>
+						
+                        <p>
+						Diseño y producción de afiches, plegables, volantes,<br> tarjetas de invitación, pasacalles, pendones de promoción para eventos </p>
+						<br>
+
+						<h4 style="color: red;">Promoción en medios digitales</h4>
+						
+
+						<p>Diseño y difusión Banner promocionales  para redes y wsp
+						<br>Invitaciones, inscripciones y certificaciones virtuales
+						<br>Difusión de cronogramas virtual 
+						<br>Recordatorio de fechas para inscritos 
+						<br>Agradecimiento al final de la jornada 
+						</p>
+
+
+
+                        </p>
+                    </div>
+                    
+                    
+                </div>
+
+            </div><br><br><br>
+<hr/><br>
+            <div class="row">
+                <div class="service-base col-sm-12 no-padding">
+                <div class="col-sm-6 service-block text-center animate-in move-up">
+                        
+                        <h4 style="color:red;">Eventos</h4> 
+						<br>
+                        <p>
+                        Refrigerios, pasabocas <br> cocteles, bebidas,<br>
+
+
+						<br>
+
+						<h4 style="color:red;">Logistica</h4> 
+						<br>
+						<p>	 
+						Sonido, mobiliario <br>alquiler de espacios,
+						</p>
+
+                        
+                    </div>
+                    
+	
+                    <div class="col-sm-6 service-block text-center animate-in move-up">
+                        <br><br><img src="http://pro2col.com/wp-content/uploads/2015/06/webinar-icon-300x300.png" width="200px" alt="service">
+                        <h4 style="color: red;">Logistica y Eventos</h4>
+                        
+                    </div>
+                    
+                    
+                    
+                </div>
+
+            </div><br><br><br>
+
+            <hr/><br>
+            <div class="row">
+                <div class="service-base col-sm-12 no-padding">
+                    <div class="col-sm-6 service-block text-center animate-in move-up">
+                        <img src="https://ohheydesign.files.wordpress.com/2015/02/print-design-icon.png" width="200px" alt="service">
+                        <h4 style="color:red;" >Material de Apoyo</h4>
+                        
+                    </div>
+                    <div class="col-sm-6 service-block text-center animate-in move-up">
+                        
+                        <br><br>
+
+						<p>Pendones, escarapelas, programas de mano <br> libretas, agendas (con control de entradas),<br><br> carpetas, bolígrafos, camisetas <br>certificados, reconocimiento, memorias 
+						</p>
+
+
+
+                        </p>
+                    </div>
+                    
+                    
+                </div>
+
+            </div><br><br><br>
+            
+        </div>
+    </section>
+
 
 
 		<!-- Footer -->

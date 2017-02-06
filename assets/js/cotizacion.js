@@ -121,7 +121,7 @@ function load () {
 		console.log("checkbox sel: "+idcheckbox);
 		var checkSelected="";
 		$('input[name="'+idcheckbox+'[]"]:checked').each(function(){
-       		checkSelected+= $(this).val()+" , ";
+       		checkSelected+= $(this).val()+",";
        		checkSelected = checkSelected.substring(0, checkSelected.length-1);
        		console.log("colores escogidos para "+idcheckbox+" son"+checkSelected);
      		document.getElementById("col"+idcheckbox).innerHTML=checkSelected;

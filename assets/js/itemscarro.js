@@ -11,12 +11,30 @@ function load2(){
 		document.getElementById('CartCount').innerHTML=""+contador;}
 
 	/*Se consulta el carro guardado*/
-	for (var i = 1; i < sessionStorage.length ; i++) {
+	/*for (var i = 1; i < sessionStorage.length ; i++) {
 		objGuardado=sessionStorage.getItem(i) ;
 		objFinal=JSON.parse(objGuardado);
 		console.log("item: "+i+" es:"+objFinal.imagen1 );
-		datos=datos+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+i+")'>Eliminar</a></span></div></div></div><br><br>";}
+		datos=datos+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+i+")'>Eliminar</a></span></div></div></div><br><br>";}*/
+		
+		var numItem=1;
+		var cont=1;
+		do{
+				objGuardado=sessionStorage.getItem(numItem) ;
+				if(objGuardado==null || objGuardado=="" || objGuardado==undefined){
+					numItem++;
+				}else{
+					
+					console.log("contador "+cont+" numitem: "+numItem);
+					objFinal=JSON.parse(objGuardado);
 						
+					datos=datos+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+i+")'>Eliminar</a></span></div></div></div><br><br>";}	
+					cont++;
+					numItem++;
+						}
+				
+			}while(cont<sessionStorage.length);
+
 		document.getElementById('datos').innerHTML=datos;		
 	}
 

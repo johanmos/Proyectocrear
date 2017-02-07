@@ -88,15 +88,10 @@ $listacategorias2=$listacategorias;
 		<div id="CartContainer">
 			<form action="http://demo.tadathemes.com/HTML_Homemarket/demo/cart.html" method="post" novalidate="" class="cart ajaxcart">
 				<div class="ajaxcart__inner">
-					<div class="ajaxcart__product">
-						<div class="ajaxcart__row" data-line="1">
-							<div class="grid">
+					
 						
 									<div id="datos"></div>
-								
-							</div>
-						</div>
-					</div>
+						
 										
 					
 				</div>

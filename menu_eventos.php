@@ -293,7 +293,6 @@ h4 {
 						<br>
 
 						<h4 style="color: red;">Promoción en medios digitales</h4>
-						
 
 						<p class="centrado">
 						<img src="assets/images/check.png">Diseño y difusión Banner promocionales  para redes y wsp
@@ -307,9 +306,6 @@ h4 {
 						<img src="assets/images/check.png">Agradecimiento al final de la jornada 
 						</p>
 
-
-
-                        </p>
                     </div>
                     
                     

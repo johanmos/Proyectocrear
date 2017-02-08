@@ -86,17 +86,15 @@ $idsel=$_GET["id"];
 				<div class="ajaxcart__inner">
 					<div class="ajaxcart__product">
 						<div class="ajaxcart__row" data-line="1">
-							<div class="grid">
-						
-									<div id="datos"></div>
-								
+							<div class="grid">						
+									<div id="datos"></div>								
 							</div>
 						</div>
 					</div>
 				
 					</div>
 					
-				</div>
+				
 				<div class="ajaxcart__footer">
 					<div class="grid--full">
 						<div class="grid__item title-total">

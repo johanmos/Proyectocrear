@@ -164,8 +164,8 @@
 
                                             
 <?php
-        include '../conexion.php';
-        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+        
+       
                         if(!$link) {
                             die('Failed to connect to server: ' . mysql_error());       
                             }

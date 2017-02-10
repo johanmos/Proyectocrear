@@ -3,6 +3,16 @@
 <?php
     require_once('../auth.php');
     require_once('../conexion.php');
+    $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+                        if(!$link) {
+                            die('Failed to connect to server: ' . mysql_error());       
+                            }
+                        
+                        //Select database
+                        $db = mysqli_select_db($link,DB_DATABASE);
+                        if(!$db) {
+                            die("Unable to select database");
+                        }
 
 ?>  
 <!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/tables-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:21 GMT -->
@@ -164,17 +174,8 @@
 
                                             
 <?php
-        include '../conexion.php';
-        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
-                        if(!$link) {
-                            die('Failed to connect to server: ' . mysql_error());       
-                            }
-                        
-                        //Select database
-                        $db = mysqli_select_db($link,DB_DATABASE);
-                        if(!$db) {
-                            die("Unable to select database");
-                        }
+        
+        
                         $id=$_REQUEST['id'];
         $re=mysqli_query($link,"select * from adsinicial WHERE id='$id'")or die();
         while ($f=mysqli_fetch_array($re)) {

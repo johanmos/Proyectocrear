@@ -19,7 +19,7 @@ $sql1="SELECT id FROM ca WHERE nombre='$categoria'";
 $getid= mysqli_query($link,$sql1);
 $idc=mysqli_fetch_array($getid, MYSQLI_NUM);
 
-print $idc[0] ;
+
 $sql= "SELECT * FROM producto WHERE idcategoria ='$idc[0]'";
 $result= array();
 $result= $link->query($sql);
@@ -28,7 +28,7 @@ while($row=$result->fetch_assoc()){
 
 $opciones=array("primero","segundo","tercero");
 $num_ran=array_rand($opciones,1);
-echo $num_ran;
+
 
 switch ($num_ran) {
 	case '0':

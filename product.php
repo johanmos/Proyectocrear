@@ -2,6 +2,8 @@
 
 include_once("collectionLogic.php");
 $idsel=$_GET["id"];
+$categoria=$_REQUEST["categoria"];
+
 				
 ?>
 <!DOCTYPE html>
@@ -319,26 +321,17 @@ $idsel=$_GET["id"];
 				                            die("Unable to select database");
 				                        }
 				                        
-				                        $opcion = "SELECT * FROM vista";
-				                        $vista = $link->query($opcion);
-
-				                        while($v = $vista->fetch_assoc())
-				                        {
-				                        	$view = $v['opcion'];
-				                        	echo $view; echo "hola";
-				                        }
-
-				                    	$query2 = "SELECT * FROM ca WHERE id = '$view'";
+				                    	$query2 = "SELECT * FROM ca WHERE nombre = '$categoria'";
 				                    	
 				                        $resultado2 = $link->query($query2);
 				                        while($row2 = $resultado2->fetch_assoc())
 				                        {
-				                        	echo $row2['nombre'];
+				                        	
 				                        	$id = $row2['id']; 
-				                        	echo $id;
+				                        	
 				                ?>
 									<div class="home-products-block-title">
-										<span><?php echo $row2['nombre'];?></span>
+										<span><h5>Articulos relacionados</h5></span><br>
 									</div>
 									<div class="home-products-block-content">
 										<div class="home-products-slider">

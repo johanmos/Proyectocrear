@@ -14,7 +14,7 @@ function load () {
 		var hidden="";									
 		var datos="";
 		var checkboxes="";
-		var numItem=1;
+		var numItem=0;
 		var cont=1;
 		/*for (var i = 1; i < sessionStorage.length ; i++) {
 			objGuardado=sessionStorage.getItem(i) ;
@@ -39,12 +39,13 @@ function load () {
 					
 					console.log("contador "+cont+" numitem: "+numItem);
 						objFinal=JSON.parse(objGuardado);
-						var res = objFinal.colores.split("/");
+						if(objFinal.colores!=null){
+						var res = objFinal.colores.split(",");
 			   			 for(var j = 0; j < res.length; j++) {
-			   			 	checkboxes="<input style='display: ' type='checkbox' id='checkbox"+objFinal.codigo+"' name='checkbox"+objFinal.codigo+"[]' onclick='return check(this.id);' value='"+res[j]+"'>"+res[j]+"<br>"+checkboxes;}
+			   			 	checkboxes="<input style=' display: ' type='checkbox' id='checkbox"+objFinal.codigo+"' name='checkbox"+objFinal.codigo+"[]' onclick='return check(this.id);' value='"+res[j]+"'>"+res[j]+"<br>"+checkboxes;}
 			  			 	//console.log("i: es"+i);
-
-						datos=datos+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'><a href='product.html' class='cart__image'><img src='"+objFinal.imagen1+"' alt='Crear'></a></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div><a href='' onclick='return eliminarItem("+numItem+")'  class='cart__remove'><small><h3>Eliminar</h3></small></a></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td data-label='Colores'>"+checkboxes+"</td><td data-label='Price'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.precio+"</span></span></td><td data-label='Quantity'><div class='js-qty'><button type='button' onclick='return restar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--minus icon-fallback-text' data-id='' data-qty='0'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>−</span></button><input type='text' id='cantidad"+objFinal.codigo+"' class='js-qty__num' value='1' min='1' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ><button type='button' onclick='return sumar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--plus icon-fallback-text' data-id='' data-qty='11'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></td><td data-label='Total' class='text-center'><span class='h3'><span id='sub"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td></tr>";
+			  			 }
+						datos=datos+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'><a href='product.html' class='cart__image'><img src='"+objFinal.imagen1+"' alt='Crear'></a></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div><a href='' onclick='return eliminarItem("+numItem+")'  class='cart__remove'><small><h3>Eliminar</h3></small></a></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td align='left' data-label='Colores'>"+checkboxes+"</td><td data-label='Price'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.precio+"</span></span></td><td data-label='Quantity'><div class='js-qty'><button type='button' onclick='return restar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--minus icon-fallback-text' data-id='' data-qty='0'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>−</span></button><input type='text' id='cantidad"+objFinal.codigo+"' class='js-qty__num' value='1' min='1' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ><button type='button' onclick='return sumar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--plus icon-fallback-text' data-id='' data-qty='11'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></td><td data-label='Total' class='text-center'><span class='h3'><span id='sub"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td></tr>";
 						hidden=hidden+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td data-label='Colores'><span class='h3'><span id='colcheckbox"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td><td data-label='Quantity'><div class='js-qty'><label id='cantidad2"+objFinal.codigo+"' class='js-qty__num' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ></label></div></td></tr>";
 						//datoslateral=datoslateral+"<div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'><a href='' style='color: red;' onclick='return eliminarItem("+numItem+")'>Eliminar</a></span></div></div></div><br><br>";
 						datoslateral=datoslateral+"<div class='ajaxcart__product'><div class='ajaxcart__row' data-line='1'><div class='grid'><div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a><span class='ajaxcart__product-meta'></span></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'>$34.00 USD</span></div></div></div></div></div></div><br>";
@@ -53,6 +54,7 @@ function load () {
 						}
 				checkboxes="";
 			}while(cont<sessionStorage.length);
+
 		document.getElementById('datahidden').innerHTML=hidden;				
 		document.getElementById('tablaCotizacion').innerHTML=datos;
 
@@ -121,7 +123,7 @@ function load () {
 		console.log("checkbox sel: "+idcheckbox);
 		var checkSelected="";
 		$('input[name="'+idcheckbox+'[]"]:checked').each(function(){
-       		checkSelected+= $(this).val()+",";
+       		checkSelected+= $(this).val()+" ,";
        		checkSelected = checkSelected.substring(0, checkSelected.length-1);
        		console.log("colores escogidos para "+idcheckbox+" son"+checkSelected);
      		document.getElementById("col"+idcheckbox).innerHTML=checkSelected;

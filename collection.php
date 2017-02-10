@@ -248,15 +248,7 @@ $listacategorias2=$listacategorias;
 														<a href="product.php?categoria='.$categoria.'&id='.$ar[$i]["idproducto"].'">
 															<img src="'.$ar[$i]["imagen1"].'" alt="Demo Product Sample">
 														</a>
-														<div class="quickview">
-															<div class="product-ajax-cart hidden-xs hidden-sm">
-																<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																	<a href="#quick-shop-modal" class="btn quick_shop">
-																		<i class="fa fa-eye" title="Quick View"></i>																
-																	</a>
-																</div>
-															</div>
-														</div>
+														
 													</div>
 													
 													<p class="h6 product-title">
@@ -269,7 +261,7 @@ $listacategorias2=$listacategorias;
 														
 													</p>
 													<div class="list-mode-description">
-														Quisque vel enim quis purus ultrices consequat, sed tincidunt massa blandit ipsum interdum tristique cras dictum, lacus eu molestie elementum nulla est auctor. Etiam dan lorem quis ligula elementum porttitor quisem. Duis eget purus urna fusce sed scelerisque ante. Lorem ipsum dolor sit amet consectetur...
+														'.$ar[$i]["description"].'
 													</div>
 													
 														<li class="add-to-cart-form">

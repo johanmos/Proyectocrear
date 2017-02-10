@@ -75,6 +75,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	<script src="assets/js/jquery.tweet.min.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.optionSelect.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+	<script src="assets/js/itemscarro.js" type="text/javascript"></script>
 </head>
 
 <body id="home-market-responsive-shopify-theme" class="index1 template-index">
@@ -415,15 +416,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 														<a href="product.html">
 															<img width="140px" src="<?php echo $row['imagen1']; ?>" alt="Demo Product Sample">
 														</a>
-														<div class="quickview">
-															<div class="product-ajax-cart hidden-xs hidden-sm">
-																<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																	<a href="#quick-shop-modal" class="btn quick_shop">
-																		<i class="fa fa-eye" title="Quick View"></i>																
-																	</a>
-																</div>
-															</div>
-														</div>
+													
 													</div>
 													<div class="rating-star">
 														<span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
@@ -446,9 +439,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
 																<div class="effect-ajax-cart">
 																	<input type="hidden" name="quantity" value="1">
-																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
-																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Buy Now</span>
-																	</button>
+													<?php	print' <button type="button" name="add" onclick="addToCart('.$row['idproducto'].');" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
+																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Cotizar</span>
+																	</button>';?>
 																</div>
 															</form>
 														</li>

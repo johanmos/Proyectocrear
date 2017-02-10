@@ -187,13 +187,13 @@ $result= $link->query($sql);
                             <div class="col-lg-12">
 
                                 <div class="card-box">
-                                <form action="../agregar_Producto/guardarProduto.php" method="POST" enctype="multipart/form-data">
+                                <form action="guardarProduto.php" method="POST" enctype="multipart/form-data">
 
-                                    <input type="text" class="form-control" name="codigo" id="" placeholder="Código">
+                                    <input type="text" class="form-control" required name="codigo" id="" placeholder="Código">
                                     <br>
-                                    <input type="text" class="form-control" name="name1" id="" placeholder="Nombre">
+                                    <input type="text" class="form-control" required name="name1" id="" placeholder="Nombre">
                                     <br>
-                                    <input type="text" class="form-control" name="descripcion" id="" placeholder="Descripción">
+                                    <input type="text" class="form-control" required name="descripcion" id="" placeholder="Descripción">
                                     <br>
                                      <div class="tags-default">
                                         <input type="text" name="colores" value="" data-role="tagsinput" placeholder="Escribe Colores..."/>
@@ -201,11 +201,11 @@ $result= $link->query($sql);
                                     <br>
                                     <input type="text" class="form-control" name="medidas" id="" placeholder="Medidas">
                                     <br>
-                                    <input type="text" class="form-control" name="precio1" id="" placeholder="Precio">
+                                    <input type="text" class="form-control" required name="precio1" id="" placeholder="Precio">
                                     <br>
                                     <input type="text" class="form-control" name="tecnica" id="" placeholder="Técnica de Marca">
                                     <br> 
-                                    <select name="categoria" class="form-control" data-role="tagsinput" placeholder="Escribe Categorías...">
+                                    <select name="categoria" class="form-control"  data-role="tagsinput" placeholder="Escribe Categorías...">
                                         <?php 
                                         if($result->num_rows>0){
                                         while($row=$result->fetch_assoc()){
@@ -214,7 +214,7 @@ $result= $link->query($sql);
                                         ?>                  
                                     </select>                                                         
                                     <br><br>                        
-                                     <input class="form-control" type="file" name="imagen" id="imagen"><br><br>
+                                     <input class="form-control" type="file" required name="imagen" id="imagen"><br><br>
                                      
                                     
                                     

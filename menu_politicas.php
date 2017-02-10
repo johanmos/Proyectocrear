@@ -274,7 +274,7 @@ h4 {
         <div class="container">
 
 <div class="row">
-<center><h4>Nuetras politicas</h4></center><br>
+<center><h4 style="color:red;">Nuetras politicas</h4></center><br>
   <div class="col-xs-6 col-md-3">
     <a style="text-decoration:none" class="thumbnail">
       <img src="http://cdn1.crumina.net/html-seosight/img/info-box6.png" alt="...">
@@ -313,7 +313,7 @@ h4 {
 <hr>
 <br>
 <div class="row">
-<center><h4>Como realizo un pedido?</h4></center><br>
+<center><h4 style="color:red;">Como realizo un pedido?</h4></center><br>
   <div class="service-base col-sm-12 no-padding">
     <div class="col-sm-6 service-block text-center animate-in move-up">
       <br>
@@ -338,7 +338,31 @@ h4 {
     </div> 
 </div>
 <br>
+<br>
 <hr>
+<div class="row">
+<center><h4 style="color: red;">Como realizo una orden de compra?</h4></center><br>
+  <div class="service-base col-sm-12 no-padding">
+    <div class="col-sm-6 service-block text-center animate-in move-up">
+      <br>
+      <p class="centrado">
+      <img src="assets/images/check.png">Despues de realizar la cotización de tus productos 
+      <br> 
+      <img src="assets/images/check.png">Ve al inicio de nuestra página y en la parte inferior dale click en "Descargar formato de cotizacion"
+      <br>
+      <img src="assets/images/check.png">Envía este formato por correo electrónico
+      <br>
+      <img src="assets/images/check.png">Nos pondremos en contacto con tigo para validar tu orden de compra
+      <br>
+      
+    </div>
+    <div class="col-sm-6 service-block text-center animate-in move-up">
+    <br><br>
+    <img src="https://image.freepik.com/free-icon/election-checklist-symbol_318-64494.jpg" width="200px" alt="service">
+    </div>
+    </div> 
+</div>
+<br>
 <br>
 
 

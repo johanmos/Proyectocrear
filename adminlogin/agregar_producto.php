@@ -1,4 +1,7 @@
+<!DOCTYPE html>
+<html>
 <?php 
+require_once('../auth.php');
 require_once('../conexion.php');
 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
                         if(!$link) {
@@ -18,19 +21,17 @@ $result= array();
 $result= $link->query($sql);
 ?>
 
-?><!DOCTYPE html>
-<html>
-	
+?> 
 <!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/form-advanced.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:44:59 GMT -->
 <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-		<meta name="author" content="Coderthemes">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
 
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-		<title>Agregar nuevo Post</title>
+        <title>Agregar nuevo Post</title>
 
         <!-- Plugins css-->
         <link href="assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
@@ -40,11 +41,11 @@ $result= $link->query($sql);
         <link href="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
         <link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
         <link href="assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <link href="assets/plugins/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -75,13 +76,13 @@ $result= $link->query($sql);
 <script type="text/javascript">
     $(":file").filestyle({input: false});
 </script>
-	</head>
+    </head>
 
-	<body class="fixed-left">
+    <body class="fixed-left">
 
-		<!-- Begin page -->
-		<!-- Begin page -->
-		<div id="wrapper">
+        <!-- Begin page -->
+        <!-- Begin page -->
+        <div id="wrapper">
 
             <!-- Top Bar Start -->
             <div class="topbar">
@@ -107,7 +108,7 @@ $result= $link->query($sql);
                                 <span class="clearfix"></span>
                             </div>
 
-                            
+                           
 
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li>
@@ -129,8 +130,7 @@ $result= $link->query($sql);
                                 </li>
 
                                 <li class="dropdown user-box">
-                                  
-
+                                   
                                      <?php include('includes/menulogout.php'); ?>
                                 </li>
                             </ul>
@@ -150,10 +150,10 @@ $result= $link->query($sql);
             <!-- Fin menu lateral -->
 
 
-			<!-- ============================================================== -->
-			<!-- Start right Content here -->
-			<!-- ============================================================== -->
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
                 <script src="../blog/tinymce/plugin/tinymce/js/tinymce/tinymce.min.js"></script>
                 <script>tinymce.init({ selector:'#contenido',height: 500, width: 1080,statusbar: false,menubar: false,plugins: [
                             "advlist autolink autosave link image lists charmap preview hr anchor spellchecker",
@@ -169,11 +169,11 @@ $result= $link->query($sql);
                 </script>
 
             <div class="content-page">
-				<!-- Start content -->
-				<div class="content">
-					<div class="container">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
 
-						<!-- Page-Title -->
+                        <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
                                 
@@ -187,13 +187,14 @@ $result= $link->query($sql);
                             <div class="col-lg-12">
 
                                 <div class="card-box">
-                                <form action="guardarProduto.php" method="POST" enctype="multipart/form-data">
+                                    <form action="../agregar_Producto/guardarProduto.php" method="POST" enctype="multipart/form-data">
 
-                                    <input type="text" class="form-control" required name="codigo" id="" placeholder="Código">
+                                    <input type="text" class="form-control" name="codigo" id="" placeholder="Código">
+
                                     <br>
-                                    <input type="text" class="form-control" required name="name1" id="" placeholder="Nombre">
+                                    <input type="text" class="form-control" name="name1" id="" placeholder="Nombre">
                                     <br>
-                                    <input type="text" class="form-control" required name="descripcion" id="" placeholder="Descripción">
+                                    <input type="text" class="form-control" name="descripcion" id="" placeholder="Descripción">
                                     <br>
                                      <div class="tags-default">
                                         <input type="text" name="colores" value="" data-role="tagsinput" placeholder="Escribe Colores..."/>
@@ -201,11 +202,11 @@ $result= $link->query($sql);
                                     <br>
                                     <input type="text" class="form-control" name="medidas" id="" placeholder="Medidas">
                                     <br>
-                                    <input type="text" class="form-control" required name="precio1" id="" placeholder="Precio">
+                                    <input type="text" class="form-control" name="precio1" id="" placeholder="Precio">
                                     <br>
                                     <input type="text" class="form-control" name="tecnica" id="" placeholder="Técnica de Marca">
                                     <br> 
-                                    <select name="categoria" class="form-control"  data-role="tagsinput" placeholder="Escribe Categorías...">
+                                    <select name="categoria" class="form-control" data-role="tagsinput" placeholder="Escribe Categorías...">
                                         <?php 
                                         if($result->num_rows>0){
                                         while($row=$result->fetch_assoc()){
@@ -213,8 +214,8 @@ $result= $link->query($sql);
                                         }}
                                         ?>                  
                                     </select>                                                         
-                                    <br><br>                        
-                                     <input class="form-control" type="file" required name="imagen" id="imagen"><br><br>
+                                                          
+                                     <input class="form-control" type="file" name="imagen" id="imagen"><br><br>
                                      
                                     
                                     
@@ -346,10 +347,10 @@ $result= $link->query($sql);
         <script src="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
         <script src="assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js" type="text/javascript"></script>
         <script src="assets/plugins/moment/moment.js"></script>
-     	<script src="assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
-     	<script src="assets/plugins/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-     	<script src="assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-     	<script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="assets/plugins/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
         <script src="assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
 
         <!-- App js -->
@@ -400,8 +401,8 @@ $result= $link->query($sql);
                 $(".select2").select2();
 
                 $(".select2-limiting").select2({
-				  placeholder: "Select a state"
-				});
+                  placeholder: "Select a state"
+                });
 
             });
 
@@ -607,7 +608,7 @@ $result= $link->query($sql);
             });
         </script>
 
-	</body>
+    </body>
 
 <!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/form-advanced.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:15 GMT -->
 </html>

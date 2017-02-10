@@ -287,41 +287,121 @@ $idsel=$_GET["id"];
 												
 											</div>
 										</div>
-										<div class="detail-social">
-											<div class="social-sharing">
-												<a target="_blank" href="#" class="share-facebook">
-												<span class="icon icon-facebook" aria-hidden="true"></span>
-												<span class="share-title">Share</span>
-												<span class="share-count">0</span>
-												</a>
-												<a target="_blank" href="#" class="share-twitter">
-												<span class="icon icon-twitter" aria-hidden="true"></span>
-												<span class="share-title">Tweet</span>
-												<span class="share-count">0</span>
-												</a>
-												<a target="_blank" href="#" class="share-pinterest">
-												<span class="icon icon-pinterest" aria-hidden="true"></span>
-												<span class="share-title">Pin it</span>
-												<span class="share-count">0</span>
-												</a>
-												<a target="_blank" href="#" class="share-fancy">
-												<span class="icon icon-fancy" aria-hidden="true"></span>
-												<span class="share-title">Fancy</span>
-												</a>
-												<a target="_blank" href="#" class="share-google">
-												<!-- Cannot get Google+ share count with JS yet -->
-												<span class="icon icon-google" aria-hidden="true"></span>
-												<span class="share-count">+1</span>
-												</a>
-												<a target="_blank" href="#" class="share-email">
-												<i class="fa fa-envelope"></i>
-												</a>
-											</div>
-										</div>
+										
 									</div>
 									
 									<div class="next-prev-button">
 									</div>
+
+								</div>
+							</div>
+							<div class="bh-btm">
+							<div class="grid__item three-quarters bh-left small--one-whole medium--one-whole">
+								<style>
+									.owl-carousel .owl-wrapper-outer
+									{
+										width: 1100px;
+									}
+								</style>
+								<div class="home-products-block bh-products">
+								
+								<!-- Modulo elegir que categoria se muestra en el carrusel inferior -->
+								
+								<?php require_once('conexion.php');
+				                        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+				                        if(!$link) {
+				                            die('Failed to connect to server: ' . mysql_error());       
+				                            }
+				                        
+				                        //Select database
+				                        $db = mysqli_select_db($link,DB_DATABASE);
+				                        if(!$db) {
+				                            die("Unable to select database");
+				                        }
+				                        
+				                        $opcion = "SELECT * FROM vista";
+				                        $vista = $link->query($opcion);
+
+				                        while($v = $vista->fetch_assoc())
+				                        {
+				                        	$view = $v['opcion'];
+				                        	echo $view; echo "hola";
+				                        }
+
+				                    	$query2 = "SELECT * FROM ca WHERE id = '$view'";
+				                    	
+				                        $resultado2 = $link->query($query2);
+				                        while($row2 = $resultado2->fetch_assoc())
+				                        {
+				                        	echo $row2['nombre'];
+				                        	$id = $row2['id']; 
+				                        	echo $id;
+				                ?>
+									<div class="home-products-block-title">
+										<span><?php echo $row2['nombre'];?></span>
+									</div>
+									<div class="home-products-block-content">
+										<div class="home-products-slider">
+										
+				                        <?php 
+
+				                        $query = "SELECT * FROM producto WHERE idcategoria = '$id'";
+				                        $resultado = $link->query($query);
+				                        while($row = $resultado->fetch_assoc()){
+				                        ?>
+
+											<div class="grid__item">
+												<div class="grid__item_wrapper">
+													<div class="grid__image product-image">
+														<a href="product.html">
+															<img width="140px" src="<?php echo $row['imagen1']; ?>" alt="Demo Product Sample">
+														</a>
+													
+													</div>
+													<div class="rating-star">
+														<span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
+															
+															<span class="spr-badge-caption">No reviews </span>
+														</span>
+													</div>
+													<p class="h6 product-title">
+							<a href="<?php echo'product.php?categoria='.$row2['nombre'].'&id='.$row['idproducto'].'' ?>">
+														<?php echo $row['nombre']; ?></a>
+													</p>
+													<p class="product-price">
+														<strong>On Sale</strong>
+														<span class="money" data-currency-usd="$19.99"><?php echo $row['precio'];?></span>
+														<span class="visually-hidden">Regular price</span>
+														<!--<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>-->
+													</p>
+													<ul class="action-button">
+														<li class="add-to-cart-form">
+															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
+																<div class="effect-ajax-cart">
+																	<input type="hidden" name="quantity" value="1">
+													<?php	print' <button type="button" name="add" onclick="addToCart('.$row['idproducto'].');" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
+																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Cotizar</span>
+																	</button>';?>
+																</div>
+															</form>
+														</li>
+														<li class="wishlist">
+															<a class="wish-list btn" href="wish-list.html"><i class="fa fa-heart" title="Wishlist"></i></a>
+														</li>
+														<li class="email">
+															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
+														</li>
+													</ul>
+												</div>
+											</div> 
+											<?php
+                        
+                        }}
+                        
+                        ?>
+											</div> 
+										</div>	
+									</div>											           
 								</div>
 							</div>
 							
@@ -489,6 +569,7 @@ $idsel=$_GET["id"];
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>

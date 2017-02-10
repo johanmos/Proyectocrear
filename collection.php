@@ -261,7 +261,7 @@ $listacategorias2=$listacategorias;
 														
 													</p>
 													<div class="list-mode-description">
-														'.$ar[$i]["description"].'
+														'.$ar[$i]["descripcion"].'
 													</div>
 													
 														<li class="add-to-cart-form">

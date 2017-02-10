@@ -289,24 +289,32 @@
 				<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
 					<a href="index.html" title="Back to the frontpage">Home</a>
 					<span aria-hidden="true">&rsaquo;</span>
-					<span>Store Location  Page</span>
+					<span>Contacto</span>
 				</nav>
-				<h1 class="section-header__title">Store Location  Page</h1>
+				<h1 class="section-header__title">Contacto Crear Tu Publicidad</h1>
 			</div>
 			<div class="wrapper">
 				<div class="grid">
 					<div class="grid__item ">
-						<h1 class="title-heading">Crear Publicidad</h1>
+						<h1 class="title-heading">Crear Tu Publicidad</h1>
 						<div class="page-content">
 							<div class="left-store one-quarter">
+							<?php 
+							$query = "SELECT * FROM informacion";
+			                $resultado = $link->query($query);
+			                while($row = $resultado->fetch_assoc()){
+                			?>
 								<div class="store-1">
 									<ul>
-										<li>5th&amp; columbia - Seattle</li>
-										<li>800 5th Ave</li>
-										<li>Sealtle, WA 98104</li>
-										<li>Phone: 206-623-abc</li>
+										<li><?php echo $row['direccion']; ?></li>
+										<li><?php echo $row['telefono']; ?></li>
+										<li><?php echo $row['email']; ?></li>
+										
 									</ul>
 								</div>
+								<?php
+							}
+								?>
 								
 							</div>
 							<div class="riht-map three-quarters">

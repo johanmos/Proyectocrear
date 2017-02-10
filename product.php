@@ -93,7 +93,7 @@ $idsel=$_GET["id"];
 					
 				</div>
 				<div class="ajaxcart__footer">
-					<div class="grid--full">
+					<!--<div class="grid--full">
 						<div class="grid__item title-total">
 							<p>
 								Subtotal
@@ -104,9 +104,9 @@ $idsel=$_GET["id"];
 								<span class="money" data-currency-usd="$223.00 USD" data-currency="USD"></span>
 							</p>
 						</div>
-					</div>
+					</div>-->
 					<p class="text-center">
-						Shipping &amp; taxes calculated at checkout
+						Para el envío de la cotizacion Presione el Botón!!
 					</p>
 					<button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='cart.php'">
 					VER COTIZACIÓN COMPLETA </button>

@@ -48,7 +48,7 @@ function load () {
 						datos=datos+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'><a href='product.html' class='cart__image'><img src='"+objFinal.imagen1+"' alt='Crear'></a></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div><a href='' onclick='return eliminarItem("+numItem+")'  class='cart__remove'><small><h3>Eliminar</h3></small></a></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td align='left' data-label='Colores'>"+checkboxes+"</td><td data-label='Price'><span class='h3'><span class='money' data-currency-usd=''>"+objFinal.precio+"</span></span></td><td data-label='Quantity'><div class='js-qty'><button type='button' onclick='return restar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--minus icon-fallback-text' data-id='' data-qty='0'><span class='icon icon-minus' aria-hidden='true'></span><span class='fallback-text'>−</span></button><input type='text' id='cantidad"+objFinal.codigo+"' class='js-qty__num' value='1' min='1' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ><button type='button' onclick='return sumar("+objFinal.codigo+", "+objFinal.precio+");' class='js-qty__adjust js-qty__adjust--plus icon-fallback-text' data-id='' data-qty='11'><span class='icon icon-plus' aria-hidden='true'></span><span class='fallback-text'>+</span></button></div></td><td data-label='Total' class='text-center'><span class='h3'><span id='sub"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td></tr>";
 						hidden=hidden+"<tr class='cart__row table__section'><td class='product-name' data-label='Product'><div class='img_item'></div><p  class='product-title'><a href='product.html'>"+objFinal.nombre+"</a></p><div class='variant'><small>"+objFinal.descripcion+"</small></div></td><td data-label='Codigo'><span class='h3'><span class='money' data-currency-usd=''><input readonly='true' style='border: none;' name='codigo"+objFinal.codigo+"' value='"+objFinal.codigo+"'></input></span></span></td><td data-label='Colores'><span class='h3'><span id='colcheckbox"+objFinal.codigo+"' class='money' data-currency-usd=''></span></span></td><td data-label='Quantity'><div class='js-qty'><label id='cantidad2"+objFinal.codigo+"' class='js-qty__num' data-id='' aria-label='quantity' pattern='[0-9]*' name='updates[]' ></label></div></td></tr>";
 						
-						datoslateral=datoslateral+"<div class='ajaxcart__product'><div class='ajaxcart__row' data-line='1'><div class='grid'><div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a><span class='ajaxcart__product-meta'></span></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'></span></div></div></div></div></div></div><br>";
+						datoslateral=datoslateral+"<div class='ajaxcart__product'><div class='ajaxcart__row' data-line='1'><div class='grid'><div class='grid__item one-quarter'><a href='product.html' class='ajaxcart__product-image'><img src='"+objFinal.imagen1+"' alt=''></a></div><div class='grid__item three-quarters'><p><a  href='product.html' class='ajaxcart__product-name'>"+objFinal.nombre+"</a><span class='ajaxcart__product-meta'></span></p><div class='grid--full display-table'><div class='grid__item'><div class='ajaxcart__qty'></div></div><div class='grid__item'><span class='money' data-currency-usd='$34.00 USD' data-currency='USD'>"+objFinal.precio+"</span></div></div></div></div></div></div><br>";
 					cont++;
 					numItem++;
 						}
@@ -69,7 +69,7 @@ function load () {
 
 }
 	function eliminarItem(pos){
-		alert("entro a eliminar: "+pos);
+	
 		sessionStorage.removeItem(pos);
 		contador=parseInt(sessionStorage.getItem("contador"));
     	contador=contador-1;
@@ -143,19 +143,20 @@ function load () {
 		$("#formularioCot").bind("submit",function(){
 			// Capturamnos el boton de envío
         var btnEnviar = $("#btn-cotizar");
-       alert("colores2: "+checkSelected);
+      
        	dat=document.getElementById('tablaH').innerHTML;
        	nombre=document.getElementById('nombreUsuario').value;
        	ciudad=document.getElementById('ciudadUsuario').value;
        	telefono=document.getElementById('telefonoUsuario').value;
        	correo=document.getElementById('correoUsuario').value;
+       	comentarios=document.getElementById('comentarios').value;
       
        	//console.log(":: "+dat);
         $.ajax({
             type: $(this).attr("method"),
             url: $(this).attr("action"),
             //data:$(this).serialize(),
-            data: {dat: dat, nombre: nombre, ciudad: ciudad, telefono: telefono, correo: correo},
+            data: {dat: dat, nombre: nombre, ciudad: ciudad, telefono: telefono, correo: correo, comentarios: comentarios},
             beforeSend: function(){
                 /*
                 * Esta función se ejecuta durante el envió de la petición al

@@ -98,7 +98,7 @@
 					
 				</div>
 				<div class="ajaxcart__footer">
-					<div class="grid--full">
+					<!--<div class="grid--full">
 						<div class="grid__item title-total">
 							<p>
 								Subtotal
@@ -109,14 +109,13 @@
 								<span class="money" data-currency-usd="$223.00 USD" data-currency="USD">$223.00 USD</span>
 							</p>
 						</div>
-					</div>
+					</div>-->
 					<p class="text-center">
-						Shipping &amp; taxes calculated at checkout
+						Para el envío de la cotizacion Presione el Botón!!
 					</p>
 					<button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='cart.html'">
 					VER COTIZACIÓN COMPLETA ? </button>
-					<button type="submit" class="btn btn2 btn--full cart__checkout" name="checkout">
-					Check Out ? </button>
+					
 				</div>
 			</form>
 		</div>
@@ -228,7 +227,7 @@
 					<div class="grid cart__row">
 						<div class="grid__item two-thirds small--one-whole">
 							<label for="CartSpecialInstructions">Comentarios adicionales</label>
-							<textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
+							<textarea id="comentarios" name="note" class="input-full" id="CartSpecialInstructions"></textarea>
 						</div>
 						<!--<div class="grid__item text-right one-third small--one-whole">
 							<p>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   <!DOCTYPE html>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -275,38 +276,30 @@ h4 {
 
 <div class="row">
 <center><h4 style="color:red;">Nuetras politicas</h4></center><br>
+=======
+  <div class="row">
+>>>>>>> origin/master
   <div class="col-xs-6 col-md-3">
-    <a style="text-decoration:none" class="thumbnail">
+    <a href="#" class="thumbnail">
       <img src="http://cdn1.crumina.net/html-seosight/img/info-box6.png" alt="...">
-      <br>
-      <h4 align="center">Hola</h4>
-      <p class="jup" ALIGN="justify">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.</p>
     </a>
   </div>
   <div class="col-xs-6 col-md-3">
-    <a style="text-decoration:none" class="thumbnail">
+    <a href="#" class="thumbnail">
       <img src="http://cdn1.crumina.net/html-seosight/img/info-box6.png" alt="...">
-      <br>
-      <h4 align="center">Hola</h4>
-      <p ALIGN="justify">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.</p>
     </a>
   </div>
   <div class="col-xs-6 col-md-3">
-    <a style="text-decoration:none" class="thumbnail">
+    <a href="#" class="thumbnail">
       <img src="http://cdn1.crumina.net/html-seosight/img/info-box6.png" alt="...">
-      <br>
-      <h4 align="center">Hola</h4>
-      <p ALIGN="justify">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.</p>
     </a>
   </div>
   <div class="col-xs-6 col-md-3">
-    <a style="text-decoration:none" class="thumbnail">
+    <a href="#" class="thumbnail">
       <img src="http://cdn1.crumina.net/html-seosight/img/info-box6.png" alt="...">
-      <br>
-      <h4 align="center">Hola</h4>
-      <p ALIGN="justify">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.</p>
     </a>
   </div>
+<<<<<<< HEAD
   <br>
 </div>
 <br>
@@ -545,11 +538,7 @@ h4 {
     }        
     });
   </script>
+=======
+>>>>>>> origin/master
   
-</body>
-
-
-
-
-
-
+</div>

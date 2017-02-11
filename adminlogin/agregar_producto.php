@@ -30,7 +30,7 @@ $result= $link->query($sql);
 
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <title>Agregar nuevo Post</title>
+        <title>Agregar nuevo Producto</title>
 
         <!-- Plugins css-->
         <link href="assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
@@ -211,7 +211,8 @@ $result= $link->query($sql);
                                             print '<option value="'.$row["nombre"].'" >'.$row["nombre"].'</option>';
                                         }}
                                         ?>                  
-                                    </select>                                                         
+                                    </select>  
+                                    <br>                                                       
                                                           
                                      <input class="form-control" type="file" name="photo1" id="imagen"><br><br>
                                      

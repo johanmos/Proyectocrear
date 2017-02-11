@@ -65,7 +65,11 @@ $sql= "INSERT INTO producto(codigo, nombre, descripcion, precio, medidas, colore
 
 if($link->query($sql)==TRUE){
 //if(mysqli_query($conn,$sql)==TRUE){
-	echo "Guardada satisfactoriamente";
+		print "
+         <center><div class='alert alert-success' role='alert'>
+  <strong>Gracias!</strong> Producto agregado con éxito...!!!</div></center>
+";
+	header( "refresh:1; url = ../adminlogin/ver_todos_productos.php");
 }else{
 	//echo "Error: ".$sql."<br>".mysql_error($conn);
 	echo "Error: ".$sql."<br>".$link->error;

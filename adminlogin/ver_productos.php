@@ -3,9 +3,27 @@
 <?php
     require_once('../auth.php');
     require_once('../conexion.php');
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+                        if(!$link) {
+                            die('Failed to connect to server: ' . mysql_error());       
+                            }
+                        
+                        //Select database
+                        $db = mysqli_select_db($link,DB_DATABASE);
+                        if(!$db) {
+                            die("Unable to select database");
+                        }
+
+
+$sql= "SELECT * FROM ca";
+
+$result= array();
+$result= $link->query($sql);
 
 ?>	
 
+
+<!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/tables-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:21 GMT -->
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +32,7 @@
 
 		<link rel="shortcut icon" href="assets/images/favicon.ico">
 
-		<title>Administrar Categorías</title>
+		<title>Ver productos</title>
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
@@ -74,7 +92,7 @@
                                 <span class="clearfix"></span>
                             </div>
 
-                            
+                           
 
 
                             <ul class="nav navbar-nav navbar-right pull-right">
@@ -97,8 +115,9 @@
                                 </li>
 
                                 <li class="dropdown user-box">
-                                    
-                                    <?php include('includes/menulogout.php'); ?>
+                                  
+
+                                     <?php include('includes/menulogout.php'); ?>
                                 </li>
                             </ul>
 
@@ -111,10 +130,10 @@
 
 
             <!-- ========== Left Sidebar Start ========== -->
+
             <!-- Inicio menu lateral -->
             <?php include('includes/menulateral.php') ?>
             <!-- Fin menu lateral -->
-			
 
 			<!-- ============================================================== -->
 			<!-- Start right Content here -->
@@ -130,17 +149,26 @@
                                 <div class="btn-group pull-right m-t-5 m-b-20">
                                     <button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Opciones </button>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="agregar_nueva_categoria.php">Nueva Categoría</a></li>
+                                        <li><a href="agregar_producto.php">Nuevo producto</a></li>
                                         
                                     </ul>
                                 </div>
-                                <h4 class="page-title">Categorías</h4>
+                                <?php
+
+                                $cat = $_REQUEST['id'];
+                                $query2 = "SELECT * FROM ca WHERE id = '$cat'";
+                                $resultado2 = $link->query($query2);
+                                while($row2 = $resultado2->fetch_assoc()){
+                                     $query = "SELECT * FROM producto WHERE idcategoria = '$cat'";
+                                     $resultado = $link->query($query);
+                                     while($row = $resultado->fetch_assoc()){
+             ?>
+                                <h4 class="page-title">Productos agregados en <i><?php echo $row2['nombre'];?></i></h4>
+                                <?php
+                            }}
+                                ?>
                             
                         <!-- End row -->
-
-                       
-                        <!-- end row -->
-
 
                         <div class="row">
                             <div class="col-lg-12">
@@ -154,48 +182,58 @@
                                         <table class="table m-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Imagen</th>
-                                                    <th>Titulo</th>
-                                                    
-                                                    <th>Opción 1</th>
-                                                    <th>Opción 2</th>
-                                                    <th>Opción 3</th>
+                                                    <th>Imagen</th>                                             
+                                                    <th>Código</th>
+                                                    <th>Nombre</th>
+                                                    <th>Descripción</th>                                        
+                                                    <th>Colores</th>
+                                                    <th>Medidas</th>
+                                                    <th>Precio</th>
+                                                    <th>Tecnica</th>
+                                                    <th>Categoria</th>
+                                                    <th>Op 1</th>
+                                                    <th>Op 2</th>
+                                                   
                                                     
                                                 </tr>
                                             </thead>
 
                                             
 <?php
+   
+        $cat = $_REQUEST['id'];
+        $query2 = "SELECT * FROM ca WHERE id = '$cat'";
+        $resultado2 = $link->query($query2);
+        while($row2 = $resultado2->fetch_assoc()){
+             $query = "SELECT * FROM producto WHERE idcategoria = '$cat'";
+             $resultado = $link->query($query);
+             while($row = $resultado->fetch_assoc()){
+?>
+    <tbody>
+    <tr>
         
-                        $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
-                        if(!$link) {
-                            die('Failed to connect to server: ' . mysql_error());       
-                            }
-                        
-                        //Select database
-                        $db = mysqli_select_db($link,DB_DATABASE);
-                        if(!$db) {
-                            die("Unable to select database");
-                        }
-                        
-                        $query = "SELECT * FROM ca";
-                        $resultado = $link->query($query);
-                        while($row = $resultado->fetch_assoc()){
-                        ?>
-                        <tbody>
-                        <tr>
-                            <td><?php echo $row['nombre']; ?></td>
-                            <td><img width="70px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>"/></td>
-                            <th><a href="modificar_categoria.php?id=<?php echo $row['id'];?>">Modificar</a></th>
-                            <th><a href="eliminar_categoria.php?id=<?php echo $row['id'];?>">Eliminar</a></th>
-                            <th><a href="ver_productos.php?id=<?php echo $row['id'];?>">Ver Productos</a></th>
-                        </tr>
-                        </tbody>
-                        <?php
-                        
-                        }
-                        
-                        ?>
+        <td><img width="100px" src="<?php echo "../".$row['imagen1']; ?>"></td>
+        <td><?php echo $row['codigo'];?></td>
+        <td><?php echo $row['nombre'];?></td>
+        <td><?php echo $row['descripcion'];?></td>
+        <td><?php echo $row['colores'];?></td>
+        <td><?php echo $row['medidas'];?></td>
+        <td><?php echo $row['precio'];?></td>
+        <td><?php echo $row['tecnicamarca'];?></td>
+        <td><?php echo $row2['nombre'];?></td>
+
+        
+
+        
+        <td><a href="ads_inicial_modificar_imagenes.php?id=<?php echo $f['id'];?>">Modificar</a></td>
+        <td><a href="ads_inicial_eliminar_imagenes.php?id=<?php echo $f['id'];?>">Eliminar</a></td>
+        
+        
+    </tr>
+    </tbody>
+    <?php
+    }}
+    ?>
 
 
 
@@ -208,6 +246,18 @@
 
                         </div>
                         <!-- end row -->
+
+                        <!--imagen 2 pequeña -->
+
+                         <div class="row">
+                            <div class="col-sm-12">
+                                
+                        
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
 
 
                        
@@ -327,5 +377,5 @@
 
 	</body>
 
-
+<!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/tables-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:45:21 GMT -->
 </html>

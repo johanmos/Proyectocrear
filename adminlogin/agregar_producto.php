@@ -21,7 +21,6 @@ $result= array();
 $result= $link->query($sql);
 ?>
 
-?> 
 <!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/form-advanced.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:44:59 GMT -->
 <head>
         <meta charset="utf-8">

@@ -27,6 +27,7 @@
 	<meta charset="utf-8">
 	<title>Acceso denegado</title>
 	<!-- Font ================================================== -->
+	<link rel="shortcut icon" href="adminlogin/assets/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"> 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700">
 	<!-- Helpers ================================================== -->

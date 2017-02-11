@@ -21,6 +21,7 @@ $listacategorias2=$listacategorias;
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"> 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700">
 	<!-- Helpers ================================================== -->
+	<link rel="shortcut icon" href="adminlogin/assets/images/favicon.ico">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Home Market - Responsive HTML5 theme">
 	<meta property="og:image" content="../../assets/images/logo.html">

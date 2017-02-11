@@ -1,18 +1,6 @@
 <?php
 
-//$codigo=$_POST["nombre"];
-//echo "este es codigo obtenido: ".$codigo;
-/*
 
-$codigo = addslashes(htmlspecialchars($_POST["codigo"]));
-$textarea = addslashes(htmlspecialchars($_POST["textarea"]));
-echo " ciudad: ".$ciudad;
-
-echo " nombre: ".$correo;
-
-echo " codigo: ".$textarea;*/
-//$nombre = addslashes(htmlspecialchars($_POST["apellido"]));
-//echo "el apellido es: ".$nombre;
 
 $tabla=$_POST["dat"];
 $ciudad = $_POST["ciudad"];

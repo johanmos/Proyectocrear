@@ -193,7 +193,7 @@
 				<h1 class="section-header__title">Shopping Cart</h1>
 			</div>
 			<div class="wrapper">
-				<form id="formularioCot" action="correoPrueba.php" method="post" novalidate="" class="cart table-wrap">
+				<form id="formularioCot" action="envioCorreo.php" method="post" novalidate="" class="cart table-wrap">
 					
 					<table id="tablatotal" class='cart-table full table--responsive'>
 						<thead class='cart__row cart__header-labels'>

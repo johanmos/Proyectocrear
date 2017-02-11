@@ -56,7 +56,7 @@
 			exit();
 		}else {
 			//Login failed
-			header("location: login-form2.php");
+			header("location: index.php");
 			exit();
 		}
 	}else {

@@ -1,7 +1,7 @@
 <div class="grid__item footer_newsletter">
 				<div class="wrapper">
 					<h3><i class="fa fa-envelope"></i> Subscribete a nuestro boletín de noticias</h3>
-					<form action="emails/guardaremails.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+					<form action="../emails/guardaremails.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
 						<input type="email" value="" placeholder="Ingresa tu Email aquí ..." name="email" id="mail" class="input-group-field" aria-label="email@example.com">
 						<span class="input-group-btn">
 						<input type="submit" class="btn" name="subscribe" id="subscribe" value="Enviar">
@@ -45,7 +45,7 @@
 							</div>
 							<!-- archivo cotizacion -->
 							 <?php
-							require_once('conexion.php');
+							require_once('../conexion.php');
 							 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 							        if(!$link) {
 							        die('Failed to connect to server: ' . mysql_error());       
@@ -139,7 +139,7 @@
 								</a>
 								<div id="loginBox" class="loginLightbox" style="display:none;">
 									<div id="lightboxlogin">
-										<form method="post" action="login-exec.php" id="customer_login" accept-charset="UTF-8">
+										<form method="post" action="../login-exec.php" id="customer_login" accept-charset="UTF-8">
 											<input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="✓">
 											<div id="bodyBox">
 												<h3>Login</h3>
@@ -147,7 +147,7 @@
 												<input type="text" name="login" id="login" class="input-full" placeholder="Username">
 												<label for="CustomerPassword" class="hidden-label">Password</label>
 												<input type="password" value="" name="password" id="password" class="input-full" placeholder="Password">
-												<input type="submit" class="btn btn2 btn--full" value="Ingresar">
+												<input type="submit" class="btn btn2 btn--full" value="Sign In">
 												
 											</div>
 										</form>

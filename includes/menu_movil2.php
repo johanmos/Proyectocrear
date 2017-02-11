@@ -1,6 +1,6 @@
 <ul class="mobile-nav">
 			<li class="mobile-nav__item mobile-nav__item--active">
-				<a href="index.php" class="mobile-nav__link">Home</a>
+				<a href="../index.php" class="mobile-nav__link">Home</a>
 			</li>
 
 			<?php 
@@ -14,7 +14,7 @@
 									print '
 			
 			<li class="mobile-nav__item">
-			<a href="'.$row["url"].'" id="customer_register_link">'.$row["titulo"].'</a>
+			<a href="../'.$row["url"].'" id="customer_register_link">'.$row["titulo"].'</a>
 			</li>
 
 			';}?>

@@ -344,7 +344,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 									<li>
 										<div>
 											<img width="20px" src="pub_inicial/Subir/Imagenes/<?php echo $f['Imagen']; ?>">
-											<span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'"><?php echo $f['Nombre'];?></a></span>
+											<span class="cr-title"><a><?php echo $f['Nombre'];?></a></span>
 											<span class="cr-desc"><?php echo $f['descripcion'];?></span>
 										</div>
 									</li>
@@ -413,7 +413,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 											<div class="grid__item">
 												<div class="grid__item_wrapper">
 													<div class="grid__image product-image">
-														<a href="product.html">
+														<a href="<?php echo'product.php?categoria='.$row2['nombre'].'&id='.$row['idproducto'].'' ?>">
 															<img width="140px" src="<?php echo $row['imagen1']; ?>" alt="Demo Product Sample">
 														</a>
 													

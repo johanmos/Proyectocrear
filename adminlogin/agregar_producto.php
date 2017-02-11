@@ -187,7 +187,7 @@ $result= $link->query($sql);
                             <div class="col-lg-12">
 
                                 <div class="card-box">
-                                    <form action="../agregar_Producto/guardarProduto.php" method="POST" enctype="multipart/form-data">
+                                    <form action="../agregar_Producto/guardarProducto.php" method="POST" enctype="multipart/form-data">
 
                                     <input type="text" class="form-control" name="codigo" id="" placeholder="Código">
 

@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
-<?php
-session_start();
-?>
+
 <!-- Mirrored from demo.tadathemes.com/HTML_Homemarket/demo/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2016 17:19:35 GMT -->
 <?php
-					require_once('../conexion.php');
+					require_once('conexion.php');
 				
 							
 						$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
@@ -77,7 +75,7 @@ session_start();
 			</div>
 		</div>
 		<!-- begin mobile-nav -->
-		<?php include('../includes/menu_movil2.php'); ?>
+		<?php include('../includes/menu_movil.php'); ?>
 	</div>
 	
 	<div id="CartDrawer" class="drawer drawer--right fancybox-margin">
@@ -243,13 +241,45 @@ session_start();
 		</div>
 	
 		<!-- Top Other -->
-		<?php include('../includes/top_info2.php'); ?> 
+		<div id="top-header" class="grid--full grid--table">
+			<div class="wrapper">
+				<div id="topother-header" class="grid--full grid--table">
+					<div class="grid__item one-half top-header-left">
+						 Default Welcome Msg!
+					</div>
+					<div class="grid__item one-half top-header-right">
+						<div class="currency-picker">
+							<label class="currency-picker__wrapper">
+							<span class="currency-picker__label">Currency</span>
+							<select class="currency-picker" name="currencies" style="display: inline; width: auto; vertical-align: inherit;">
+								<option value="USD" selected="selected">USD</option>
+								<option value="INR">INR</option>
+								<option value="GBP">GBP</option>
+								<option value="CAD">CAD</option>
+								<option value="AUD">AUD</option>
+								<option value="EUR">EUR</option>
+								<option value="JPY">JPY</option>
+							</select>
+							</label>
+						</div>
+						<div class="fi-content inline-list social-icons">
+							<a href="#" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
+							<a href="#" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
+							<a href="#" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
+							<a href="#" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
+							<a href="#" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
+							<a href="#" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- Main Header -->
 		<header class="site-header">
 			<div class="wrapper">
 				<div id="main-header" class="grid--full grid--table">
-					<?php include('../includes/logo2.php'); ?>
+					<?php include('../includes/logo.php'); ?>
 					<div class="grid__item small--one-whole medium--one-whole four-eighths mobile-bottom">
 						<div class="large--hide medium-down--show navigation-icon">
 							<div class="grid">
@@ -263,7 +293,7 @@ session_start();
 								</div>
 							</div>
 						</div>
-						<?php include('../includes/busqueda2.php'); ?>
+						<?php include('../includes/busqueda.php'); ?>
 						<div class="large--hide medium-down--show navigation-cart">
 							<div class="grid__item text-right">
 								<div class="site-nav--mobile">
@@ -277,7 +307,7 @@ session_start();
 							</div>
 						</div>
 					</div>
-					<?php include('../includes/options_header2.php'); ?>
+					<?php include('../includes/options_header.php'); ?>
 				</div>       
 			</div>
 		</header>
@@ -287,7 +317,7 @@ session_start();
 			<div class="wrapper">
 				<div class="medium-down--hide">
 					<!-- begin site-nav -->
-					<?php include('../includes/menu_principal2.php'); ?>
+					<?php include('../includes/menu_principal.php'); ?>
 					<script>
 						  $(window).ready(function($) {
 							//$('.megamenu__dropdown').css("width",$('#main-header').innerWidth());
@@ -305,9 +335,9 @@ session_start();
 				<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
 					<a href="index.html" title="Back to the frontpage">Home</a>
 					<span aria-hidden="true">&rsaquo;</span>
-					<span>Blog</span>
+					<span>Blog Page</span>
 				</nav>
-				<h1 class="section-header__title">Blog Crear Tu Publicidad</h1>
+				<h1 class="section-header__title">Blog (News)</h1>
 			</div>
 			<div class="wrapper">
 				<div class="grid--rev">
@@ -392,7 +422,7 @@ require_once('../conexion.php');
 			</div>
 		</main>
 		<footer class="site-footer">       
-			<?php include('../includes/info_footer2.php'); ?>
+			<?php include('../includes/info_footer.php'); ?>
 			
 			
 			

@@ -2,8 +2,25 @@
 <html>
 <?php
     require_once('../auth.php');
+    require_once('../conexion.php');
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+                        if(!$link) {
+                            die('Failed to connect to server: ' . mysql_error());       
+                            }
+                        
+                        //Select database
+                        $db = mysqli_select_db($link,DB_DATABASE);
+                        if(!$db) {
+                            die("Unable to select database");
+                        }
 
-?>	
+
+$sql= "SELECT * FROM ca";
+
+$result= array();
+$result= $link->query($sql);
+
+?> 
 <!-- Mirrored from coderthemes.com/flacto_1.3/light_red_2_light/form-advanced.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Dec 2016 00:44:59 GMT -->
 <head>
 		<meta charset="utf-8">
@@ -70,11 +87,10 @@
             <div class="topbar">
 
                 <!-- LOGO -->
-                <div class="topbar-left">
+               <div class="topbar-left">
                     <div class="text-center">
-                        <a href="index-2.html" class="logo">
-                            <i class="zmdi zmdi-toys icon-c-logo"></i><span>Flac<span>to</span></span>
-                            <!--<span><img src="assets/images/logo.png" alt="logo" style="height: 20px;"></span>-->
+                        <a href="index.php" class="logo">                        
+                           <?php include('includes/logoinclude.php');?>
                         </a>
                     </div>
                 </div>
@@ -151,17 +167,7 @@
                 });
                 </script>
             <?php
-                require_once('../conexion.php');
-                $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
-                if(!$link) {
-                die('Failed to connect to server: ' . mysql_error());       
-                }
-                        
-                //Select database
-                $db = mysqli_select_db($link,DB_DATABASE);
-                if(!$db) {
-                die("Unable to select database");
-                }
+                
                         
                 $query = "SELECT * FROM informacion";
                 $resultado = $link->query($query);

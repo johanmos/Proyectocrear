@@ -7,6 +7,12 @@
 
                         	<li class="text-muted menu-title">Menu Navegación</li>
 
+
+
+                            <li class="has_sub">
+                                <a href="agregar_producto.php" class="waves-effect"><i class="zmdi zmdi-crop"></i> <span> Agregar Producto </span> <span class="menu-arrow"></span></a>                              
+                            </li>
+
                             <li class="has_sub">
                                 <a href="administrar_categorias.php" class="waves-effect"><i class="zmdi zmdi-view-dashboard""></i> <span> Categorias </span> <span class="menu-arrow"></span> </a>                               
                             </li>

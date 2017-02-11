@@ -88,11 +88,10 @@ $result= $link->query($sql);
             <div class="topbar">
 
                 <!-- LOGO -->
-                <div class="topbar-left">
+               <div class="topbar-left">
                     <div class="text-center">
-                        <a href="index-2.html" class="logo">
-                            <i class="zmdi zmdi-toys icon-c-logo"></i><span>Flac<span>to</span></span>
-                            <!--<span><img src="assets/images/logo.png" alt="logo" style="height: 20px;"></span>-->
+                        <a href="index.php" class="logo">                        
+                           <?php include('includes/logoinclude.php');?>
                         </a>
                     </div>
                 </div>

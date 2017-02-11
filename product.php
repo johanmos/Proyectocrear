@@ -13,7 +13,7 @@ $categoria=$_REQUEST["categoria"];
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Product Detail Page - Home Market Red</title>
+	<title>Productos</title>
 	<!-- Font ================================================== -->
 	<link rel="shortcut icon" href="adminlogin/assets/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"> 

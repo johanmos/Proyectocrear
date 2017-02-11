@@ -41,7 +41,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Home Market - Responsive HTML5 theme – Red version</title>
+	<title>Categoria</title>
 	<!-- Font ================================================== -->
 	<link rel="shortcut icon" href="adminlogin/assets/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"> 

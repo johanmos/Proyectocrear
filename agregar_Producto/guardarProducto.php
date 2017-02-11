@@ -61,7 +61,7 @@ if (move_uploaded_file($_FILES['photo1']['tmp_name'], $direccionimagen)) {
 $data4=date("Y-m-d-G-i-s");
 
 //$photo2=mysql_real_escape_string($photo2);
-$sql= "INSERT INTO producto(codigo, nombre, descripcion, precio, medidas, colores, tecnicamarca, fechaingreso, imagen, idcategoria) VALUES ('$codigo', $name2', '$descripcion2', '$precio2', '$medida','$colores', '$tecnica', '$data4', '$direccionimagen2', '$idc[0]')";
+$sql= "INSERT INTO producto(codigo, nombre, descripcion, precio, medidas, colores, tecnicamarca, fechaingreso, imagen1, idcategoria) VALUES ('$codigo', '$name2', '$descripcion2', '$precio2', '$medida','$colores', '$tecnica', '$data4', '$direccionimagen2', '$idc[0]')";
 
 if($link->query($sql)==TRUE){
 //if(mysqli_query($conn,$sql)==TRUE){

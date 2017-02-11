@@ -302,7 +302,7 @@ $listacategorias2=$listacategorias;
 										<div class="element full_width" data-animate="fadeInUp" data-delay="0">
 											<div class="grid__item large--one-quarter medium--one-half">
 												<?php 
-						                        $queryprod = "SELECT * FROM producto limit 4";
+						                        $queryprod = "SELECT * FROM producto ORDER BY idproducto DESC limit 4";
 						                        $resultado = $link->query($queryprod);
 						                        while($prod = $resultado->fetch_assoc()){
 						                        	$idp=$prod["idcategoria"];

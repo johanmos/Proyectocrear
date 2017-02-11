@@ -213,7 +213,7 @@ $result= $link->query($sql);
                                         ?>                  
                                     </select>                                                         
                                                           
-                                     <input class="form-control" type="file" name="imagen" id="imagen"><br><br>
+                                     <input class="form-control" type="file" name="photo1" id="imagen"><br><br>
                                      
                                     
                                     

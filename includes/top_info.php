@@ -2,7 +2,7 @@
 			<div class="wrapper">
 				<div id="topother-header" class="grid--full grid--table">
 					<div class="grid__item one-half top-header-left">
-						 Crear Publicidad 2016  
+						 Crear Publicidad 2017  
 						<?php 
 
                   if(isset($_SESSION['SESS_LOGIN']))

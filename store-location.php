@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 
 <!-- Mirrored from demo.tadathemes.com/HTML_Homemarket/demo/store-location.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2016 17:20:20 GMT -->
@@ -292,43 +295,79 @@
 					<span aria-hidden="true">&rsaquo;</span>
 					<span>Contacto</span>
 				</nav>
-				<h1 class="section-header__title">Contacto Crear Tu Publicidad</h1>
+				<h1 class="section-header__title">Contactanos</h1>
 			</div>
 			<div class="wrapper">
 				<div class="grid">
-					<div class="grid__item ">
-						<h1 class="title-heading">Crear Tu Publicidad</h1>
-						<div class="page-content">
-							<div class="left-store one-quarter">
-							<?php 
-							$query = "SELECT * FROM informacion";
-			                $resultado = $link->query($query);
-			                while($row = $resultado->fetch_assoc()){
-                			?>
-								<div class="store-1">
-									<ul>
-										<li><?php echo $row['direccion']; ?></li>
-										<li><?php echo $row['telefono']; ?></li>
-										<li><?php echo $row['email']; ?></li>
-										
-									</ul>
-								</div>
-								<?php
-							}
-								?>
-								
+					<div class="grid__item">
+						<div class="grid__item one-half small--one-whole medium--one-whole">
+							<div class="title-heading">
+								Donde estamos?
 							</div>
-							<div class="riht-map three-quarters">
-								
-										<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15944.612225824454!2d-76.60083325!3d2.4561051000000003!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1486071730422" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>									
-										
+							<div class="page-contact">
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15944.612225824454!2d-76.60083325!3d2.4561051000000003!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1486071730422" width="560" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>	
 								</div>
+								<ul>
+								<?php 
+								$query = "SELECT * FROM informacion";
+			                	$resultado = $link->query($query);
+			                	while($row = $resultado->fetch_assoc()){
+			                	?>
+									<li class="address">
+									<i class="fa fa-street-view"></i> Dirección <?php echo $row['direccion']; ?></li>
+									<li class="email">
+									<i class="fa fa-envelope-o"></i> Email: <?php echo $row['email']; ?></li>
+									<li class="phone">
+									<i class="fa fa-phone"></i> Telefono: <?php echo $row['telefono']; ?></li>
+								<?php } ?>
+								</ul>
+							</div>
+						</div>
+						<div class="form-vertical grid__item one-half small--one-whole medium--one-whole">
+							<div class="title-heading">
+								Dejanos un mensaje
+							</div>
+							<div class="page-contact">
+								<form method="post" action="# id="contact_form" class="contact-form" accept-charset="UTF-8">
+									<input type="hidden" value="contact" name="form_type"><input type="hidden" name="utf8" value="✓">
+									<label for="ContactFormName" class="hidden-label">Nombre</label>
+									<input type="text" id="ContactFormName" class="input-full" name="nombre" placeholder="Nombre" autocapitalize="words" value="">
+
+									<label for="ContactFormEmail" class="hidden-label">Email</label>
+									<input type="email" id="ContactFormEmail" class="input-full" name="email" placeholder="Email" autocorrect="off" autocapitalize="off" value="">
+
+									<label for="ContactFormPhone" class="hidden-label">Telefono</label>
+									<input type="tel" id="ContactFormPhone" class="input-full" name="telefono" placeholder="Telefono" pattern="[0-9\-]*" value="">
+
+									<label for="ContactFormMessage" class="hidden-label">Mensaje</label>
+									<textarea rows="10" id="ContactFormMessage" class="input-full" name="mensaje" placeholder="Mensaje"></textarea>
+									<input type="submit" class="btn right" value="Enviar">
+								</form>
+								<br>
+								<ul>
+								<?php 
+								$query = "SELECT * FROM informacion";
+			                	$resultado = $link->query($query);
+			                	while($row = $resultado->fetch_assoc()){
+			                	?>
+									<li class="address">
+									<i class="fa fa-facebook"><a href="<?php echo "http://".$row['facebook'].""; ?>"></i><?php echo $row['facebook']; ?></li></a>
+									<li class="address">
+									<i class="fa fa-twitter"><a href="<?php echo "http://".$row['twitter'].""; ?>"></i><?php echo $row['twitter']; ?></li></a>
+									<li class="address">
+									<i class="fa fa-pinterest"><a href="<?php echo "http://".$row['pinterest'].""; ?>"></i><?php echo $row['pinterest']; ?></li></a>
+									
+								<?php } ?>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</main>
+
+
 		<footer class="site-footer">       
 			<?php include('includes/info_footer.php');?>
 			

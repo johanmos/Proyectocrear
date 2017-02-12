@@ -153,20 +153,29 @@ $result= $link->query($sql);
                                         
                                     </ul>
                                 </div>
-                                <?php
+                                
+                                <h4 class="page-title">Productos agregados en <i>
+<?php
 
                                 $cat = $_REQUEST['id'];
                                 $query2 = "SELECT * FROM ca WHERE id = '$cat'";
                                 $resultado2 = $link->query($query2);
                                 while($row2 = $resultado2->fetch_assoc()){
-                                     $query = "SELECT * FROM producto WHERE idcategoria = '$cat'";
-                                     $resultado = $link->query($query);
-                                     while($row = $resultado->fetch_assoc()){
-             ?>
-                                <h4 class="page-title">Productos agregados en <i><?php echo $row2['nombre'];?></i></h4>
-                                <?php
-                            }}
+                                
+                                        
+             
+                                echo $row2['nombre']; 
+  }
                                 ?>
+                                </i>
+
+ 
+                          
+                                </h4>
+
+
+
+                               
                             
                         <!-- End row -->
 
@@ -205,7 +214,7 @@ $result= $link->query($sql);
         $query2 = "SELECT * FROM ca WHERE id = '$cat'";
         $resultado2 = $link->query($query2);
         while($row2 = $resultado2->fetch_assoc()){
-             $query = "SELECT * FROM producto WHERE idcategoria = '$cat'";
+             $query = "SELECT * FROM producto WHERE idcategoria = '$cat' ORDER BY idproducto DESC";
              $resultado = $link->query($query);
              while($row = $resultado->fetch_assoc()){
 ?>
@@ -226,7 +235,7 @@ $result= $link->query($sql);
 
         
         <td><a href="ads_inicial_modificar_imagenes.php?id=<?php echo $f['id'];?>">Modificar</a></td>
-        <td><a href="ads_inicial_eliminar_imagenes.php?id=<?php echo $f['id'];?>">Eliminar</a></td>
+        <td><a href="../agregar_producto/eliminarProducto.php?id=<?php echo $row['idproducto'];?>">Eliminar</a></td>
         
         
     </tr>

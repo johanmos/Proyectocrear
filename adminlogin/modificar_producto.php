@@ -197,7 +197,7 @@ $result= $link->query($sql);
                                         while($res=$productomod->fetch_assoc()){
                                     ?>
 
-                                    <form action="../crud_producto/modificarProducto.php?id=<?php echo $res['idproducto'];?>" method="POST" enctype="multipart/form-data">
+                                    <form action="../crud_producto/modificarProducto.php?id=<?php echo $res['idproducto'];?>" method="POST">
 
                                     <input type="text" class="form-control"required name="codigo" id="" placeholder="Código" value="<?php echo $res['codigo'];?>">
 
@@ -216,6 +216,7 @@ $result= $link->query($sql);
                                     <br>
                                     <input type="text" class="form-control" required name="tecnica" id="" placeholder="Técnica de Marca" value="<?php echo $res['tecnicamarca'];?>">
                                     <br> 
+
                                     <select name="categoria" class="form-control" data-role="tagsinput" placeholder="Escribe Categorías...">
                                         <?php 
                                         if($result->num_rows>0){
@@ -224,14 +225,26 @@ $result= $link->query($sql);
                                         }}
                                         ?>                  
                                     </select>                                                         
-                                                          
-                                     <input class="form-control" type="file" required name="photo1" id="imagen"><br><br>
-                                     <input type="hidden" name="imagenAborrar" value="<?php echo $res['imagen1'];?>"><br><br>
+                                    <br>
                                      
                                     
                                     
                                     <br><input type="submit" class="btn btn-danger" value="Actualizar Producto">
                                 </form>
+                                <br><br>
+
+                                <h5>Imagen actual</h5>
+                                <img src="<?php echo "../".$res['imagen1']; ?>" width="300px">
+                
+                                <form action="../crud_producto/modificarProductoimagen.php?id=<?php echo $res['idproducto'];?>" method="POST" enctype="multipart/form-data">               
+                                     <input class="form-control" type="file" required name="photo1" id="imagen"><br>
+                                     
+                                     <input type="hidden" name="categoria" value="<?php echo $res['idcategoria'];?>">
+
+                                     <input type="hidden" name="categorianombre" value="<?php echo $row['nombre'];?>">
+                                     <input type="submit" class="btn btn-danger" value="Actualizar Imagen">
+                                </form>
+
                                    <?php }}?> 
                                     
                                 </div>

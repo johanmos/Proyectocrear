@@ -213,8 +213,8 @@ $result= $link->query($sql);
         
 
         
-        <td><a href="ads_inicial_modificar_imagenes.php?id=<?php echo $f['id'];?>">Modificar</a></td>
-        <td><a href="ads_inicial_eliminar_imagenes.php?id=<?php echo $f['id'];?>">Eliminar</a></td>
+        <td><a href="modificar_producto.php?id=<?php echo $row['idproducto'];?>"">Modificar</a></td>
+        <td><a href="../agregar_producto/eliminarProducto.php?id=<?php echo $row['idproducto'];?>">Eliminar</a></td>
         
         
     </tr>

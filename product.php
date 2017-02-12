@@ -1,11 +1,16 @@
 <?php 
-
+require_once('auth.php');
 include_once("collectionLogic.php");
 $idsel=$_GET["id"];
 $categoria=$_REQUEST["categoria"];
 
 				
 ?>
+
+<!--Start of Zendesk Chat Script-->
+<?php include('includes/chat.php'); ?>
+<!--End of Zendesk Chat Script-->
+
 <!DOCTYPE html>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 

@@ -1,6 +1,6 @@
 <div class="grid__item small--one-whole medium--one-whole two-eighths">
 						<h1 class="site-header__logo large--left" itemscope="" itemtype="http://schema.org/Organization">
-						<a href="index.html" itemprop="url" class="site-header__logo-link">
+						<a href="index.php" itemprop="url" class="site-header__logo-link">
 						 <?php
 					         $re=mysqli_query($link,"select * from logo")or die();
 					        while ($f=mysqli_fetch_array($re)) {

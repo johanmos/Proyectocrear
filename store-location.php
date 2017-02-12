@@ -2,6 +2,7 @@
 <?php
 session_start();
 ?>
+<?php include('includes/chat.php'); ?>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 
 <!-- Mirrored from demo.tadathemes.com/HTML_Homemarket/demo/store-location.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2016 17:20:20 GMT -->

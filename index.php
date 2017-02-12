@@ -4,13 +4,7 @@ session_start();
 ?>
 <!-- chat -->
 <!--Start of Zendesk Chat Script-->
-<script type="text/javascript">
-window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-$.src="https://v2.zopim.com/?30xIyeACRZ5LdQ3jTn9NLphLIls3j8zr";z.t=+new Date;$.
-type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-</script>
+<?php include('includes/chat.php'); ?>
 <!--End of Zendesk Chat Script-->
 <!-- chat fin -->
 </style>
@@ -372,7 +366,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				                        while($v = $vista->fetch_assoc())
 				                        {
 				                        	$view = $v['opcion'];
-				                        	echo $view; echo "hola";
+				                        	
 				                        }
 
 				                    	$query2 = "SELECT * FROM ca WHERE id = '$view'";
@@ -380,9 +374,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				                        $resultado2 = $link->query($query2);
 				                        while($row2 = $resultado2->fetch_assoc())
 				                        {
-				                        	echo $row2['nombre'];
+				                        	
 				                        	$id = $row2['id']; 
-				                        	echo $id;
+				                        	
 				                ?>
 									<div class="home-products-block-title">
 										<span><?php echo $row2['nombre'];?></span>

@@ -4,6 +4,8 @@
 <?php
 session_start();
 ?>
+
+<?php include('includes/chat.php'); ?>
 <!-- chat -->
 <!--Start of Zendesk Chat Script-->
 <script type="text/javascript">

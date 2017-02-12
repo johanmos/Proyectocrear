@@ -1,9 +1,15 @@
 <?php 
+ require_once('auth.php');
 include_once("collectionLogic.php");
 include_once("listacategorias.php"); 
 $listacategorias2=$listacategorias;
 
 ?>
+
+<!--Start of Zendesk Chat Script-->
+<?php include('includes/chat.php'); ?>
+<!--End of Zendesk Chat Script-->
+
 <!DOCTYPE html>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 
@@ -387,31 +393,7 @@ $listacategorias2=$listacategorias;
 				</div>
 			</div>
 			
-			<div class="grid__item footer_copyright">
-				<div class="wrapper">
-					<div class="grid">
-						<div class="grid__item footer-copyright one-half small--one-whole medium--one-whole small--text-center">
-							<p>
-								© 2015 Home Market Red. All rights Reserved
-							</p>
-						</div>
-						<div class="grid__item footer-payment one-half small--one-whole medium--one-whole small--text-center">
-							<div id="widget-payment">
-								<ul id="payments" class="list-inline animated">
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Visa"><a href="index.html" class="icons visa"><i class="fa fa-cc-visa"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Mastercard"><a href="index.html" class="icons mastercard"><i class="fa fa-cc-mastercard"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="American Express"><a href="index.html" class="icons amex"><i class="fa fa-cc-amex"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Paypal"><a href="index.html" class="icons paypal"><i class="fa fa-cc-paypal"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Google Wallet"><a href="index.html" class="icons gw"><i class="fa fa-google-wallet"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Discover"><a href="index.html" class="icons dsc"><i class="fa fa-cc-discover"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="Diners Club"><a href="index.html" class="icons dc"><i class="fa fa-cc-diners-club"></i></a></li>
-									<li class="tada" data-toggle="tooltip" data-placement="top" title="JCB"><a href="index.html" class="icons jcb"><i class="fa fa-cc-jcb"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			
 			<script type="text/javascript">
 			  $(function () {

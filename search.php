@@ -2,7 +2,7 @@
 <?php
 session_start();
 ?>
-
+<?php include('includes/chat.php'); ?>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
 <?php
 					require_once('conexion.php');
@@ -318,9 +318,10 @@ session_start();
 
 							
 							if($count == 0)
-							{
+							{?><center><?php
 								echo "No hay resultado para la busqueda: <b>".$searchq."</b>";
-								print "<img src='http://www.tatasecondcareer.com/images/page_notfound.png'>";
+								print "<br> <img src='assets/images/noencontrado.png'>";
+								?></center><?php
 							}
 							else
 							{

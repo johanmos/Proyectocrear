@@ -17,17 +17,15 @@ date_default_timezone_set('UTC');
 $id=$_GET["id"];
 
 $photo2=""; 
-$codigo=$_POST["codigo"];
-$nombre=$_POST["name1"];
-$descripcion=$_POST["descripcion"];
-$colores=$_POST["colores"];
-$medida=$_POST["medidas"];
-$precio=$_POST["precio1"];
-$tecnica=$_POST["tecnica"];
-$nombrecategoria=$_POST["categoria"];
 
+$numerocategoria=$_POST["categoria"];
 
+$query2 = "SELECT * FROM ca WHERE id = '$numerocategoria'";
+    $resultado2 = $link->query($query2);
+    while($row2 = $resultado2->fetch_assoc()){
+    	$nombrecategoria = $row2['nombre'];
 
+    }
 
 
 ///////////////Guardar imagen en carpeta y direccion en la BD/////////////////
@@ -60,24 +58,22 @@ $sql1="SELECT id FROM ca WHERE nombre='$nombrecategoria'";
 //$id=arra
 $getid= mysqli_query($link,$sql1);
 $idc=mysqli_fetch_array($getid, MYSQLI_NUM);
-$resultado = $link->query($sql1);
-while($row = $resultado->fetch_assoc()){
-	$idcat = $row['id'];
-}
 
 
 
-$query = "UPDATE producto SET codigo='$codigo', nombre='$nombre', descripcion='$descripcion', precio='$precio', medidas='$medida', colores='$colores', tecnicamarca='$tecnica', fechaingreso='$data4', idcategoria='$idc[0]' WHERE idproducto ='$id'";
+
+$query = "UPDATE producto SET imagen1='$direccionimagen2' WHERE idproducto ='$id'";
 $resultado = $link->query($query);
 
 if($resultado){
-	
+	//header("location: mostrar_menu.php");
 		print "
          <center><div class='alert alert-success' role='alert'>
-  <strong>Gracias!</strong>  Información Modificada...!!! </div></center>
+  <strong>Gracias!</strong>  Imagen Modificada...!!! </div></center>
 ";
-	header( "refresh:1; url = ../adminlogin/ver_productos.php?id=$idcat");
+	header( "refresh:1; url = ../adminlogin/ver_productos.php?id=$numerocategoria");
 }
+
 else
 { 
 echo "no";

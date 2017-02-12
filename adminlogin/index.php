@@ -151,7 +151,7 @@
                                         Panel de administrador - Crear Tu Publicidad
                                         <br>
                                         <br>
-                                        Selecciona en la barra derecha tu opción
+                                        Selecciona en la barra izquierda tu opción
 
 
                                             </div>

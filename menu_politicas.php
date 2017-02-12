@@ -160,21 +160,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
   
   <div id="PageContainer" class="is-moved-by-drawer">
     <!-- Ads Banner -->
-    <div id="adv-banner">
-      <div id="ads-banner" class="grid--full grid--table">
-        <div class="ads-banner-slider owl-carousel">
-          <div class="ads-item">
-            <img src="assets/images/ads1.png" alt="ads banner 1">
-          </div>            
-          <div class="ads-item">
-            <img src="assets/images/ads2.png" alt="ads banner 2">
-          </div>
-          <div class="ads-item">
-            <img src="assets/images/ads3.png" alt="ads banner 3">
-          </div>
-        </div>
-      </div>
-    </div>
+    
   
     <!-- Top Other -->
     <?php 

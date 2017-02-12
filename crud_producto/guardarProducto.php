@@ -31,11 +31,12 @@ $sql1="SELECT id FROM ca WHERE nombre='$nombrecategoria'";
 $getid= mysqli_query($link,$sql1);
 $idc=mysqli_fetch_array($getid, MYSQLI_NUM);
 
-//echo "File:".$_FILES['photo1'];
-if(isset($_FILES['photo1'])&& $_FILES['photo1']['tmp_name']!=""){
-//$imagentype=mime_content_type($_FILES['photo1']);
-//Echo $imagentype;	
+
+
+
 ///////////////Guardar imagen en carpeta y direccion en la BD/////////////////
+
+if(isset($_FILES['photo1'])&& $_FILES['photo1']['tmp_name']!=""){	
 $filename=basename($_FILES['photo1']['name']);
 $tipoimagen=$_FILES['photo1']['type'];
 
@@ -45,12 +46,9 @@ if(!file_exists($ruta)){
 	mkdir($ruta,0777, true);
 }
 
-//$explode=explode(''.$filename);	
-//$exp=$explode[sizeof($explode)-1];
 $direccionimagen=$ruta."/".$filename;
 $direccionimagen2=$ruta2."/".$filename;
-//echo $direccionimagen;
-//echo"<img src='".$direccionimagen."' />";
+
 if (move_uploaded_file($_FILES['photo1']['tmp_name'], $direccionimagen)) {
 	//echo"<img src='".$direccionimagen."' />";
 }

@@ -14,7 +14,8 @@ $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
                             die("Unable to select database");
                         }
 
-
+$idmodificar=$_GET["id"];
+//$idmodificar="31";
 $sql= "SELECT * FROM ca";
 
 $result= array();
@@ -30,7 +31,7 @@ $result= $link->query($sql);
 
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <title>Agregar nuevo Producto</title>
+        <title>Modificar Producto</title>
 
         <!-- Plugins css-->
         <link href="assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
@@ -52,6 +53,7 @@ $result= $link->query($sql);
         <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
 
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -175,7 +177,7 @@ $result= $link->query($sql);
                         <div class="row">
                             <div class="col-sm-12">
                                 
-                                <h4 class="page-title">Añadir un nuevo Producto</h4>
+                                <h4 class="page-title">Modificar Producto</h4>
                             </div>
                         </div>
 
@@ -185,24 +187,34 @@ $result= $link->query($sql);
                             <div class="col-lg-12">
 
                                 <div class="card-box">
-                                    <form action="../crud_psroducto/guardarProducto.php" method="POST" enctype="multipart/form-data">
 
-                                    <input type="text" class="form-control" name="codigo" id="" placeholder="Código">
+                                    <?php 
+                                        $sql7= "SELECT * FROM producto WHERE idproducto='$idmodificar'";
+
+                                         $productomod=array(); 
+                                        $productomod= $link->query($sql7);
+                                        if($productomod->num_rows>0){
+                                        while($res=$productomod->fetch_assoc()){
+                                    ?>
+
+                                    <form action="../crud_producto/modificarProducto.php?id=<?php echo $res['idproducto'];?>" method="POST" enctype="multipart/form-data">
+
+                                    <input type="text" class="form-control"required name="codigo" id="" placeholder="Código" value="<?php echo $res['codigo'];?>">
 
                                     <br>
-                                    <input type="text" class="form-control" name="name1" id="" placeholder="Nombre">
+                                    <input type="text" class="form-control" required name="name1" id="" placeholder="Nombre"  value="<?php echo $res['nombre'];?>">
                                     <br>
-                                    <input type="text" class="form-control" name="descripcion" id="" placeholder="Descripción">
+                                    <input type="text" class="form-control" required name="descripcion" id="" placeholder="Descripción" value="<?php echo $res['descripcion'];?>">
                                     <br>
                                      <div class="tags-default">
-                                        <input type="text" name="colores" value="" data-role="tagsinput" placeholder="Escribe Colores..."/>
+                                        <input type="text" name="colores" required data-role="tagsinput" placeholder="Escribe Colores..." value="<?php echo $res['colores'];?>">
                                     </div>
                                     <br>
-                                    <input type="text" class="form-control" name="medidas" id="" placeholder="Medidas">
+                                    <input type="text" class="form-control" required name="medidas" id="" placeholder="Medidas" value="<?php echo $res['medidas'];?>">
                                     <br>
-                                    <input type="text" class="form-control" name="precio1" id="" placeholder="Precio">
+                                    <input type="text" class="form-control" required name="precio1" id="" placeholder="Precio" value="<?php echo $res['precio'];?>">
                                     <br>
-                                    <input type="text" class="form-control" name="tecnica" id="" placeholder="Técnica de Marca">
+                                    <input type="text" class="form-control" required name="tecnica" id="" placeholder="Técnica de Marca" value="<?php echo $res['tecnicamarca'];?>">
                                     <br> 
                                     <select name="categoria" class="form-control" data-role="tagsinput" placeholder="Escribe Categorías...">
                                         <?php 
@@ -211,16 +223,16 @@ $result= $link->query($sql);
                                             print '<option value="'.$row["nombre"].'" >'.$row["nombre"].'</option>';
                                         }}
                                         ?>                  
-                                    </select>  
-                                    <br>                                                       
+                                    </select>                                                         
                                                           
-                                     <input class="form-control" type="file" name="photo1" id="imagen"><br><br>
+                                     <input class="form-control" type="file" required name="photo1" id="imagen"><br><br>
+                                     <input type="hidden" name="imagenAborrar" value="<?php echo $res['imagen1'];?>"><br><br>
                                      
                                     
                                     
-                                    <br><input type="submit" class="btn btn-danger" value="Guardar Producto Nuevo">
+                                    <br><input type="submit" class="btn btn-danger" value="Actualizar Producto">
                                 </form>
-
+                                   <?php }}?> 
                                     
                                 </div>
                             </div><!-- end col -->

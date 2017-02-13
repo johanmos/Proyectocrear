@@ -1,5 +1,5 @@
 <?php 
-require_once('auth.php');
+
 include_once("collectionLogic.php");
 $idsel=$_GET["id"];
 $categoria=$_REQUEST["categoria"];

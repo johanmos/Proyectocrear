@@ -418,20 +418,10 @@ session_start();
 													<ul class="action-button">
 														<li class="add-to-cart-form">
 															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
-																<div class="effect-ajax-cart">
-																	<input type="hidden" name="quantity" value="1">
-													<?php	print' <button type="button" name="add" onclick="addToCart('.$row['idproducto'].');" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
-																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> Cotizar</span>
-																	</button>';?>
-																</div>
+																
 															</form>
 														</li>
-														<li class="wishlist">
-															<a class="wish-list btn" href="wish-list.html"><i class="fa fa-heart" title="Wishlist"></i></a>
-														</li>
-														<li class="email">
-															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
-														</li>
+														
 													</ul>
 												</div>
 											</div> 

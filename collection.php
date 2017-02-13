@@ -1,5 +1,5 @@
 <?php 
- require_once('auth.php');
+
 include_once("collectionLogic.php");
 include_once("listacategorias.php"); 
 $listacategorias2=$listacategorias;

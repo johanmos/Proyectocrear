@@ -96,7 +96,7 @@ session_start();
 			</div>
 		</div>
 		<div id="CartContainer">
-			<form action="http://demo.tadathemes.com/HTML_Homemarket/demo/cart.html" method="post" novalidate="" class="cart ajaxcart">
+			
 				<div class="ajaxcart__inner">
 					<div class="ajaxcart__product">
 						<div class="ajaxcart__row" data-line="1">
@@ -223,7 +223,7 @@ session_start();
 					<button type="submit" class="btn btn2 btn--full cart__checkout" name="checkout">
 					Check Out ? </button>
 				</div>
-			</form>
+			
 		</div>
 	</div>
 	
@@ -330,7 +330,7 @@ session_start();
 								Dejanos un mensaje
 							</div>
 							<div class="page-contact">
-								<form method="post" action="# id="contact_form" class="contact-form" accept-charset="UTF-8">
+								<form method="post" action="enviarcorreo/enviarcorreocontacto.php" id="contact_form" class="contact-form" accept-charset="UTF-8">
 									<input type="hidden" value="contact" name="form_type"><input type="hidden" name="utf8" value="✓">
 									<label for="ContactFormName" class="hidden-label">Nombre</label>
 									<input type="text" id="ContactFormName" class="input-full" name="nombre" placeholder="Nombre" autocapitalize="words" value="">

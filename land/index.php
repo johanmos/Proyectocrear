@@ -2,6 +2,7 @@
 <!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
 <html>
 
+
 <?php
           require_once('../conexion.php');
         
@@ -114,18 +115,21 @@
           
           <div class="col-md-6">
             <section class="cta-form cta-light">
-              <form id="cta-signup-form" class="cta-signup-form">
+              <form action="../enviarcorreo/enviarcorreolanding.php" method="POST" id="cta-signup-form" class="cta-signup-form">
                 <h2  class="text-center">Para tener mas información, Ingresa tus datos</h2>
                 <div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>
                 <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
                 <div class="form-group"> <i class="fa fa-user"></i>
-                  <input type="text" value="" name="FNAME" class="form-control input-lg" id="input-name" placeholder="Nombre" required>
+                  <input type="text" value="" name="nombre" class="form-control input-lg" id="input-name" placeholder="Nombre" required>
                 </div>
                 <div class="form-group"> <i class="fa fa-envelope-o"></i>
-                  <input type="email" value="" name="EMAIL" class="form-control input-lg" id="input-email" placeholder="Email" required>
+                  <input type="email" value="" name="email" class="form-control input-lg" id="input-email" placeholder="Email" required>
                 </div>
-				<div class="form-group"> <i class="fa fa-map"></i>
-                  <input type="text" value="" name="FNAME" class="form-control input-lg" id="input-name" placeholder="Ciudad" required>
+                <div class="form-group"> <i class="fa fa-phone"></i>
+                  <input type="text" value="" name="telefono" class="form-control input-lg" id="input-name" placeholder="Telefono" required>
+                </div>
+				        <div class="form-group"> <i class="fa fa-map"></i>
+                  <input type="text" value="" name="ciudad" class="form-control input-lg" id="input-name" placeholder="Ciudad" required>
                 </div>
                 <div class="form-btn">
                   <button type="submit" class="btn">ENVIAR</button>                  
